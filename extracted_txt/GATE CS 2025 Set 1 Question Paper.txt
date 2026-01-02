@@ -1,0 +1,5105 @@
+=== PDF EXTRACTION REPORT ===
+Source: /Users/nikich/Desktop/PROMPT RESEARCH Q&A/GATE CS 2025 Set 1 Question Paper.pdf
+SHA256: 81a6517cc058c3a471dce9a39a6bb2291f4fff9aa7ebebe6a5f337f61e25ee81
+Bytes: 1024592
+ExtractedAtUTC: 2026-01-02T06:53:49.290100+00:00
+PageCount: 64
+Metadata:
+{
+  "author": "Gate Office",
+  "creationDate": "D:20250225192158+05'30'",
+  "creator": "Microsoft® Word for Microsoft 365",
+  "encryption": null,
+  "format": "PDF 1.7",
+  "keywords": "",
+  "modDate": "D:20250225192158+05'30'",
+  "producer": "Microsoft® Word for Microsoft 365",
+  "subject": "",
+  "title": "",
+  "trapped": ""
+}
+TOC:
+[]
+
+
+--- PAGE 1/64 ---
+{
+  "page": 1,
+  "rect": [
+    0.0,
+    0.0,
+    595.3200073242188,
+    841.9199829101562
+  ],
+  "rotation": 0
+}
+[TEXT]
+                           Computer Science and Information Technology (CS1)
+
+
+
+General Aptitude
+
+Q.1 – Q.5 Carry ONE mark Each
+
+
+ Q.1    Ravi had ______ younger brother who taught at ______ university. He was widely
+         regarded as ______ honorable man.
+
+          Select the option with the correct sequence of articles to fill in the blanks.
+
+
+
+
+
+ (A)      a; a; an
+
+
+ (B)      the; an; a
+
+
+ (C)      a; an; a
+
+
+ (D)     an; an; a
+
+
+
+
+
+Organising Institute: IIT Roorkee            Page 1 of 64
+[SPANS]
+[]
+[IMAGES]
+[
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0001_img_001_xref_5.png",
+    "height": 1253,
+    "page": 1,
+    "size_bytes": 134484,
+    "width": 1252,
+    "xref": 5
+  },
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0001_img_002_xref_15.png",
+    "height": 183,
+    "page": 1,
+    "size_bytes": 8815,
+    "width": 151,
+    "xref": 15
+  }
+]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 2/64 ---
+{
+  "page": 2,
+  "rect": [
+    0.0,
+    0.0,
+    595.3200073242188,
+    841.9199829101562
+  ],
+  "rotation": 0
+}
+[TEXT]
+                           Computer Science and Information Technology (CS1)
+
+
+
+
+ Q.2    The CEO’s decision to downsize the workforce was considered myopic because it
+          sacrificed long-term stability to accommodate short-term gains.
+
+          Select the most appropriate option that can replace the word “myopic” without
+         changing the meaning of the sentence.
+
+
+
+
+
+ (A)     visionary
+
+
+ (B)     shortsighted
+
+
+ (C)     progressive
+
+
+ (D)     innovative
+
+
+
+
+
+Organising Institute: IIT Roorkee            Page 2 of 64
+[SPANS]
+[]
+[IMAGES]
+[
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0002_img_001_xref_5.png",
+    "height": 1253,
+    "page": 2,
+    "size_bytes": 134484,
+    "width": 1252,
+    "xref": 5
+  },
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0002_img_002_xref_15.png",
+    "height": 183,
+    "page": 2,
+    "size_bytes": 8815,
+    "width": 151,
+    "xref": 15
+  }
+]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 3/64 ---
+{
+  "page": 3,
+  "rect": [
+    0.0,
+    0.0,
+    595.3200073242188,
+    841.9199829101562
+  ],
+  "rotation": 0
+}
+[TEXT]
+                           Computer Science and Information Technology (CS1)
+
+
+
+
+ Q.3    The average marks obtained by a class in an examination were calculated as 30.8.
+        However, while checking the marks entered, the teacher found that the marks of one
+          student were entered incorrectly as 24 instead of 42. After correcting the marks, the
+         average becomes 31.4. How many students does the class have?
+
+
+
+
+
+ (A)    25
+
+
+ (B)    28
+
+
+ (C)    30
+
+
+ (D)    32
+
+
+
+
+
+Organising Institute: IIT Roorkee            Page 3 of 64
+[SPANS]
+[]
+[IMAGES]
+[
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0003_img_001_xref_5.png",
+    "height": 1253,
+    "page": 3,
+    "size_bytes": 134484,
+    "width": 1252,
+    "xref": 5
+  },
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0003_img_002_xref_15.png",
+    "height": 183,
+    "page": 3,
+    "size_bytes": 8815,
+    "width": 151,
+    "xref": 15
+  }
+]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 4/64 ---
+{
+  "page": 4,
+  "rect": [
+    0.0,
+    0.0,
+    595.3200073242188,
+    841.9199829101562
+  ],
+  "rotation": 0
+}
+[TEXT]
+                           Computer Science and Information Technology (CS1)
+
+
+
+
+ Q.4     Consider the relationships among P, Q, R, S, and T:
+
+               • P is the brother of Q.
+               • S is the daughter of Q.
+               • T is the sister of S.
+               • R is the mother of Q.
+
+        The following statements are made based on the relationships given above.
+
+                  (1) R is the grandmother of S.
+
+                  (2) P is the uncle of S and T.
+
+                  (3) R has only one son.
+
+                  (4) Q has only one daughter.
+
+        Which one of the following options is correct?
+
+
+
+
+
+ (A)    Both (1) and (2) are true.
+
+
+ (B)     Both (1) and (3) are true.
+
+
+ (C)    Only (3) is true.
+
+
+ (D)    Only (4) is true.
+
+
+
+
+
+Organising Institute: IIT Roorkee            Page 4 of 64
+[SPANS]
+[]
+[IMAGES]
+[
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0004_img_001_xref_5.png",
+    "height": 1253,
+    "page": 4,
+    "size_bytes": 134484,
+    "width": 1252,
+    "xref": 5
+  },
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0004_img_002_xref_15.png",
+    "height": 183,
+    "page": 4,
+    "size_bytes": 8815,
+    "width": 151,
+    "xref": 15
+  }
+]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 5/64 ---
+{
+  "page": 5,
+  "rect": [
+    0.0,
+    0.0,
+    595.3200073242188,
+    841.9199829101562
+  ],
+  "rotation": 0
+}
+[TEXT]
+                           Computer Science and Information Technology (CS1)
+
+
+
+
+ Q.5    According to the map shown in the figure, which one of the following statements is
+          correct?
+
+         Note: The figure shown is representative.
+
+
+
+
+
+                          Library              Canteen                                                              Road
+                                                              Main                       Physics Lab             Hospital
+                                              1st
+
+                       5th Cross Road
+
+                                           Chemistry                          Hostels
+                                         Lab
+                                     N
+                      Classrooms
+                          W       E
+
+                                                S
+
+
+ (A)    The library is located to the northwest of the canteen.
+
+
+ (B)    The hospital is located to the east of the chemistry lab.
+
+
+ (C)    The chemistry lab is to the southeast of physics lab.
+
+
+ (D)    The classrooms and canteen are next to each other.
+
+
+
+
+
+Organising Institute: IIT Roorkee            Page 5 of 64
+[SPANS]
+[]
+[IMAGES]
+[
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0005_img_001_xref_5.png",
+    "height": 1253,
+    "page": 5,
+    "size_bytes": 134484,
+    "width": 1252,
+    "xref": 5
+  },
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0005_img_002_xref_15.png",
+    "height": 183,
+    "page": 5,
+    "size_bytes": 8815,
+    "width": 151,
+    "xref": 15
+  },
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0005_img_003_xref_44.png",
+    "height": 63,
+    "page": 5,
+    "size_bytes": 327,
+    "width": 273,
+    "xref": 44
+  },
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0005_img_004_xref_46.png",
+    "height": 63,
+    "page": 5,
+    "size_bytes": 311,
+    "width": 236,
+    "xref": 46
+  },
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0005_img_005_xref_48.png",
+    "height": 63,
+    "page": 5,
+    "size_bytes": 173,
+    "width": 63,
+    "xref": 48
+  },
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0005_img_006_xref_50.png",
+    "height": 63,
+    "page": 5,
+    "size_bytes": 176,
+    "width": 60,
+    "xref": 50
+  },
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0005_img_007_xref_52.png",
+    "height": 63,
+    "page": 5,
+    "size_bytes": 262,
+    "width": 71,
+    "xref": 52
+  },
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0005_img_008_xref_54.png",
+    "height": 63,
+    "page": 5,
+    "size_bytes": 180,
+    "width": 58,
+    "xref": 54
+  },
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0005_img_009_xref_56.png",
+    "height": 86,
+    "page": 5,
+    "size_bytes": 361,
+    "width": 192,
+    "xref": 56
+  },
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0005_img_010_xref_58.png",
+    "height": 63,
+    "page": 5,
+    "size_bytes": 311,
+    "width": 203,
+    "xref": 58
+  },
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0005_img_011_xref_60.png",
+    "height": 63,
+    "page": 5,
+    "size_bytes": 311,
+    "width": 203,
+    "xref": 60
+  },
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0005_img_012_xref_62.png",
+    "height": 63,
+    "page": 5,
+    "size_bytes": 302,
+    "width": 189,
+    "xref": 62
+  },
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0005_img_013_xref_64.png",
+    "height": 63,
+    "page": 5,
+    "size_bytes": 302,
+    "width": 189,
+    "xref": 64
+  }
+]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 6/64 ---
+{
+  "page": 6,
+  "rect": [
+    0.0,
+    0.0,
+    595.3200073242188,
+    841.9199829101562
+  ],
+  "rotation": 0
+}
+[TEXT]
+                           Computer Science and Information Technology (CS1)
+
+
+
+
+
+Q.6 – Q.10 Carry TWO marks Each
+
+
+ Q.6     “I put the brown paper in my pocket along with the chalks, and possibly other things.
+            I suppose every one must have reflected how primeval and how poetical are the
+          things that one carries in one’s pocket: the pocket-knife, for instance the type of all
+       human tools, the infant of the sword. Once I planned to write a book of poems
+           entirely about the things in my pocket. But I found it would be too long: and the age
+          of the great epics is past.”
+
+                                      (From G.K. Chesterton’s “A Piece of Chalk”)
+
+        Based only on the information provided in the above passage, which one of the
+         following statements is true?
+
+
+
+
+
+ (A)    The author of the passage carries a mirror in his pocket to reflect upon things.
+
+
+ (B)    The author of the passage had decided to write a poem on epics.
+
+
+ (C)    The pocket-knife is described as the infant of the sword.
+
+
+ (D)     Epics are described as too inconvenient to write.
+
+
+
+
+
+Organising Institute: IIT Roorkee            Page 6 of 64
+[SPANS]
+[]
+[IMAGES]
+[
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0006_img_001_xref_5.png",
+    "height": 1253,
+    "page": 6,
+    "size_bytes": 134484,
+    "width": 1252,
+    "xref": 5
+  },
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0006_img_002_xref_15.png",
+    "height": 183,
+    "page": 6,
+    "size_bytes": 8815,
+    "width": 151,
+    "xref": 15
+  }
+]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 7/64 ---
+{
+  "page": 7,
+  "rect": [
+    0.0,
+    0.0,
+    595.3200073242188,
+    841.9199829101562
+  ],
+  "rotation": 0
+}
+[TEXT]
+                           Computer Science and Information Technology (CS1)
+
+
+
+
+ Q.7     In the diagram, the lines QR and ST are parallel to each other. The shortest distance
+        between these two lines is half the shortest distance between the point P and line
+       QR. What is the ratio of the area of the triangle PST to the area of the trapezium
+       SQRT?
+
+         Note: The figure shown is representative.
+
+                                   P
+
+
+
+                           S         T
+
+
+
+                 Q              R
+
+
+ (A)    1
+       3
+
+
+ (B)    1
+       4
+
+
+ (C)    2
+       5
+
+
+ (D)    1
+       2
+
+
+
+
+
+Organising Institute: IIT Roorkee            Page 7 of 64
+[SPANS]
+[]
+[IMAGES]
+[
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0007_img_001_xref_5.png",
+    "height": 1253,
+    "page": 7,
+    "size_bytes": 134484,
+    "width": 1252,
+    "xref": 5
+  },
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0007_img_002_xref_15.png",
+    "height": 183,
+    "page": 7,
+    "size_bytes": 8815,
+    "width": 151,
+    "xref": 15
+  },
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0007_img_003_xref_75.png",
+    "height": 38,
+    "page": 7,
+    "size_bytes": 155,
+    "width": 44,
+    "xref": 75
+  },
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0007_img_004_xref_77.png",
+    "height": 42,
+    "page": 7,
+    "size_bytes": 162,
+    "width": 52,
+    "xref": 77
+  },
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0007_img_005_xref_79.png",
+    "height": 33,
+    "page": 7,
+    "size_bytes": 147,
+    "width": 45,
+    "xref": 79
+  },
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0007_img_006_xref_81.png",
+    "height": 34,
+    "page": 7,
+    "size_bytes": 147,
+    "width": 46,
+    "xref": 81
+  },
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0007_img_007_xref_83.png",
+    "height": 32,
+    "page": 7,
+    "size_bytes": 148,
+    "width": 44,
+    "xref": 83
+  }
+]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 8/64 ---
+{
+  "page": 8,
+  "rect": [
+    0.0,
+    0.0,
+    595.3200073242188,
+    841.9199829101562
+  ],
+  "rotation": 0
+}
+[TEXT]
+                           Computer Science and Information Technology (CS1)
+
+
+
+
+ Q.8   A fair six-faced dice, with the faces labelled ‘1’, ‘2’, ‘3’, ‘4’, ‘5’, and ‘6’, is rolled
+           thrice. What is the probability of rolling ‘6’ exactly once?
+
+
+
+
+
+ (A)    75
+       216
+
+
+ (B)    1
+       6
+
+
+ (C)    1
+       18
+
+
+ (D)    25
+       216
+
+
+
+
+
+Organising Institute: IIT Roorkee            Page 8 of 64
+[SPANS]
+[]
+[IMAGES]
+[
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0008_img_001_xref_5.png",
+    "height": 1253,
+    "page": 8,
+    "size_bytes": 134484,
+    "width": 1252,
+    "xref": 5
+  },
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0008_img_002_xref_15.png",
+    "height": 183,
+    "page": 8,
+    "size_bytes": 8815,
+    "width": 151,
+    "xref": 15
+  }
+]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 9/64 ---
+{
+  "page": 9,
+  "rect": [
+    0.0,
+    0.0,
+    595.3200073242188,
+    841.9199829101562
+  ],
+  "rotation": 0
+}
+[TEXT]
+                           Computer Science and Information Technology (CS1)
+
+
+
+
+ Q.9   A square paper, shown in figure (I), is folded along the dotted lines as shown in the
+          figures (II) and (III). Then a few cuts are made as shown in figure (IV). Which one
+          of the following patterns will be obtained when the paper is unfolded?
+
+         Note: The figures shown are representative.
+
+
+
+
+
+                 (I)                (II)              (III)            (IV)
+
+
+ (A)
+
+
+
+
+
+ (B)
+
+
+
+
+
+ (C)
+
+
+
+
+
+ (D)
+
+
+
+
+
+Organising Institute: IIT Roorkee            Page 9 of 64
+[SPANS]
+[]
+[IMAGES]
+[
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0009_img_001_xref_5.png",
+    "height": 1253,
+    "page": 9,
+    "size_bytes": 134484,
+    "width": 1252,
+    "xref": 5
+  },
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0009_img_002_xref_15.png",
+    "height": 183,
+    "page": 9,
+    "size_bytes": 8815,
+    "width": 151,
+    "xref": 15
+  },
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0009_img_003_xref_89.png",
+    "height": 70,
+    "page": 9,
+    "size_bytes": 280,
+    "width": 79,
+    "xref": 89
+  },
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0009_img_004_xref_91.png",
+    "height": 70,
+    "page": 9,
+    "size_bytes": 279,
+    "width": 91,
+    "xref": 91
+  }
+]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 10/64 ---
+{
+  "page": 10,
+  "rect": [
+    0.0,
+    0.0,
+    595.3200073242188,
+    841.9199829101562
+  ],
+  "rotation": 0
+}
+[TEXT]
+                           Computer Science and Information Technology (CS1)
+
+
+
+
+ Q.10  A shop has 4 distinct flavors of ice-cream. One can purchase any number of scoops
+          of any flavor. The order in which the scoops are purchased is inconsequential.
+            If one wants to purchase 3 scoops of ice-cream, in how many ways can one make
+           that purchase?
+
+
+
+
+
+ (A)    4
+
+
+ (B)    20
+
+
+ (C)    24
+
+
+ (D)    48
+
+
+
+
+
+Q.11 – Q.35 Carry ONE mark Each
+
+
+ Q.11   Suppose a program is running on a non-pipelined single processor computer system.
+        The computer is connected to an external device that can interrupt the processor
+         asynchronously. The processor needs to execute the interrupt service routine (ISR)
+          to serve this interrupt. The following steps (not necessarily in order) are taken by
+          the processor when the interrupt arrives:
+
+                   (i)   The processor saves the content of the program counter.
+                   (ii)   The program counter is loaded with the start address of the ISR.
+                    (iii)  The processor finishes the present instruction.
+
+        Which ONE of the following is the CORRECT sequence of steps?
+
+
+
+
+
+ (A)       (iii),  (i),  (ii)
+
+
+ (B)       (i),  (iii), (ii)
+
+
+Organising Institute: IIT Roorkee            Page 10 of 64
+[SPANS]
+[]
+[IMAGES]
+[
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0010_img_001_xref_5.png",
+    "height": 1253,
+    "page": 10,
+    "size_bytes": 134484,
+    "width": 1252,
+    "xref": 5
+  },
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0010_img_002_xref_15.png",
+    "height": 183,
+    "page": 10,
+    "size_bytes": 8815,
+    "width": 151,
+    "xref": 15
+  }
+]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 11/64 ---
+{
+  "page": 11,
+  "rect": [
+    0.0,
+    0.0,
+    595.3200073242188,
+    841.9199829101562
+  ],
+  "rotation": 0
+}
+[TEXT]
+                           Computer Science and Information Technology (CS1)
+
+
+
+
+ (C)       (i),  (ii),  (iii)
+
+
+ (D)       (iii), (ii),  (i)
+
+
+
+
+
+Organising Institute: IIT Roorkee            Page 11 of 64
+[SPANS]
+[]
+[IMAGES]
+[
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0011_img_001_xref_5.png",
+    "height": 1253,
+    "page": 11,
+    "size_bytes": 134484,
+    "width": 1252,
+    "xref": 5
+  },
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0011_img_002_xref_15.png",
+    "height": 183,
+    "page": 11,
+    "size_bytes": 8815,
+    "width": 151,
+    "xref": 15
+  }
+]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 12/64 ---
+{
+  "page": 12,
+  "rect": [
+    0.0,
+    0.0,
+    595.3200073242188,
+    841.9199829101562
+  ],
+  "rotation": 0
+}
+[TEXT]
+                           Computer Science and Information Technology (CS1)
+
+
+
+
+ Q.12   Which ONE of the following statements is FALSE regarding the symbol table?
+
+
+
+
+
+ (A)    Symbol table is responsible for keeping track of the scope of variables.
+
+
+ (B)    Symbol table can be implemented using a binary search tree.
+
+
+ (C)    Symbol table is not required after the parsing phase.
+
+
+ (D)    Symbol table is created during the lexical analysis phase.
+
+
+
+
+
+Organising Institute: IIT Roorkee            Page 12 of 64
+[SPANS]
+[]
+[IMAGES]
+[
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0012_img_001_xref_5.png",
+    "height": 1253,
+    "page": 12,
+    "size_bytes": 134484,
+    "width": 1252,
+    "xref": 5
+  },
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0012_img_002_xref_15.png",
+    "height": 183,
+    "page": 12,
+    "size_bytes": 8815,
+    "width": 151,
+    "xref": 15
+  }
+]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 13/64 ---
+{
+  "page": 13,
+  "rect": [
+    0.0,
+    0.0,
+    595.3200073242188,
+    841.9199829101562
+  ],
+  "rotation": 0
+}
+[TEXT]
+                           Computer Science and Information Technology (CS1)
+
+
+
+
+ Q.13   Which ONE of the following techniques used in compiler code optimization uses
+           live variable analysis?
+
+
+
+
+
+ (A)     Run-time function call management
+
+
+ (B)     Register assignment to variables
+
+
+ (C)     Strength reduction
+
+
+ (D)     Constant folding
+
+
+
+
+
+Organising Institute: IIT Roorkee            Page 13 of 64
+[SPANS]
+[]
+[IMAGES]
+[
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0013_img_001_xref_5.png",
+    "height": 1253,
+    "page": 13,
+    "size_bytes": 134484,
+    "width": 1252,
+    "xref": 5
+  },
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0013_img_002_xref_15.png",
+    "height": 183,
+    "page": 13,
+    "size_bytes": 8815,
+    "width": 151,
+    "xref": 15
+  }
+]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 14/64 ---
+{
+  "page": 14,
+  "rect": [
+    0.0,
+    0.0,
+    595.3200073242188,
+    841.9199829101562
+  ],
+  "rotation": 0
+}
+[TEXT]
+                           Computer Science and Information Technology (CS1)
+
+
+
+
+ Q.14    Consider a demand paging memory management system with 32-bit logical
+          address, 20-bit physical address, and page size of 2048 bytes. Assuming that the
+        memory is byte addressable, what is the maximum number of entries in the page
+           table?
+
+
+
+
+ (A)      221
+
+
+ (B)      220
+
+
+ (C)      222
+
+
+ (D)      224
+
+
+
+
+
+Organising Institute: IIT Roorkee            Page 14 of 64
+[SPANS]
+[]
+[IMAGES]
+[
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0014_img_001_xref_5.png",
+    "height": 1253,
+    "page": 14,
+    "size_bytes": 134484,
+    "width": 1252,
+    "xref": 5
+  },
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0014_img_002_xref_15.png",
+    "height": 183,
+    "page": 14,
+    "size_bytes": 8815,
+    "width": 151,
+    "xref": 15
+  }
+]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 15/64 ---
+{
+  "page": 15,
+  "rect": [
+    0.0,
+    0.0,
+    595.3200073242188,
+    841.9199829101562
+  ],
+  "rotation": 0
+}
+[TEXT]
+                           Computer Science and Information Technology (CS1)
+
+
+
+ Q.15  A schedule of three database transactions 𝑇1, 𝑇2, and 𝑇3  is shown. 𝑅𝑖(𝐴) and
+        𝑊𝑖(𝐴) denote read and write of data item 𝐴 by transaction  𝑇𝑖, 𝑖= 1,2,3. The
+          transaction 𝑇1 aborts at the end. Which other transaction(s) will be required to be
+          rolled back?
+
+
+                     𝑅1(𝑋) 𝑊1(𝑌) 𝑅2(𝑋) 𝑅2(𝑌) 𝑅3(𝑌) 𝐴𝐵𝑂𝑅𝑇(𝑇1)
+
+
+ (A)    Only 𝑇2
+
+
+ (B)    Only 𝑇3
+
+
+ (C)     Both 𝑇2 and 𝑇3
+
+
+ (D)     Neither 𝑇2 nor 𝑇3
+
+
+
+
+
+Organising Institute: IIT Roorkee            Page 15 of 64
+[SPANS]
+[]
+[IMAGES]
+[
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0015_img_001_xref_5.png",
+    "height": 1253,
+    "page": 15,
+    "size_bytes": 134484,
+    "width": 1252,
+    "xref": 5
+  },
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0015_img_002_xref_15.png",
+    "height": 183,
+    "page": 15,
+    "size_bytes": 8815,
+    "width": 151,
+    "xref": 15
+  }
+]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 16/64 ---
+{
+  "page": 16,
+  "rect": [
+    0.0,
+    0.0,
+    595.3200073242188,
+    841.9199829101562
+  ],
+  "rotation": 0
+}
+[TEXT]
+                           Computer Science and Information Technology (CS1)
+
+
+
+
+ Q.16    Identify  the ONE CORRECT matching between  the OSI  layers and  their
+          corresponding functionalities as shown.
+
+
+
+
+             OSI Layers                Functionalities
+
+                 (a) Network layer                 (I)  Packet routing
+
+                (b) Transport layer                (II) Framing and error handling
+
+                 (c) Datalink layer                (III) Host to host communication
+
+
+
+
+
+ (A)       (a)-(I), (b)-(II), (c)-(III)
+
+
+ (B)       (a)-(I), (b)-(III), (c)-(II)
+
+
+ (C)       (a)-(II), (b)-(I), (c)-(III)
+
+
+ (D)       (a)-(III), (b)-(II), (c)-(I)
+
+
+
+
+
+Organising Institute: IIT Roorkee            Page 16 of 64
+[SPANS]
+[]
+[IMAGES]
+[
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0016_img_001_xref_5.png",
+    "height": 1253,
+    "page": 16,
+    "size_bytes": 134484,
+    "width": 1252,
+    "xref": 5
+  },
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0016_img_002_xref_15.png",
+    "height": 183,
+    "page": 16,
+    "size_bytes": 8815,
+    "width": 151,
+    "xref": 15
+  }
+]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 17/64 ---
+{
+  "page": 17,
+  "rect": [
+    0.0,
+    0.0,
+    595.3200073242188,
+    841.9199829101562
+  ],
+  "rotation": 0
+}
+[TEXT]
+                           Computer Science and Information Technology (CS1)
+
+
+
+
+ Q.17    𝑔(. ) is a function from 𝐴 to 𝐵, 𝑓(. ) is a function from 𝐵 to 𝐶, and their
+         composition defined as 𝑓(𝑔(. )) is a mapping from 𝐴 to 𝐶.
+
+            If 𝑓(. ) and 𝑓(𝑔(. )) are onto (surjective) functions, which ONE of the following
+            is TRUE about the function 𝑔(. )?
+
+
+
+
+
+ (A)     𝑔(. ) must be an onto (surjective) function.
+
+
+ (B)     𝑔(. ) must be a one-to-one (injective) function.
+
+
+ (C)     𝑔(. ) must be a bijective function, that is, both one-to-one and onto.
+
+
+ (D)     𝑔(. ) is not required to be a one-to-one or onto function.
+
+
+
+
+
+Organising Institute: IIT Roorkee            Page 17 of 64
+[SPANS]
+[]
+[IMAGES]
+[
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0017_img_001_xref_5.png",
+    "height": 1253,
+    "page": 17,
+    "size_bytes": 134484,
+    "width": 1252,
+    "xref": 5
+  },
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0017_img_002_xref_15.png",
+    "height": 183,
+    "page": 17,
+    "size_bytes": 8815,
+    "width": 151,
+    "xref": 15
+  }
+]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 18/64 ---
+{
+  "page": 18,
+  "rect": [
+    0.0,
+    0.0,
+    595.3200073242188,
+    841.9199829101562
+  ],
+  "rotation": 0
+}
+[TEXT]
+                           Computer Science and Information Technology (CS1)
+
+
+
+
+ Q.18    Let 𝐺 be any undirected graph with positive edge weights, and 𝑇 be a minimum
+         spanning tree of 𝐺. For any two vertices, 𝑢 and 𝑣, let 𝑑1(𝑢, 𝑣) and 𝑑2(𝑢, 𝑣) be the
+          shortest distances between 𝑢 and 𝑣 in 𝐺 and 𝑇, respectively. Which ONE of the
+         options is CORRECT for all possible 𝐺, 𝑇, 𝑢 and 𝑣?
+
+
+
+
+ (A)     𝑑1(𝑢, 𝑣) = 𝑑2(𝑢, 𝑣)
+
+
+ (B)     𝑑1(𝑢, 𝑣) ≤𝑑2(𝑢, 𝑣)
+
+
+ (C)     𝑑1(𝑢, 𝑣) ≥𝑑2(𝑢, 𝑣)
+
+
+ (D)     𝑑1(𝑢, 𝑣) ≠𝑑2(𝑢, 𝑣)
+
+
+
+
+
+Organising Institute: IIT Roorkee            Page 18 of 64
+[SPANS]
+[]
+[IMAGES]
+[
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0018_img_001_xref_5.png",
+    "height": 1253,
+    "page": 18,
+    "size_bytes": 134484,
+    "width": 1252,
+    "xref": 5
+  },
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0018_img_002_xref_15.png",
+    "height": 183,
+    "page": 18,
+    "size_bytes": 8815,
+    "width": 151,
+    "xref": 15
+  }
+]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 19/64 ---
+{
+  "page": 19,
+  "rect": [
+    0.0,
+    0.0,
+    595.3200073242188,
+    841.9199829101562
+  ],
+  "rotation": 0
+}
+[TEXT]
+                           Computer Science and Information Technology (CS1)
+
+
+
+
+ Q.19   Consider the following context-free grammar 𝐺, where 𝑆, 𝐴, and 𝐵 are the variables
+          (non-terminals), 𝑎 and 𝑏 are the terminal symbols, 𝑆 is the start variable, and the
+          rules of 𝐺 are described as:
+
+                       𝑆→𝑎𝑎𝐵 | 𝐴𝑏𝑏
+
+                    𝐴→𝑎 | 𝑎𝐴
+
+                    𝐵→𝑏 | 𝑏𝐵
+
+        Which ONE of the languages 𝐿(𝐺) is accepted by 𝐺?
+
+
+
+
+
+ (A)    𝐿(𝐺) = {𝑎2𝑏𝑛 | 𝑛≥1} ∪{𝑎𝑛𝑏2 | 𝑛≥1}
+
+
+ (B)    𝐿(𝐺) = {𝑎𝑛𝑏2𝑛 | 𝑛≥1} ∪{𝑎2𝑛𝑏𝑛 | 𝑛≥1}
+
+
+ (C)    𝐿(𝐺) = {𝑎𝑛𝑏𝑛 | 𝑛≥1}
+
+
+ (D)    𝐿(𝐺) = {𝑎2𝑛𝑏2𝑛 | 𝑛≥1}
+
+
+
+
+
+Organising Institute: IIT Roorkee            Page 19 of 64
+[SPANS]
+[]
+[IMAGES]
+[
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0019_img_001_xref_5.png",
+    "height": 1253,
+    "page": 19,
+    "size_bytes": 134484,
+    "width": 1252,
+    "xref": 5
+  },
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0019_img_002_xref_15.png",
+    "height": 183,
+    "page": 19,
+    "size_bytes": 8815,
+    "width": 151,
+    "xref": 15
+  }
+]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 20/64 ---
+{
+  "page": 20,
+  "rect": [
+    0.0,
+    0.0,
+    595.3200073242188,
+    841.9199829101562
+  ],
+  "rotation": 0
+}
+[TEXT]
+                           Computer Science and Information Technology (CS1)
+
+
+
+         Consider the following recurrence relation:
+ Q.20
+        𝑇(𝑛) = 2𝑇(𝑛−1) + 𝑛2𝑛 for 𝑛 > 0,  𝑇(0) = 1.
+
+        Which ONE of the following options is CORRECT?
+
+
+
+
+ (A)    𝑇(𝑛) = Θ(𝑛22𝑛)
+
+
+ (B)    𝑇(𝑛) = Θ(𝑛2𝑛)
+
+
+ (C)    𝑇(𝑛) = Θ((log 𝑛)2 2𝑛)
+
+
+ (D)    𝑇(𝑛) = Θ(4𝑛)
+
+
+
+
+
+Organising Institute: IIT Roorkee            Page 20 of 64
+[SPANS]
+[]
+[IMAGES]
+[
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0020_img_001_xref_5.png",
+    "height": 1253,
+    "page": 20,
+    "size_bytes": 134484,
+    "width": 1252,
+    "xref": 5
+  },
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0020_img_002_xref_15.png",
+    "height": 183,
+    "page": 20,
+    "size_bytes": 8815,
+    "width": 151,
+    "xref": 15
+  }
+]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 21/64 ---
+{
+  "page": 21,
+  "rect": [
+    0.0,
+    0.0,
+    595.3200073242188,
+    841.9199829101562
+  ],
+  "rotation": 0
+}
+[TEXT]
+                           Computer Science and Information Technology (CS1)
+
+
+
+
+ Q.21  Consider the following 𝐵+ tree with 5 nodes, in which a node can store at most 3 key values.
+      The value 23 is now inserted in the 𝐵+ tree. Which of the following options(s) is/are
+     CORRECT?
+
+
+
+
+
+ (A)   None of the nodes will split.
+
+
+ (B)   At least one node will split and redistribute.
+
+
+ (C)   The total number of nodes will remain same.
+
+
+ (D)   The height of the tree will increase.
+
+
+
+
+
+Organising Institute: IIT Roorkee            Page 21 of 64
+[SPANS]
+[]
+[IMAGES]
+[
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0021_img_001_xref_5.png",
+    "height": 1253,
+    "page": 21,
+    "size_bytes": 134484,
+    "width": 1252,
+    "xref": 5
+  },
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0021_img_002_xref_15.png",
+    "height": 183,
+    "page": 21,
+    "size_bytes": 8815,
+    "width": 151,
+    "xref": 15
+  },
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "jpeg",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0021_img_003_xref_117.jpeg",
+    "height": 302,
+    "page": 21,
+    "size_bytes": 33540,
+    "width": 1415,
+    "xref": 117
+  }
+]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 22/64 ---
+{
+  "page": 22,
+  "rect": [
+    0.0,
+    0.0,
+    595.3200073242188,
+    841.9199829101562
+  ],
+  "rotation": 0
+}
+[TEXT]
+                           Computer Science and Information Technology (CS1)
+
+
+
+
+ Q.22    Consider the 3-way handshaking protocol for TCP connection establishment. Let
+          the three packets exchanged during the connection establishment be denoted as P1,
+          P2, and P3, in order. Which of the following option(s) is/are TRUE with respect to
+       TCP header flags that are set in the packets?
+
+
+
+
+
+ (A)     P3: SYN = 1, ACK = 1
+
+
+ (B)     P2: SYN = 1, ACK = 1
+
+
+ (C)     P2: SYN = 0, ACK = 1
+
+
+ (D)     P1: SYN = 1
+
+
+
+
+
+Organising Institute: IIT Roorkee            Page 22 of 64
+[SPANS]
+[]
+[IMAGES]
+[
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0022_img_001_xref_5.png",
+    "height": 1253,
+    "page": 22,
+    "size_bytes": 134484,
+    "width": 1252,
+    "xref": 5
+  },
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0022_img_002_xref_15.png",
+    "height": 183,
+    "page": 22,
+    "size_bytes": 8815,
+    "width": 151,
+    "xref": 15
+  }
+]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 23/64 ---
+{
+  "page": 23,
+  "rect": [
+    0.0,
+    0.0,
+    595.3200073242188,
+    841.9199829101562
+  ],
+  "rotation": 0
+}
+[TEXT]
+                           Computer Science and Information Technology (CS1)
+
+
+
+         Consider the given system of linear equations for variables 𝑥 and 𝑦, where 𝑘 is a
+ Q.23    real-valued constant. Which of the following option(s) is/are CORRECT?
+
+
+                       𝑥+ 𝑘𝑦=  1
+                          𝑘𝑥+ 𝑦= −1
+
+
+ (A)     There is exactly one value of 𝑘 for which the above system of equations has no
+          solution.
+
+
+ (B)     There exist an infinite number of values of 𝑘 for which the system of equations has
+        no solution.
+
+
+ (C)     There exists exactly one value of 𝑘 for which the system of equations has exactly
+        one solution.
+
+
+ (D)     There exists exactly one value of 𝑘 for which the system of equations has an infinite
+        number of solutions.
+
+
+
+
+
+Organising Institute: IIT Roorkee            Page 23 of 64
+[SPANS]
+[]
+[IMAGES]
+[
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0023_img_001_xref_5.png",
+    "height": 1253,
+    "page": 23,
+    "size_bytes": 134484,
+    "width": 1252,
+    "xref": 5
+  },
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0023_img_002_xref_15.png",
+    "height": 183,
+    "page": 23,
+    "size_bytes": 8815,
+    "width": 151,
+    "xref": 15
+  }
+]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 24/64 ---
+{
+  "page": 24,
+  "rect": [
+    0.0,
+    0.0,
+    595.3200073242188,
+    841.9199829101562
+  ],
+  "rotation": 0
+}
+[TEXT]
+                           Computer Science and Information Technology (CS1)
+
+
+
+
+ Q.24    Let 𝑋 be a 3-variable Boolean function that produces output as ‘1’ when at least
+        two of the input variables are ‘1’. Which of the following statement(s) is/are
+       CORRECT, where 𝑎, 𝑏, 𝑐, 𝑑, 𝑒 are Boolean variables?
+
+
+
+
+
+ (A)     𝑋(𝑎, 𝑏, 𝑋(𝑐, 𝑑, 𝑒)) = 𝑋(𝑋(𝑎, 𝑏, 𝑐), 𝑑, 𝑒)
+
+
+ (B)     𝑋(𝑎, 𝑏, 𝑋(𝑎, 𝑏, 𝑐)) = 𝑋(𝑎, 𝑏, 𝑐)
+
+
+ (C)     𝑋(𝑎, 𝑏, 𝑋(𝑎, 𝑐, 𝑑)) = (𝑋(𝑎, 𝑏, 𝑎) AND 𝑋(𝑐, 𝑑, 𝑐))
+
+
+ (D)     𝑋(𝑎, 𝑏, 𝑐) = 𝑋(𝑎, 𝑋(𝑎, 𝑏, 𝑐), 𝑋(𝑎, 𝑐, 𝑐))
+
+
+
+
+
+Organising Institute: IIT Roorkee            Page 24 of 64
+[SPANS]
+[]
+[IMAGES]
+[
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0024_img_001_xref_5.png",
+    "height": 1253,
+    "page": 24,
+    "size_bytes": 134484,
+    "width": 1252,
+    "xref": 5
+  },
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0024_img_002_xref_15.png",
+    "height": 183,
+    "page": 24,
+    "size_bytes": 8815,
+    "width": 151,
+    "xref": 15
+  }
+]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 25/64 ---
+{
+  "page": 25,
+  "rect": [
+    0.0,
+    0.0,
+    595.3200073242188,
+    841.9199829101562
+  ],
+  "rotation": 0
+}
+[TEXT]
+                           Computer Science and Information Technology (CS1)
+
+
+
+
+ Q.25   The number −6 can be represented as 1010 in 4-bit 2’s complement representation.
+        Which of the following is/are CORRECT 2’s complement representation(s) of −6?
+
+
+
+
+
+ (A)    1000 1010 in 8-bits
+
+
+ (B)    1111 1010 in 8-bits
+
+
+ (C)    1000 0000 0000 1010 in 16-bits
+
+
+ (D)    1111 1111 1111 1010 in 16-bits
+
+
+
+
+
+Organising Institute: IIT Roorkee            Page 25 of 64
+[SPANS]
+[]
+[IMAGES]
+[
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0025_img_001_xref_5.png",
+    "height": 1253,
+    "page": 25,
+    "size_bytes": 134484,
+    "width": 1252,
+    "xref": 5
+  },
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0025_img_002_xref_15.png",
+    "height": 183,
+    "page": 25,
+    "size_bytes": 8815,
+    "width": 151,
+    "xref": 15
+  }
+]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 26/64 ---
+{
+  "page": 26,
+  "rect": [
+    0.0,
+    0.0,
+    595.3200073242188,
+    841.9199829101562
+  ],
+  "rotation": 0
+}
+[TEXT]
+                           Computer Science and Information Technology (CS1)
+
+
+
+
+ Q.26   Which of the following statement(s) is/are TRUE for any binary search tree (BST)
+         having 𝑛 distinct integers?
+
+
+
+
+
+ (A)    The maximum length of a path from the root node to any other node is (𝑛−1).
+
+
+ (B)    An inorder traversal will always produce a sorted sequence of elements.
+
+
+ (C)     Finding an element takes 𝑂(log2 𝑛) time in the worst case.
+
+
+ (D)     Every BST is also a Min-Heap.
+
+
+
+
+
+Organising Institute: IIT Roorkee            Page 26 of 64
+[SPANS]
+[]
+[IMAGES]
+[
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0026_img_001_xref_5.png",
+    "height": 1253,
+    "page": 26,
+    "size_bytes": 134484,
+    "width": 1252,
+    "xref": 5
+  },
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0026_img_002_xref_15.png",
+    "height": 183,
+    "page": 26,
+    "size_bytes": 8815,
+    "width": 151,
+    "xref": 15
+  }
+]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 27/64 ---
+{
+  "page": 27,
+  "rect": [
+    0.0,
+    0.0,
+    595.3200073242188,
+    841.9199829101562
+  ],
+  "rotation": 0
+}
+[TEXT]
+                           Computer Science and Information Technology (CS1)
+
+
+
+
+ Q.27 A partial data path of a processor is given in the figure, where RA, RB, and RZ are
+        32-bit registers. Which option(s) is/are CORRECT related to arithmetic operations
+        using the data path as shown?
+
+
+
+
+
+ (A)   The data path can implement arithmetic operations involving two registers.
+
+
+ (B)   The data path can implement arithmetic operations involving one register and one
+       immediate value.
+
+
+ (C)   The data path can implement arithmetic operations involving two immediate values.
+
+
+ (D)   The data path can only implement arithmetic operations involving one register and
+       one immediate value.
+
+
+
+
+
+Organising Institute: IIT Roorkee            Page 27 of 64
+[SPANS]
+[]
+[IMAGES]
+[
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0027_img_001_xref_5.png",
+    "height": 1253,
+    "page": 27,
+    "size_bytes": 134484,
+    "width": 1252,
+    "xref": 5
+  },
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0027_img_002_xref_15.png",
+    "height": 183,
+    "page": 27,
+    "size_bytes": 8815,
+    "width": 151,
+    "xref": 15
+  },
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "jpeg",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0027_img_003_xref_130.jpeg",
+    "height": 373,
+    "page": 27,
+    "size_bytes": 23206,
+    "width": 678,
+    "xref": 130
+  }
+]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 28/64 ---
+{
+  "page": 28,
+  "rect": [
+    0.0,
+    0.0,
+    595.3200073242188,
+    841.9199829101562
+  ],
+  "rotation": 0
+}
+[TEXT]
+                           Computer Science and Information Technology (CS1)
+
+
+
+
+ Q.28  A regular language 𝐿 is accepted by a non-deterministic finite automaton (NFA)
+         with 𝑛 states. Which of the following statement(s) is/are FALSE?
+
+
+
+
+
+ (A)    𝐿 may have an accepting NFA with < 𝑛 states.
+
+
+ (B)    𝐿 may have an accepting DFA with < 𝑛 states.
+
+
+ (C)     There exists a DFA with ≤2𝑛 states that accepts 𝐿.
+
+
+ (D)     Every DFA that accepts 𝐿 has > 2𝑛 states.
+
+
+
+
+
+Organising Institute: IIT Roorkee            Page 28 of 64
+[SPANS]
+[]
+[IMAGES]
+[
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0028_img_001_xref_5.png",
+    "height": 1253,
+    "page": 28,
+    "size_bytes": 134484,
+    "width": 1252,
+    "xref": 5
+  },
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0028_img_002_xref_15.png",
+    "height": 183,
+    "page": 28,
+    "size_bytes": 8815,
+    "width": 151,
+    "xref": 15
+  }
+]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 29/64 ---
+{
+  "page": 29,
+  "rect": [
+    0.0,
+    0.0,
+    595.3200073242188,
+    841.9199829101562
+  ],
+  "rotation": 0
+}
+[TEXT]
+                           Computer Science and Information Technology (CS1)
+
+
+
+
+ Q.29   Suppose in a multiprogramming environment, the following C program segment is
+          executed. A process goes into I/O queue whenever an I/O related operation is
+         performed. Assume that there will always be a context switch whenever a process
+          requests for an I/O, and also whenever the process returns from an I/O. The number
+          of times the process will enter the ready queue during its lifetime (not counting the
+         time the process enters the ready queue when it is run initially) is _______. (Answer
+           in integer)
+
+
+            int main()
+            {
+                int x=0,i=0;
+                scanf("%d",&x);
+                for(i=0; i<20; i++)
+                {
+                    x = x+20;
+                    printf("%d\n",x);
+                }
+                return 0;
+            }
+
+
+
+
+
+Organising Institute: IIT Roorkee            Page 29 of 64
+[SPANS]
+[]
+[IMAGES]
+[
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0029_img_001_xref_5.png",
+    "height": 1253,
+    "page": 29,
+    "size_bytes": 134484,
+    "width": 1252,
+    "xref": 5
+  },
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0029_img_002_xref_15.png",
+    "height": 183,
+    "page": 29,
+    "size_bytes": 8815,
+    "width": 151,
+    "xref": 15
+  }
+]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 30/64 ---
+{
+  "page": 30,
+  "rect": [
+    0.0,
+    0.0,
+    595.3200073242188,
+    841.9199829101562
+  ],
+  "rotation": 0
+}
+[TEXT]
+                           Computer Science and Information Technology (CS1)
+
+
+
+
+ Q.30    Let 𝑆 be the set of all ternary strings defined over the alphabet {𝑎, 𝑏, 𝑐}. Consider
+            all strings in 𝑆 that contain at least one occurrence of two consecutive symbols, that
+             is, “aa”, “bb” or “cc”. The number of such strings of length 5 that are possible is
+         _______. (Answer in integer)
+
+
+
+
+
+Organising Institute: IIT Roorkee            Page 30 of 64
+[SPANS]
+[]
+[IMAGES]
+[
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0030_img_001_xref_5.png",
+    "height": 1253,
+    "page": 30,
+    "size_bytes": 134484,
+    "width": 1252,
+    "xref": 5
+  },
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0030_img_002_xref_15.png",
+    "height": 183,
+    "page": 30,
+    "size_bytes": 8815,
+    "width": 151,
+    "xref": 15
+  }
+]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 31/64 ---
+{
+  "page": 31,
+  "rect": [
+    0.0,
+    0.0,
+    595.3200073242188,
+    841.9199829101562
+  ],
+  "rotation": 0
+}
+[TEXT]
+                           Computer Science and Information Technology (CS1)
+
+
+
+
+ Q.31   Consider the given function 𝑓(𝑥).
+
+                         𝑎𝑥+ 𝑏       for 𝑥< 1
+                            𝑓(𝑥) = {
+                                    𝑥3 + 𝑥2 + 1  for 𝑥≥1
+
+            If the function is differentiable everywhere, the value of 𝑏 must be ________.
+         (rounded off to one decimal place)
+
+
+
+
+
+Organising Institute: IIT Roorkee            Page 31 of 64
+[SPANS]
+[]
+[IMAGES]
+[
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0031_img_001_xref_5.png",
+    "height": 1253,
+    "page": 31,
+    "size_bytes": 134484,
+    "width": 1252,
+    "xref": 5
+  },
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0031_img_002_xref_15.png",
+    "height": 183,
+    "page": 31,
+    "size_bytes": 8815,
+    "width": 151,
+    "xref": 15
+  }
+]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 32/64 ---
+{
+  "page": 32,
+  "rect": [
+    0.0,
+    0.0,
+    595.3200073242188,
+    841.9199829101562
+  ],
+  "rotation": 0
+}
+[TEXT]
+                           Computer Science and Information Technology (CS1)
+
+
+
+
+ Q.32  A box contains 5 coins: 4 regular coins and 1 fake coin. When a regular coin is
+          tossed, the probability 𝑃(ℎ𝑒𝑎𝑑) = 0.5 and for a fake coin, 𝑃(ℎ𝑒𝑎𝑑) = 1. You pick
+         a coin at random and toss it twice, and get two heads. The probability that the coin
+        you have chosen is the fake coin is _______. (rounded off to two decimal places)
+
+
+
+
+
+Organising Institute: IIT Roorkee            Page 32 of 64
+[SPANS]
+[]
+[IMAGES]
+[
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0032_img_001_xref_5.png",
+    "height": 1253,
+    "page": 32,
+    "size_bytes": 134484,
+    "width": 1252,
+    "xref": 5
+  },
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0032_img_002_xref_15.png",
+    "height": 183,
+    "page": 32,
+    "size_bytes": 8815,
+    "width": 151,
+    "xref": 15
+  }
+]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 33/64 ---
+{
+  "page": 33,
+  "rect": [
+    0.0,
+    0.0,
+    595.3200073242188,
+    841.9199829101562
+  ],
+  "rotation": 0
+}
+[TEXT]
+                           Computer Science and Information Technology (CS1)
+
+
+
+
+ Q.33        The pseudocode of a function fun() is given below:
+
+            fun(int A[0,…,n-1]){
+                for i=0 to n-2
+                    for j=0 to n-i-2
+                        if (A[j]>A[j+1])
+                            then swap A[j] and A[j+1]
+
+                  }
+
+         Let 𝐴[0, … ,29] be an array storing 30 distinct integers in descending order. The
+        number of swap operations that will be performed, if the function fun() is called
+         with 𝐴[0, … ,29] as argument, is __________. (Answer in integer)
+
+
+
+
+
+Organising Institute: IIT Roorkee            Page 33 of 64
+[SPANS]
+[]
+[IMAGES]
+[
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0033_img_001_xref_5.png",
+    "height": 1253,
+    "page": 33,
+    "size_bytes": 134484,
+    "width": 1252,
+    "xref": 5
+  },
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0033_img_002_xref_15.png",
+    "height": 183,
+    "page": 33,
+    "size_bytes": 8815,
+    "width": 151,
+    "xref": 15
+  }
+]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 34/64 ---
+{
+  "page": 34,
+  "rect": [
+    0.0,
+    0.0,
+    595.3200073242188,
+    841.9199829101562
+  ],
+  "rotation": 0
+}
+[TEXT]
+                           Computer Science and Information Technology (CS1)
+
+
+
+ Q.34   #include <stdio.h>
+       void foo(int *p, int x){
+           *p=x;
+       }
+       int main(){
+           int *z;
+           int a = 20, b = 25;
+           z = &a;
+           foo(z,b);
+           printf("%d",a);
+           return 0;
+       }
+
+        The output of the given C program is __________. (Answer in integer)
+
+
+
+
+
+Organising Institute: IIT Roorkee            Page 34 of 64
+[SPANS]
+[]
+[IMAGES]
+[
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0034_img_001_xref_5.png",
+    "height": 1253,
+    "page": 34,
+    "size_bytes": 134484,
+    "width": 1252,
+    "xref": 5
+  },
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0034_img_002_xref_15.png",
+    "height": 183,
+    "page": 34,
+    "size_bytes": 8815,
+    "width": 151,
+    "xref": 15
+  }
+]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 35/64 ---
+{
+  "page": 35,
+  "rect": [
+    0.0,
+    0.0,
+    595.3200073242188,
+    841.9199829101562
+  ],
+  "rotation": 0
+}
+[TEXT]
+                           Computer Science and Information Technology (CS1)
+
+
+
+
+ Q.35   The height of any rooted tree is defined as the maximum number of edges in the
+         path from the root node to any leaf node.
+
+        Suppose a Min-Heap 𝑇 stores 32 keys. The height of 𝑇 is _____________.
+        (Answer in integer)
+
+
+
+
+
+Organising Institute: IIT Roorkee            Page 35 of 64
+[SPANS]
+[]
+[IMAGES]
+[
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0035_img_001_xref_5.png",
+    "height": 1253,
+    "page": 35,
+    "size_bytes": 134484,
+    "width": 1252,
+    "xref": 5
+  },
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0035_img_002_xref_15.png",
+    "height": 183,
+    "page": 35,
+    "size_bytes": 8815,
+    "width": 151,
+    "xref": 15
+  }
+]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 36/64 ---
+{
+  "page": 36,
+  "rect": [
+    0.0,
+    0.0,
+    595.3200073242188,
+    841.9199829101562
+  ],
+  "rotation": 0
+}
+[TEXT]
+                           Computer Science and Information Technology (CS1)
+
+
+
+Q.36 – Q.65 Carry TWO marks Each
+
+
+ Q.36   Consider a memory system with 1M bytes of main memory and 16K bytes of cache
+        memory. Assume that the processor generates 20-bit memory address, and the cache
+         block size is 16 bytes. If the cache uses direct mapping, how many bits will be
+          required to store all the tag values? [Assume memory is byte addressable, 1K=210,
+        1M=220 .]
+
+
+
+
+
+ (A)    6 × 210
+
+
+ (B)    8 × 210
+
+
+ (C)     212
+
+
+ (D)     214
+
+
+
+
+
+Organising Institute: IIT Roorkee            Page 36 of 64
+[SPANS]
+[]
+[IMAGES]
+[
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0036_img_001_xref_5.png",
+    "height": 1253,
+    "page": 36,
+    "size_bytes": 134484,
+    "width": 1252,
+    "xref": 5
+  },
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0036_img_002_xref_15.png",
+    "height": 183,
+    "page": 36,
+    "size_bytes": 8815,
+    "width": 151,
+    "xref": 15
+  }
+]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 37/64 ---
+{
+  "page": 37,
+  "rect": [
+    0.0,
+    0.0,
+    595.3200073242188,
+    841.9199829101562
+  ],
+  "rotation": 0
+}
+[TEXT]
+                           Computer Science and Information Technology (CS1)
+
+
+
+
+ Q.37  A processor has 64 general-purpose registers and 50 distinct instruction types. An
+          instruction is encoded in 32-bits. What is the maximum number of bits that can be
+         used to store the immediate operand for the given instruction?
+
+           ADD R1, #25     // R1 = R1 + 25
+
+
+
+
+
+ (A)    16
+
+
+ (B)    20
+
+
+ (C)    22
+
+
+ (D)    24
+
+
+
+
+
+Organising Institute: IIT Roorkee            Page 37 of 64
+[SPANS]
+[]
+[IMAGES]
+[
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0037_img_001_xref_5.png",
+    "height": 1253,
+    "page": 37,
+    "size_bytes": 134484,
+    "width": 1252,
+    "xref": 5
+  },
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0037_img_002_xref_15.png",
+    "height": 183,
+    "page": 37,
+    "size_bytes": 8815,
+    "width": 151,
+    "xref": 15
+  }
+]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 38/64 ---
+{
+  "page": 38,
+  "rect": [
+    0.0,
+    0.0,
+    595.3200073242188,
+    841.9199829101562
+  ],
+  "rotation": 0
+}
+[TEXT]
+                           Computer Science and Information Technology (CS1)
+
+
+
+ Q.38  A computer has two processors, 𝑀1 and 𝑀2. Four processes 𝑃1, 𝑃2, 𝑃3, 𝑃4 with CPU
+          bursts of 20, 16, 25, and 10 milliseconds, respectively, arrive at the same time and
+          these are the only processes in the system. The scheduler uses non-preemptive
+           priority scheduling, with priorities decided as follows:
+
+            •  𝑀1 uses priority of execution for the processes as, 𝑃1 > 𝑃3 > 𝑃2 > 𝑃4, i.e.,
+                𝑃1 and 𝑃4 have highest and lowest priorities, respectively.
+            •  𝑀2 uses priority of execution for the processes as, 𝑃2 > 𝑃3 > 𝑃4 > 𝑃1, i.e.,
+                𝑃2 and 𝑃1 have highest and lowest priorities, respectively.
+
+      A process 𝑃𝑖 is scheduled to a processor 𝑀𝑘, if the processor is free and no other
+          process 𝑃𝑗 is waiting with higher priority. At any given point of time, a process can
+         be allocated to any one of the free processors without violating the execution
+           priority rules. Ignore the context switch time. What will be the average waiting time
+          of the processes in milliseconds?
+
+
+
+
+
+ (A)     9.00
+
+
+ (B)     8.75
+
+
+ (C)     6.50
+
+
+ (D)     7.50
+
+
+
+
+
+Organising Institute: IIT Roorkee            Page 38 of 64
+[SPANS]
+[]
+[IMAGES]
+[
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0038_img_001_xref_5.png",
+    "height": 1253,
+    "page": 38,
+    "size_bytes": 134484,
+    "width": 1252,
+    "xref": 5
+  },
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0038_img_002_xref_15.png",
+    "height": 183,
+    "page": 38,
+    "size_bytes": 8815,
+    "width": 151,
+    "xref": 15
+  }
+]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 39/64 ---
+{
+  "page": 39,
+  "rect": [
+    0.0,
+    0.0,
+    595.3200073242188,
+    841.9199829101562
+  ],
+  "rotation": 0
+}
+[TEXT]
+                           Computer Science and Information Technology (CS1)
+
+
+
+
+ Q.39  Consider two relations describing 𝑡𝑒𝑎𝑚𝑠 and 𝑝𝑙𝑎𝑦𝑒𝑟𝑠 in a sports league:
+
+           •  𝑡𝑒𝑎𝑚𝑠(𝑡𝑖𝑑, 𝑡𝑛𝑎𝑚𝑒): 𝑡𝑖𝑑, 𝑡𝑛𝑎𝑚e are team-id and team-name, respectively
+           •  𝑝𝑙𝑎𝑦𝑒𝑟𝑠(𝑝𝑖𝑑, 𝑝𝑛𝑎𝑚𝑒, 𝑡𝑖𝑑): 𝑝𝑖𝑑, 𝑝𝑛𝑎𝑚𝑒, and 𝑡𝑖𝑑 denote player-id, player-
+            name and the team-id of the player, respectively
+
+       Which ONE of the following tuple relational calculus queries returns the name of the
+         players who play for the team having 𝑡𝑛𝑎𝑚𝑒 as ′𝑀𝐼′?
+
+
+
+
+
+ (A)    { 𝑝. 𝑝𝑛𝑎𝑚𝑒 | 𝑝∈𝑝𝑙𝑎𝑦𝑒𝑟𝑠∧∃𝑡 (𝑡∈𝑡𝑒𝑎𝑚𝑠∧𝑝. 𝑡𝑖𝑑= 𝑡. 𝑡𝑖𝑑∧𝑡. 𝑡𝑛𝑎𝑚𝑒= ′𝑀𝐼′)}
+
+
+ (B)    { 𝑝. 𝑝𝑛𝑎𝑚𝑒 | 𝑝∈𝑡𝑒𝑎𝑚𝑠∧∃𝑡 (𝑡∈𝑝𝑙𝑎𝑦𝑒𝑟𝑠∧𝑝. 𝑡𝑖𝑑= 𝑡. 𝑡𝑖𝑑∧𝑡. 𝑡𝑛𝑎𝑚𝑒= ′𝑀𝐼′)}
+
+
+ (C)    { 𝑝. 𝑝𝑛𝑎𝑚𝑒 | 𝑝∈𝑝𝑙𝑎𝑦𝑒𝑟𝑠∧∃𝑡 (𝑡∈𝑡𝑒𝑎𝑚𝑠∧𝑡. 𝑡𝑛𝑎𝑚𝑒= ′𝑀𝐼′)}
+
+
+ (D)    { 𝑝. 𝑝𝑛𝑎𝑚𝑒 | 𝑝∈𝑡𝑒𝑎𝑚𝑠∧∃𝑡 (𝑡∈𝑝𝑙𝑎𝑦𝑒𝑟𝑠∧𝑡. 𝑡𝑛𝑎𝑚𝑒= ′𝑀𝐼′)}
+
+
+
+
+
+Organising Institute: IIT Roorkee            Page 39 of 64
+[SPANS]
+[]
+[IMAGES]
+[
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0039_img_001_xref_5.png",
+    "height": 1253,
+    "page": 39,
+    "size_bytes": 134484,
+    "width": 1252,
+    "xref": 5
+  },
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0039_img_002_xref_15.png",
+    "height": 183,
+    "page": 39,
+    "size_bytes": 8815,
+    "width": 151,
+    "xref": 15
+  }
+]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 40/64 ---
+{
+  "page": 40,
+  "rect": [
+    0.0,
+    0.0,
+    595.3200073242188,
+    841.9199829101562
+  ],
+  "rotation": 0
+}
+[TEXT]
+                           Computer Science and Information Technology (CS1)
+
+
+
+
+ Q.40  A packet with the destination IP address 145.36.109.70 arrives at a router whose
+          routing table is shown. Which interface will the packet be forwarded to?
+
+
+
+
+
+ (A)    E3
+
+
+ (B)    E1
+
+
+ (C)    E2
+
+
+ (D)    E5
+
+
+
+
+
+Organising Institute: IIT Roorkee            Page 40 of 64
+[SPANS]
+[]
+[IMAGES]
+[
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0040_img_001_xref_5.png",
+    "height": 1253,
+    "page": 40,
+    "size_bytes": 134484,
+    "width": 1252,
+    "xref": 5
+  },
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0040_img_002_xref_15.png",
+    "height": 183,
+    "page": 40,
+    "size_bytes": 8815,
+    "width": 151,
+    "xref": 15
+  },
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0040_img_003_xref_166.png",
+    "height": 367,
+    "page": 40,
+    "size_bytes": 16284,
+    "width": 894,
+    "xref": 166
+  }
+]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 41/64 ---
+{
+  "page": 41,
+  "rect": [
+    0.0,
+    0.0,
+    595.3200073242188,
+    841.9199829101562
+  ],
+  "rotation": 0
+}
+[TEXT]
+                           Computer Science and Information Technology (CS1)
+
+
+
+         Let 𝐴 be a 2 × 2 matrix as given.
+ Q.41                                1   1
+                     𝐴= [         ]
+                                    1  −1
+
+        What are the eigenvalues of the matrix 𝐴13 ?
+
+ (A)      1, −1
+
+
+ (B)     2√2, −2√2
+
+
+ (C)     4√2, −4√2
+
+
+ (D)     64√2, −64√2
+
+
+
+
+
+Organising Institute: IIT Roorkee            Page 41 of 64
+[SPANS]
+[]
+[IMAGES]
+[
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0041_img_001_xref_5.png",
+    "height": 1253,
+    "page": 41,
+    "size_bytes": 134484,
+    "width": 1252,
+    "xref": 5
+  },
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0041_img_002_xref_15.png",
+    "height": 183,
+    "page": 41,
+    "size_bytes": 8815,
+    "width": 151,
+    "xref": 15
+  }
+]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 42/64 ---
+{
+  "page": 42,
+  "rect": [
+    0.0,
+    0.0,
+    595.3200073242188,
+    841.9199829101562
+  ],
+  "rotation": 0
+}
+[TEXT]
+                           Computer Science and Information Technology (CS1)
+
+
+
+
+ Q.42   Consider the following four variable Boolean function in sum-of-product form
+
+                           𝐹(𝑏3, 𝑏2, 𝑏1, 𝑏0) = ∑(0, 2, 4, 8, 10, 11, 12).
+
+        where the value of the function is computed by considering 𝑏3𝑏2𝑏1𝑏0 as a 4-bit
+         binary number, where 𝑏3 denotes the most significant bit and 𝑏0 denotes the least
+          significant bit. Note that there are no don’t care terms. Which ONE of the following
+         options is the CORRECT minimized Boolean expression for 𝐹?
+
+
+
+
+ (A)       𝑏̅1𝑏̅0 + 𝑏̅2𝑏̅0 + 𝑏1 𝑏̅2𝑏3
+
+ (B)       𝑏̅1 𝑏̅0 + 𝑏̅2 𝑏̅0
+
+ (C)         𝑏̅2𝑏̅0 + 𝑏1𝑏2𝑏3
+
+ (D)        𝑏̅0𝑏̅2 + 𝑏̅3
+
+
+
+
+
+Organising Institute: IIT Roorkee            Page 42 of 64
+[SPANS]
+[]
+[IMAGES]
+[
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0042_img_001_xref_5.png",
+    "height": 1253,
+    "page": 42,
+    "size_bytes": 134484,
+    "width": 1252,
+    "xref": 5
+  },
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0042_img_002_xref_15.png",
+    "height": 183,
+    "page": 42,
+    "size_bytes": 8815,
+    "width": 151,
+    "xref": 15
+  }
+]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 43/64 ---
+{
+  "page": 43,
+  "rect": [
+    0.0,
+    0.0,
+    595.3200073242188,
+    841.9199829101562
+  ],
+  "rotation": 0
+}
+[TEXT]
+                           Computer Science and Information Technology (CS1)
+
+
+
+
+ Q.43    Let 𝐺(𝑉, 𝐸) be an undirected and unweighted graph with 100 vertices. Let 𝑑(𝑢, 𝑣)
+         denote the number of edges in a shortest path between vertices 𝑢 and 𝑣 in 𝑉. Let the
+       maximum value of 𝑑(𝑢, 𝑣), 𝑢, 𝑣∈𝑉 such that 𝑢≠𝑣, be 30. Let 𝑇 be any breadth-
+           first-search tree of 𝐺. Which ONE of the given options is CORRECT for every such
+         graph 𝐺?
+
+
+
+
+
+ (A)    The height of 𝑇 is exactly 15.
+
+
+ (B)    The height of 𝑇 is exactly 30.
+
+
+ (C)    The height of 𝑇 is at least 15.
+
+
+ (D)    The height of 𝑇 is at least 30.
+
+
+
+
+
+Organising Institute: IIT Roorkee            Page 43 of 64
+[SPANS]
+[]
+[IMAGES]
+[
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0043_img_001_xref_5.png",
+    "height": 1253,
+    "page": 43,
+    "size_bytes": 134484,
+    "width": 1252,
+    "xref": 5
+  },
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0043_img_002_xref_15.png",
+    "height": 183,
+    "page": 43,
+    "size_bytes": 8815,
+    "width": 151,
+    "xref": 15
+  }
+]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 44/64 ---
+{
+  "page": 44,
+  "rect": [
+    0.0,
+    0.0,
+    595.3200073242188,
+    841.9199829101562
+  ],
+  "rotation": 0
+}
+[TEXT]
+                           Computer Science and Information Technology (CS1)
+
+
+
+
+ Q.44   Consider the following two languages over the alphabet {𝑎, 𝑏}:
+
+                         𝐿1 = { 𝛼𝛽𝛼 | 𝛼∈{𝑎, 𝑏}+ AND 𝛽∈{𝑎, 𝑏}+ }
+
+                        𝐿2 = { 𝛼𝛽𝛼 | 𝛼∈{𝑎}+ AND 𝛽∈{𝑎, 𝑏}+ }
+
+        Which ONE of the following statements is CORRECT?
+
+
+
+
+ (A)    Both 𝐿1 and 𝐿2 are regular languages.
+
+
+ (B)     𝐿1 is a regular language but 𝐿2 is not a regular language.
+
+
+ (C)     𝐿1 is not a regular language but 𝐿2 is a regular language.
+
+
+ (D)     Neither 𝐿1 nor 𝐿2 is a regular language.
+
+
+
+
+
+Organising Institute: IIT Roorkee            Page 44 of 64
+[SPANS]
+[]
+[IMAGES]
+[
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0044_img_001_xref_5.png",
+    "height": 1253,
+    "page": 44,
+    "size_bytes": 134484,
+    "width": 1252,
+    "xref": 5
+  },
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0044_img_002_xref_15.png",
+    "height": 183,
+    "page": 44,
+    "size_bytes": 8815,
+    "width": 151,
+    "xref": 15
+  }
+]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 45/64 ---
+{
+  "page": 45,
+  "rect": [
+    0.0,
+    0.0,
+    595.3200073242188,
+    841.9199829101562
+  ],
+  "rotation": 0
+}
+[TEXT]
+                           Computer Science and Information Technology (CS1)
+
+
+
+
+ Q.45   Consider the following two languages over the alphabet {𝑎, 𝑏, 𝑐}, where 𝑚 and 𝑛
+          are natural numbers.
+
+                               𝐿1 = {𝑎𝑚𝑏𝑚𝑐𝑚+𝑛 | 𝑚, 𝑛≥1}
+
+                               𝐿2 = {𝑎𝑚𝑏𝑛𝑐𝑚+𝑛 | 𝑚, 𝑛≥1}
+
+        Which ONE of the following statements is CORRECT?
+
+
+
+
+ (A)    Both 𝐿1 and 𝐿2 are context-free languages.
+
+
+ (B)     𝐿1 is a context-free language but 𝐿2 is not a context-free language.
+
+
+ (C)     𝐿1 is not a context-free language but 𝐿2 is a context-free language.
+
+
+ (D)     Neither 𝐿1 nor 𝐿2 are context-free languages.
+
+
+
+
+
+Organising Institute: IIT Roorkee            Page 45 of 64
+[SPANS]
+[]
+[IMAGES]
+[
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0045_img_001_xref_5.png",
+    "height": 1253,
+    "page": 45,
+    "size_bytes": 134484,
+    "width": 1252,
+    "xref": 5
+  },
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0045_img_002_xref_15.png",
+    "height": 183,
+    "page": 45,
+    "size_bytes": 8815,
+    "width": 151,
+    "xref": 15
+  }
+]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 46/64 ---
+{
+  "page": 46,
+  "rect": [
+    0.0,
+    0.0,
+    595.3200073242188,
+    841.9199829101562
+  ],
+  "rotation": 0
+}
+[TEXT]
+                           Computer Science and Information Technology (CS1)
+
+
+
+
+ Q.46   Which of the following statement(s) is/are TRUE while computing First and Follow
+         during top down parsing by a compiler?
+
+
+
+
+
+ (A)     For a production 𝐴→𝜖, 𝜖 will be added to 𝐹𝑖𝑟𝑠𝑡(𝐴).
+
+
+ (B)       If there is any input right end marker, it will be added to 𝐹𝑖𝑟𝑠𝑡(𝑆), where 𝑆 is the
+            start symbol.
+
+
+ (C)     For a production 𝐴→𝜖, 𝜖 will be added to 𝐹𝑜𝑙𝑙𝑜𝑤(𝐴).
+
+
+ (D)      If there is any input right end marker, it will be added to 𝐹𝑜𝑙𝑙𝑜𝑤(𝑆), where 𝑆 is
+          the start symbol.
+
+
+
+
+
+Organising Institute: IIT Roorkee            Page 46 of 64
+[SPANS]
+[]
+[IMAGES]
+[
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0046_img_001_xref_5.png",
+    "height": 1253,
+    "page": 46,
+    "size_bytes": 134484,
+    "width": 1252,
+    "xref": 5
+  },
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0046_img_002_xref_15.png",
+    "height": 183,
+    "page": 46,
+    "size_bytes": 8815,
+    "width": 151,
+    "xref": 15
+  }
+]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 47/64 ---
+{
+  "page": 47,
+  "rect": [
+    0.0,
+    0.0,
+    595.3200073242188,
+    841.9199829101562
+  ],
+  "rotation": 0
+}
+[TEXT]
+                           Computer Science and Information Technology (CS1)
+
+
+
+
+ Q.47    Consider  a   relational  schema  𝑡𝑒𝑎𝑚(𝑛𝑎𝑚𝑒, 𝑐𝑖𝑡𝑦, 𝑜𝑤𝑛𝑒𝑟),  with  functional
+         dependencies {𝑛𝑎𝑚𝑒→𝑐𝑖𝑡𝑦, 𝑛𝑎𝑚𝑒→𝑜𝑤𝑛𝑒𝑟}.
+
+        The  relation 𝑡𝑒𝑎𝑚  is decomposed  into two  relations, 𝑡1(𝑛𝑎𝑚𝑒, 𝑐𝑖𝑡𝑦) and
+        𝑡2(𝑛𝑎𝑚𝑒, 𝑜𝑤𝑛𝑒𝑟). Which of the following statement(s) is/are TRUE?
+
+
+
+
+
+ (A)    The relation 𝑡𝑒𝑎𝑚 is NOT in BCNF.
+
+
+ (B)    The relations 𝑡1 and 𝑡2 are in BCNF.
+
+
+ (C)    The decomposition constitutes a lossless join.
+
+
+ (D)    The relation 𝑡𝑒𝑎𝑚 is NOT in 3NF.
+
+
+
+
+
+Organising Institute: IIT Roorkee            Page 47 of 64
+[SPANS]
+[]
+[IMAGES]
+[
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0047_img_001_xref_5.png",
+    "height": 1253,
+    "page": 47,
+    "size_bytes": 134484,
+    "width": 1252,
+    "xref": 5
+  },
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0047_img_002_xref_15.png",
+    "height": 183,
+    "page": 47,
+    "size_bytes": 8815,
+    "width": 151,
+    "xref": 15
+  }
+]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 48/64 ---
+{
+  "page": 48,
+  "rect": [
+    0.0,
+    0.0,
+    595.3200073242188,
+    841.9199829101562
+  ],
+  "rotation": 0
+}
+[TEXT]
+                           Computer Science and Information Technology (CS1)
+
+
+
+
+ Q.48   Which  of  the following  predicate  logic formulae/formula  is/are CORRECT
+          representation(s) of the statement: “Everyone has exactly one mother”?
+
+        The meanings of the predicates used are:
+
+                  •  𝑚𝑜𝑡ℎ𝑒𝑟(𝑦, 𝑥): 𝑦 is the mother of 𝑥
+                  •   𝑛𝑜𝑡𝑒𝑞(𝑥, 𝑦): 𝑥 and 𝑦 are not equal
+
+
+
+
+ (A)    ∀𝑥∃𝑦∃𝑧(𝑚𝑜𝑡ℎ𝑒𝑟(𝑦, 𝑥) ∧¬𝑚𝑜𝑡ℎ𝑒𝑟(𝑧, 𝑥))
+
+
+ (B)    ∀𝑥∃𝑦[𝑚𝑜𝑡ℎ𝑒𝑟(𝑦, 𝑥) ∧∀𝑧(𝑛𝑜𝑡𝑒𝑞(𝑧, 𝑦) →¬𝑚𝑜𝑡ℎ𝑒𝑟(𝑧, 𝑥))]
+
+
+ (C)    ∀𝑥∀𝑦[𝑚𝑜𝑡ℎ𝑒𝑟(𝑦, 𝑥) →∃𝑧(𝑚𝑜𝑡ℎ𝑒𝑟(𝑧, 𝑥) ∧¬𝑛𝑜𝑡𝑒𝑞(𝑧, 𝑦))]
+
+
+ (D)    ∀𝑥∃𝑦[𝑚𝑜𝑡ℎ𝑒𝑟(𝑦, 𝑥) ∧¬∃𝑧(𝑛𝑜𝑡𝑒𝑞(𝑧, 𝑦) ∧𝑚𝑜𝑡ℎ𝑒𝑟(𝑧, 𝑥))]
+
+
+
+
+
+Organising Institute: IIT Roorkee            Page 48 of 64
+[SPANS]
+[]
+[IMAGES]
+[
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0048_img_001_xref_5.png",
+    "height": 1253,
+    "page": 48,
+    "size_bytes": 134484,
+    "width": 1252,
+    "xref": 5
+  },
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0048_img_002_xref_15.png",
+    "height": 183,
+    "page": 48,
+    "size_bytes": 8815,
+    "width": 151,
+    "xref": 15
+  }
+]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 49/64 ---
+{
+  "page": 49,
+  "rect": [
+    0.0,
+    0.0,
+    595.3200073242188,
+    841.9199829101562
+  ],
+  "rotation": 0
+}
+[TEXT]
+                           Computer Science and Information Technology (CS1)
+
+
+
+
+ Q.49  𝐴= {0, 1, 2, 3, … } is the set of non-negative integers. Let Ϝ be the set of functions
+        from 𝐴 to itself. For any two functions, 𝑓1, 𝑓2 ∈Ϝ, we define
+
+                               (𝑓1⨀𝑓2)(𝑛) = 𝑓1(𝑛) + 𝑓2(𝑛)
+
+          for every number 𝑛 in 𝐴. Which of the following is/are CORRECT about the
+         mathematical structure (Ϝ, ⨀)?
+
+
+ (A)      (Ϝ, ⨀) is an Abelian group.
+
+
+ (B)      (Ϝ, ⨀) is an Abelian monoid.
+
+
+ (C)      (Ϝ, ⨀) is a non-Abelian group.
+
+
+ (D)      (Ϝ, ⨀) is a non-Abelian monoid.
+
+
+
+
+
+Organising Institute: IIT Roorkee            Page 49 of 64
+[SPANS]
+[]
+[IMAGES]
+[
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0049_img_001_xref_5.png",
+    "height": 1253,
+    "page": 49,
+    "size_bytes": 134484,
+    "width": 1252,
+    "xref": 5
+  },
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0049_img_002_xref_15.png",
+    "height": 183,
+    "page": 49,
+    "size_bytes": 8815,
+    "width": 151,
+    "xref": 15
+  }
+]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 50/64 ---
+{
+  "page": 50,
+  "rect": [
+    0.0,
+    0.0,
+    595.3200073242188,
+    841.9199829101562
+  ],
+  "rotation": 0
+}
+[TEXT]
+                           Computer Science and Information Technology (CS1)
+
+
+
+
+ Q.50   Consider the following deterministic finite automaton (DFA) defined over the
+          alphabet, Σ = {𝑎, 𝑏}. Identify which of the following language(s) is/are accepted by
+          the given DFA.
+
+
+
+
+
+ (A)    The set of all strings containing an even number of 𝑏’s.
+
+
+ (B)    The set of all strings containing the pattern 𝑏𝑎𝑏.
+
+
+ (C)    The set of all strings ending with the pattern 𝑏𝑎𝑏.
+
+
+ (D)    The set of all strings not containing the pattern 𝑎𝑏𝑎.
+
+
+
+
+
+Organising Institute: IIT Roorkee            Page 50 of 64
+[SPANS]
+[]
+[IMAGES]
+[
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0050_img_001_xref_5.png",
+    "height": 1253,
+    "page": 50,
+    "size_bytes": 134484,
+    "width": 1252,
+    "xref": 5
+  },
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0050_img_002_xref_15.png",
+    "height": 183,
+    "page": 50,
+    "size_bytes": 8815,
+    "width": 151,
+    "xref": 15
+  },
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "jpeg",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0050_img_003_xref_189.jpeg",
+    "height": 202,
+    "page": 50,
+    "size_bytes": 11797,
+    "width": 534,
+    "xref": 189
+  }
+]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 51/64 ---
+{
+  "page": 51,
+  "rect": [
+    0.0,
+    0.0,
+    595.3200073242188,
+    841.9199829101562
+  ],
+  "rotation": 0
+}
+[TEXT]
+                           Computer Science and Information Technology (CS1)
+
+
+
+
+ Q.51  A disk of size 512M bytes is divided into blocks of 64K bytes. A file is stored in
+          the disk using linked allocation. In linked allocation, each data block reserves 4
+         bytes to store the pointer to the next data block. The link part of the last data block
+          contains a NULL pointer (also of 4 bytes). Suppose a file of 1M bytes needs to be
+          stored in the disk. Assume, 1K = 210 and 1M = 220. The amount of space in bytes
+           that will be wasted due to internal fragmentation is ______. (Answer in integer)
+
+
+
+
+
+Organising Institute: IIT Roorkee            Page 51 of 64
+[SPANS]
+[]
+[IMAGES]
+[
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0051_img_001_xref_5.png",
+    "height": 1253,
+    "page": 51,
+    "size_bytes": 134484,
+    "width": 1252,
+    "xref": 5
+  },
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0051_img_002_xref_15.png",
+    "height": 183,
+    "page": 51,
+    "size_bytes": 8815,
+    "width": 151,
+    "xref": 15
+  }
+]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 52/64 ---
+{
+  "page": 52,
+  "rect": [
+    0.0,
+    0.0,
+    595.3200073242188,
+    841.9199829101562
+  ],
+  "rotation": 0
+}
+[TEXT]
+                           Computer Science and Information Technology (CS1)
+
+
+
+
+ Q.52    Refer to the given 3-address code sequence. This code sequence is split into basic
+          blocks. The number of basic blocks is ________. (Answer in integer)
+
+
+            1001: i = 1
+            1002: j = 1
+            1003: t1 = 10*i
+            1004: t2 = t1+j
+            1005: t3 = 8*t2
+            1006: t4 = t3-88
+            1007: a[t4] = 0.0
+            1008: j = j+1
+            1009: if j <= 10 goto 1003
+            1010: i = i+1
+            1011: if i <= 10 goto 1002
+            1012: i = 1
+            1013: t5 = i-1
+            1014: t6 = 88*t5
+            1015: a[t6] = 1.0
+            1016: i = i+1
+            1017: if i <= 10 goto 1013
+
+
+
+
+
+Organising Institute: IIT Roorkee            Page 52 of 64
+[SPANS]
+[]
+[IMAGES]
+[
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0052_img_001_xref_5.png",
+    "height": 1253,
+    "page": 52,
+    "size_bytes": 134484,
+    "width": 1252,
+    "xref": 5
+  },
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0052_img_002_xref_15.png",
+    "height": 183,
+    "page": 52,
+    "size_bytes": 8815,
+    "width": 151,
+    "xref": 15
+  }
+]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 53/64 ---
+{
+  "page": 53,
+  "rect": [
+    0.0,
+    0.0,
+    595.3200073242188,
+    841.9199829101562
+  ],
+  "rotation": 0
+}
+[TEXT]
+                           Computer Science and Information Technology (CS1)
+
+
+
+
+ Q.53  A computer has a memory hierarchy consisting of two-level cache (L1 and L2) and
+         a main memory. If the processor needs to access data from memory, it first looks
+          into L1 cache. If the data is not found in L1 cache, it goes to L2 cache. If it fails to
+          get the data from L2 cache, it goes to main memory, where the data is definitely
+          available. Hit rates and access times of various memory units are shown in the
+           figure. The average memory access time in nanoseconds (ns) is ________. (rounded
+          off to two decimal places)
+
+
+
+
+
+Organising Institute: IIT Roorkee            Page 53 of 64
+[SPANS]
+[]
+[IMAGES]
+[
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0053_img_001_xref_5.png",
+    "height": 1253,
+    "page": 53,
+    "size_bytes": 134484,
+    "width": 1252,
+    "xref": 5
+  },
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0053_img_002_xref_15.png",
+    "height": 183,
+    "page": 53,
+    "size_bytes": 8815,
+    "width": 151,
+    "xref": 15
+  },
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0053_img_003_xref_196.png",
+    "height": 836,
+    "page": 53,
+    "size_bytes": 50725,
+    "width": 747,
+    "xref": 196
+  }
+]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 54/64 ---
+{
+  "page": 54,
+  "rect": [
+    0.0,
+    0.0,
+    595.3200073242188,
+    841.9199829101562
+  ],
+  "rotation": 0
+}
+[TEXT]
+                           Computer Science and Information Technology (CS1)
+
+
+
+
+ Q.54    In optimal page replacement algorithm, information about all future page references
+            is available to the operating system (OS). A modification of the optimal page
+         replacement algorithm is as follows:
+
+        The OS correctly predicts only up to next 4 page references (including the current
+         page) at the time of allocating a frame to a page.
+
+      A process accesses the pages in the following order of page numbers:
+
+                                        1, 3, 2, 4, 2, 3, 1, 2, 4, 3, 1, 4.
+
+            If the system has three memory frames that are initially empty, the number of page
+           faults that will occur during execution of the process is ________ . (Answer in
+          integer)
+
+
+
+
+
+Organising Institute: IIT Roorkee            Page 54 of 64
+[SPANS]
+[]
+[IMAGES]
+[
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0054_img_001_xref_5.png",
+    "height": 1253,
+    "page": 54,
+    "size_bytes": 134484,
+    "width": 1252,
+    "xref": 5
+  },
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0054_img_002_xref_15.png",
+    "height": 183,
+    "page": 54,
+    "size_bytes": 8815,
+    "width": 151,
+    "xref": 15
+  }
+]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 55/64 ---
+{
+  "page": 55,
+  "rect": [
+    0.0,
+    0.0,
+    595.3200073242188,
+    841.9199829101562
+  ],
+  "rotation": 0
+}
+[TEXT]
+                           Computer Science and Information Technology (CS1)
+
+
+
+
+ Q.55   Consider the following database tables of a sports league.
+
+       player(pid,pname,age)        team(tid,tname,city,cid)
+       coach(cid,cname)             members(pid,tid)
+
+      An instance of the table and an SQL query are given.
+
+               player              coach               team             members
+
+
+
+
+
+      SELECT MIN(P.age)
+      FROM player P
+      WHERE P.pid IN (
+          SELECT M.pid
+          FROM team T, coach C, members M
+          WHERE C.cname = 'Mark'
+                AND T.cid = C.cid
+                AND M.tid = T.tid
+          )
+
+       The value returned by the given SQL query is ______ . (Answer in integer)
+
+
+
+
+
+Organising Institute: IIT Roorkee            Page 55 of 64
+[SPANS]
+[]
+[IMAGES]
+[
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0055_img_001_xref_5.png",
+    "height": 1253,
+    "page": 55,
+    "size_bytes": 134484,
+    "width": 1252,
+    "xref": 5
+  },
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0055_img_002_xref_15.png",
+    "height": 183,
+    "page": 55,
+    "size_bytes": 8815,
+    "width": 151,
+    "xref": 15
+  },
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "jpeg",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0055_img_003_xref_203.jpeg",
+    "height": 288,
+    "page": 55,
+    "size_bytes": 54028,
+    "width": 1268,
+    "xref": 203
+  }
+]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 56/64 ---
+{
+  "page": 56,
+  "rect": [
+    0.0,
+    0.0,
+    595.3200073242188,
+    841.9199829101562
+  ],
+  "rotation": 0
+}
+[TEXT]
+                           Computer Science and Information Technology (CS1)
+
+
+
+
+ Q.56    Suppose a 5-bit message is transmitted from a source to a destination through a
+          noisy channel. The probability that a bit of the message gets flipped during
+          transmission is 0.01. Flipping of each bit is independent of one another. The
+          probability that the message is delivered error-free to the destination is ______ .
+         (rounded off to three decimal places)
+
+
+
+
+
+Organising Institute: IIT Roorkee            Page 56 of 64
+[SPANS]
+[]
+[IMAGES]
+[
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0056_img_001_xref_5.png",
+    "height": 1253,
+    "page": 56,
+    "size_bytes": 134484,
+    "width": 1252,
+    "xref": 5
+  },
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0056_img_002_xref_15.png",
+    "height": 183,
+    "page": 56,
+    "size_bytes": 8815,
+    "width": 151,
+    "xref": 15
+  }
+]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 57/64 ---
+{
+  "page": 57,
+  "rect": [
+    0.0,
+    0.0,
+    595.3200073242188,
+    841.9199829101562
+  ],
+  "rotation": 0
+}
+[TEXT]
+                           Computer Science and Information Technology (CS1)
+
+
+
+
+ Q.57    Suppose a message of size 15000 bytes is transmitted from a source to a destination
+          using IPv4 protocol via two routers as shown in the figure. Each router has a defined
+       maximum transmission unit (MTU) as shown in the figure, including IP header.
+        The number of fragments that will be delivered to the destination is ________ .
+         (Answer in integer)
+
+
+
+
+
+Organising Institute: IIT Roorkee            Page 57 of 64
+[SPANS]
+[]
+[IMAGES]
+[
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0057_img_001_xref_5.png",
+    "height": 1253,
+    "page": 57,
+    "size_bytes": 134484,
+    "width": 1252,
+    "xref": 5
+  },
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0057_img_002_xref_15.png",
+    "height": 183,
+    "page": 57,
+    "size_bytes": 8815,
+    "width": 151,
+    "xref": 15
+  },
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0057_img_003_xref_208.png",
+    "height": 409,
+    "page": 57,
+    "size_bytes": 22113,
+    "width": 1305,
+    "xref": 208
+  }
+]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 58/64 ---
+{
+  "page": 58,
+  "rect": [
+    0.0,
+    0.0,
+    595.3200073242188,
+    841.9199829101562
+  ],
+  "rotation": 0
+}
+[TEXT]
+                           Computer Science and Information Technology (CS1)
+
+
+
+
+ Q.58    Consider a probability distribution given by the density function 𝑃(𝑥).
+
+                                                  for 1 ≤𝑥≤4                          𝑃(𝑥) = {𝐶𝑥2,
+                                               0,     for 𝑥< 1 or 𝑥> 4
+
+        The probability that 𝑥 lies between 2 and 3, i.e., 𝑃(2 ≤𝑥≤3) is __________.
+         (rounded off to three decimal places)
+
+
+
+
+
+Organising Institute: IIT Roorkee            Page 58 of 64
+[SPANS]
+[]
+[IMAGES]
+[
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0058_img_001_xref_5.png",
+    "height": 1253,
+    "page": 58,
+    "size_bytes": 134484,
+    "width": 1252,
+    "xref": 5
+  },
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0058_img_002_xref_15.png",
+    "height": 183,
+    "page": 58,
+    "size_bytes": 8815,
+    "width": 151,
+    "xref": 15
+  }
+]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 59/64 ---
+{
+  "page": 59,
+  "rect": [
+    0.0,
+    0.0,
+    595.3200073242188,
+    841.9199829101562
+  ],
+  "rotation": 0
+}
+[TEXT]
+                           Computer Science and Information Technology (CS1)
+
+
+
+
+ Q.59     Consider a finite state machine (FSM) with one input 𝑋 and one output 𝑓,
+           represented by the given state transition table. The minimum number of states
+           required to realize this FSM is ________. (Answer in integer)
+
+
+
+
+                           Present state    Next state       Output 𝑓
+                     𝑋= 0 𝑋= 1 𝑋= 0 𝑋= 1
+                   A        F    B      0      0
+                    B      D    C      0      0
+                    C        F     E      0      0
+                   D      G    A      1      0
+                      E      D    C      0      0
+                        F        F    B      1      1
+                   G      G    H      0      1
+                   H      G    A      1      0
+
+
+
+
+
+Organising Institute: IIT Roorkee            Page 59 of 64
+[SPANS]
+[]
+[IMAGES]
+[
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0059_img_001_xref_5.png",
+    "height": 1253,
+    "page": 59,
+    "size_bytes": 134484,
+    "width": 1252,
+    "xref": 5
+  },
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0059_img_002_xref_15.png",
+    "height": 183,
+    "page": 59,
+    "size_bytes": 8815,
+    "width": 151,
+    "xref": 15
+  }
+]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 60/64 ---
+{
+  "page": 60,
+  "rect": [
+    0.0,
+    0.0,
+    595.3200073242188,
+    841.9199829101562
+  ],
+  "rotation": 0
+}
+[TEXT]
+                           Computer Science and Information Technology (CS1)
+
+
+
+
+ Q.60    Consider the given sequential circuit designed using D-Flip-flops. The circuit is
+            initialized with some value (initial state). The number of distinct states the circuit
+           will go through before returning back to the initial state is _________ . (Answer
+           in integer)
+
+
+
+
+
+Organising Institute: IIT Roorkee            Page 60 of 64
+[SPANS]
+[]
+[IMAGES]
+[
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0060_img_001_xref_5.png",
+    "height": 1253,
+    "page": 60,
+    "size_bytes": 134484,
+    "width": 1252,
+    "xref": 5
+  },
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0060_img_002_xref_15.png",
+    "height": 183,
+    "page": 60,
+    "size_bytes": 8815,
+    "width": 151,
+    "xref": 15
+  },
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0060_img_003_xref_215.png",
+    "height": 565,
+    "page": 60,
+    "size_bytes": 26889,
+    "width": 1103,
+    "xref": 215
+  }
+]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 61/64 ---
+{
+  "page": 61,
+  "rect": [
+    0.0,
+    0.0,
+    595.3200073242188,
+    841.9199829101562
+  ],
+  "rotation": 0
+}
+[TEXT]
+                           Computer Science and Information Technology (CS1)
+
+
+
+ Q.61   #include <stdio.h>
+       int foo(int S[],int size){
+           if(size == 0) return 0;
+           if(size == 1) return 1;
+           if(S[0] != S[1]) return 1+foo(S+1,size-1);
+           return foo(S+1,size-1);
+       }
+       int main(){
+           int A[]={0,1,2,2,2,0,0,1,1};
+           printf("%d",foo(A,9));
+           return 0;
+       }
+
+        The value printed by the given C program is _______ . (Answer in integer)
+
+
+
+
+
+Organising Institute: IIT Roorkee            Page 61 of 64
+[SPANS]
+[]
+[IMAGES]
+[
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0061_img_001_xref_5.png",
+    "height": 1253,
+    "page": 61,
+    "size_bytes": 134484,
+    "width": 1252,
+    "xref": 5
+  },
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0061_img_002_xref_15.png",
+    "height": 183,
+    "page": 61,
+    "size_bytes": 8815,
+    "width": 151,
+    "xref": 15
+  }
+]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 62/64 ---
+{
+  "page": 62,
+  "rect": [
+    0.0,
+    0.0,
+    595.3200073242188,
+    841.9199829101562
+  ],
+  "rotation": 0
+}
+[TEXT]
+                           Computer Science and Information Technology (CS1)
+
+
+
+
+ Q.62  Let LIST be a datatype for an implementation of linked list defined as follows:
+
+      typedef struct list {
+          int data;
+          struct list *next;
+      } LIST;
+
+       Suppose a program has created two linked lists, L1 and L2, whose contents are given
+         in the figure below (code for creating L1 and L2 is not provided here). L1 contains 9
+        nodes, and L2 contains 7 nodes.
+
+       Consider the following C program segment that modifies the list L1. The number of
+       nodes that will be there in L1 after the execution of the code segment is ________ .
+       (Answer in integer)
+
+
+
+
+
+      int find (int query, LIST *list) {
+          while (list != NULL){
+              if(list->data == query) return 1;
+              list = list->next;
+          }
+          return 0;
+      }
+      int main () {
+           … … …
+          ptr1=L1; ptr2=L2;
+          while (ptr1->next != NULL){
+              query = ptr1->next->data;
+              if (find (query, L2))
+                  ptr1->next = ptr1->next->next;
+              else ptr1 = ptr1->next;
+          }
+           … … …
+          return 0;
+      }
+
+
+
+
+
+Organising Institute: IIT Roorkee            Page 62 of 64
+[SPANS]
+[]
+[IMAGES]
+[
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0062_img_001_xref_5.png",
+    "height": 1253,
+    "page": 62,
+    "size_bytes": 134484,
+    "width": 1252,
+    "xref": 5
+  },
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0062_img_002_xref_15.png",
+    "height": 183,
+    "page": 62,
+    "size_bytes": 8815,
+    "width": 151,
+    "xref": 15
+  },
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0062_img_003_xref_220.png",
+    "height": 185,
+    "page": 62,
+    "size_bytes": 1352,
+    "width": 1127,
+    "xref": 220
+  }
+]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 63/64 ---
+{
+  "page": 63,
+  "rect": [
+    0.0,
+    0.0,
+    595.3200073242188,
+    841.9199829101562
+  ],
+  "rotation": 0
+}
+[TEXT]
+                           Computer Science and Information Technology (CS1)
+
+
+
+
+
+ Q.63         Consider the following C program:
+
+       #include <stdio.h>
+       int gate (int n) {
+           int d, t, newnum, turn;
+           newnum = turn = 0; t=1;
+           while (n>=t) t *= 10;
+           t /=10;
+           while (t>0) {
+               d = n/t;
+               n = n%t;
+               t /= 10;
+               if (turn) newnum = 10*newnum + d;
+               turn = (turn + 1) % 2;
+           }
+           return newnum;
+       }
+       int main () {
+           printf ("%d", gate(14362));
+           return 0;
+
+       }
+
+        The value printed by the given C program is _______ . (Answer in integer)
+
+
+
+
+
+Organising Institute: IIT Roorkee            Page 63 of 64
+[SPANS]
+[]
+[IMAGES]
+[
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0063_img_001_xref_5.png",
+    "height": 1253,
+    "page": 63,
+    "size_bytes": 134484,
+    "width": 1252,
+    "xref": 5
+  },
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0063_img_002_xref_15.png",
+    "height": 183,
+    "page": 63,
+    "size_bytes": 8815,
+    "width": 151,
+    "xref": 15
+  }
+]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 64/64 ---
+{
+  "page": 64,
+  "rect": [
+    0.0,
+    0.0,
+    595.3200073242188,
+    841.9199829101562
+  ],
+  "rotation": 0
+}
+[TEXT]
+                           Computer Science and Information Technology (CS1)
+
+
+
+
+ Q.64   The maximum value of 𝑥 such that the edge between the nodes B and C is included
+          in every minimum spanning tree of the given graph is _________  . (answer in
+          integer)
+
+
+
+
+
+ Q.65    In a double hashing scheme, ℎ1(𝑘) = 𝑘 mod 11 and ℎ2(𝑘) = 1 + (𝑘 mod 7) are
+          the auxiliary hash functions. The size 𝑚 of the hash table is 11. The hash function
+           for the i-th probe in the open address table is [ℎ1(𝑘) + 𝑖 ℎ2(𝑘)] mod 𝑚. The
+          following keys are inserted in the given order: 63, 50, 25, 79, 67, 24.
+
+        The slot at which key 24 gets stored is ___________. (Answer in integer)
+
+
+
+
+
+Organising Institute: IIT Roorkee            Page 64 of 64
+[SPANS]
+[]
+[IMAGES]
+[
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0064_img_001_xref_5.png",
+    "height": 1253,
+    "page": 64,
+    "size_bytes": 134484,
+    "width": 1252,
+    "xref": 5
+  },
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0064_img_002_xref_15.png",
+    "height": 183,
+    "page": 64,
+    "size_bytes": 8815,
+    "width": 151,
+    "xref": 15
+  },
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper_images/page_0064_img_003_xref_226.png",
+    "height": 239,
+    "page": 64,
+    "size_bytes": 27607,
+    "width": 266,
+    "xref": 226
+  }
+]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]

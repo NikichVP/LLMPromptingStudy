@@ -1,0 +1,856 @@
+=== PDF EXTRACTION REPORT ===
+Source: /Users/nikich/Desktop/PROMPT RESEARCH Q&A/MIT6_006S20_final_exam.pdf
+SHA256: 91d236a292cb136f029963f0392530d192bc47ffa46de7b419d19bf270ca64d6
+Bytes: 265634
+ExtractedAtUTC: 2026-01-02T06:54:18.564928+00:00
+PageCount: 21
+Metadata:
+{
+  "author": "Erik Demaine, Jason Ku, Justin Solomon",
+  "creationDate": "D:20200520160607-04'00'",
+  "creator": "TeX",
+  "encryption": null,
+  "format": "PDF 1.6",
+  "keywords": "",
+  "modDate": "D:20201030140447-04'00'",
+  "producer": "pdfTeX-1.40.20",
+  "subject": "",
+  "title": "6.006 Introduction to Algorithms, Final Exam",
+  "trapped": ""
+}
+TOC:
+[
+  [
+    1,
+    "cover.pdf",
+    -1,
+    {
+      "collapse": false,
+      "kind": 0,
+      "page": -1,
+      "xref": 133,
+      "zoom": 0.0
+    }
+  ],
+  [
+    2,
+    "Blank Page",
+    21,
+    {
+      "kind": 1,
+      "page": 20,
+      "to": {
+        "x": 0.0,
+        "y": 0.0
+      },
+      "xref": 134,
+      "zoom": 0.0
+    }
+  ]
+]
+
+
+--- PAGE 1/21 ---
+{
+  "page": 1,
+  "rect": [
+    0.0,
+    0.0,
+    612.0,
+    792.0
+  ],
+  "rotation": 0
+}
+[TEXT]
+Introduction to Algorithms
+Massachusetts Institute of Technology                                     6.006 Spring 2020
+Instructors: Erik Demaine, Jason Ku, and Justin Solomon                                   Final
+
+
+                            Final
+
+   • Do not open this quiz booklet until directed to do so. Read all the instructions on this page.
+   • When the quiz begins, write your name on the top of every page of this quiz booklet.
+   • You have 180 minutes to earn a maximum of 180 points. Do not spend too much time on
+     any one problem. Skim them all ﬁrst, and attack them in the order that allows you to make
+      the most progress.
+   • You are allowed three double-sided letter-sized sheet with your own notes. No calcula­
+       tors, cell phones, or other programmable or communication devices are permitted.
+   • Write your solutions in the space provided. Pages will be scanned and separated for grading.
+       If you need more space, write “Continued on S1” (or S2, S3, S4, S5, S6, S7) and continue
+     your solution on the referenced scratch page at the end of the exam.
+   • Do not waste time and paper rederiving facts that we have studied in lecture, recitation, or
+     problem sets. Simply cite them.
+   • When writing an algorithm, a clear description in English will sufﬁce. Pseudo-code is not
+      required. Be sure to argue that your algorithm is correct, and analyze the asymptotic
+     running time of your algorithm. Even if your algorithm does not meet a requested bound,
+     you may receive partial credit for inefﬁcient solutions that are correct.
+   • Pay close attention to the instructions for each problem. Depending on the problem,
+       partial credit may be awarded for incomplete answers.
+
+                        Problem                  Parts  Points
+                              1: Information           2      2
+                              2: Decision Problems     10     40
+                              3: Sorting Sorts          2     24
+                              4: Pythagorean Quad      1     14
+                              5: Animal Counting      1     20
+                              6: Limited Connections    1     14
+                              7: On the Street          1     14
+                              8: RGB Graph           1     18
+                              9: Separated Subsets      1     16
+                           10: A Feast for Crowns    1     18
+                            Total                        180
+
+
+
+Name:
+
+
+School Email:
+[SPANS]
+[]
+[IMAGES]
+[]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 2/21 ---
+{
+  "page": 2,
+  "rect": [
+    0.0,
+    0.0,
+    612.0,
+    792.0
+  ],
+  "rotation": 0
+}
+[TEXT]
+2     6.006 Final          Name
+
+
+Problem 1.  [2 points] Information (2 parts)
+
+  (a)  [1 point] Write your name and email address on the cover page.
+
+
+
+
+
+  (b)  [1 point] Write your name at the top of each page.
+[SPANS]
+[]
+[IMAGES]
+[]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 3/21 ---
+{
+  "page": 3,
+  "rect": [
+    0.0,
+    0.0,
+    612.0,
+    792.0
+  ],
+  "rotation": 0
+}
+[TEXT]
+6.006 Final          Name                                                   3
+
+
+Problem 2.  [40 points] Decision Problems (10 parts)
+
+For each of the following questions, circle either T (True) or F (False), and brieﬂy justify your
+answer in the box provided (a single sentence or picture should be sufﬁcient). Each problem is
+worth 4 points: 2 points for your answer and 2 points for your justiﬁcation.  If you leave both
+answer and justiﬁcation blank, you will receive 1 point.
+
+(a) T F  22n ∈ Θ(2n).
+
+
+
+
+
+(b) T F   If T (n) = 94 T  23 n + n2 and T (1) = Θ(1), then T (n) = O(n2).
+
+
+
+
+
+(c) T F  Performing an O(1) amortized operation n times on an initially empty
+           data structure takes worst-case O(n) time.
+[SPANS]
+[]
+[IMAGES]
+[]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 4/21 ---
+{
+  "page": 4,
+  "rect": [
+    0.0,
+    0.0,
+    612.0,
+    792.0
+  ],
+  "rotation": 0
+}
+[TEXT]
+4     6.006 Final          Name
+
+
+(d) T F  Given an array A containing n comparable items, sort A using merge sort. While
+            sorting, each item in A is compared with O(log n) other items of A.
+
+
+
+
+
+(e) T F  Given a binary min-heap storing n items with comparable keys, one can build a
+           Set AVL Tree containing the same items using O(n) comparisons.
+
+
+
+
+
+(f) T F  Given a directed graph G = (V, E), run breadth-ﬁrst search from a vertex s ∈ V .
+         While processing a vertex u, if some v ∈ Adj+(u) has already been processed,
+           then G contains a directed cycle.
+
+
+
+
+
+(g) T F  Run Bellman-Ford on a weighted graph G = (V, E, w) from a vertex s ∈ V . If
+            there is a witness v ∈ V , i.e., δ|V |(s, v) < δ|V |−1(s, v), then v is on a negative-
+          weight cycle of G.
+[SPANS]
+[]
+[IMAGES]
+[]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 5/21 ---
+{
+  "page": 5,
+  "rect": [
+    0.0,
+    0.0,
+    612.0,
+    792.0
+  ],
+  "rotation": 0
+}
+[TEXT]
+6.006 Final          Name                                                   5
+
+
+(h) T F  Floyd–Warshall and Johnson’s Algorithm solve all-pairs shortest paths in the
+         same asymptotic running time when applied to weighted complete graphs, i.e.,
+          graphs where every vertex has an edge to every other vertex.
+
+
+
+
+
+(i) T F   If there is an algorithm to solve 0-1 Knapsack in polynomial time, then there is
+           also an algorithm to solve Subset Sum in polynomial time.
+
+
+
+
+
+(j) T F  Suppose a decision problem A has a pseudopolynomial-time algorithm to solve A.
+              If P 6= NP, then A is not solvable in polynomial time.
+[SPANS]
+[]
+[IMAGES]
+[]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 6/21 ---
+{
+  "page": 6,
+  "rect": [
+    0.0,
+    0.0,
+    612.0,
+    792.0
+  ],
+  "rotation": 0
+}
+[TEXT]
+6     6.006 Final          Name
+
+
+Problem 3.  [24 points] Sorting Sorts
+
+  (a) [12 points] An integer array A is k-even-mixed if there are exactly k even integers
+      in A, and the odd integers in A appear in sorted order. Given a k-even-mixed array A
+      containing n distinct integers for k = dn/ lg ne, describe an O(n)-time algorithm to
+       sort A.
+
+
+
+
+
+  (b) [12 points] Let A be an array of n pairs of positive integers (xi, yi) with xi, yi < n2
+      for all i ∈{0, . . . , n − 1}. The power of pair (x, y) is the integer x + ny. Describe an
+     O(n)-time algorithm to sort the pairs in A increasing by power.
+[SPANS]
+[]
+[IMAGES]
+[]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 7/21 ---
+{
+  "page": 7,
+  "rect": [
+    0.0,
+    0.0,
+    612.0,
+    792.0
+  ],
+  "rotation": 0
+}
+[TEXT]
+6.006 Final          Name                                                   7
+
+
+Problem 4.  [14 points] Pythagorean Quad
+                                    √
+A Pythagorean Quad consists of four integers (a, b, c, d) such that d =   a2 + b2 + c2. Given
+an array A containing n distinct positive integers, describe an O(n2)-time algorithm to determine
+whether four integers from A form a Pythagorean Quad, where integers from A may appear more
+than once in the Quad. State whether your running time is worst-case, expected, and/or amortized.
+[SPANS]
+[]
+[IMAGES]
+[]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 8/21 ---
+{
+  "page": 8,
+  "rect": [
+    0.0,
+    0.0,
+    612.0,
+    792.0
+  ],
+  "rotation": 0
+}
+[TEXT]
+8     6.006 Final          Name
+
+
+Problem 5.  [20 points] Animal Counting
+
+PurpleRock Park is a wildlife reserve, divided into zones, where each zone has a park ranger
+who records current sightings of animals of different species over time. Old animal sightings are
+periodically removed from the database. A species s is common if current park records contain at
+least 100 sightings of species s within any single zone of the park.
+
+Describe a database to store animal sightings, supporting the following four operations, where n
+is the number of sightings stored in the database at the time of the operation. State whether your
+running times are worst-case, expected, and/or amortized.
+
+ initialize()            Initialize an empty database in O(1) time
+ add sighting(s, i)  Record a newest sighting of species s in zone i in O(log n) time
+ remove oldest()     Remove the oldest sighting stored in the database in O(log n) time
+ is common(s)          Return whether species s is common based on sightings
+                               that have not yet been removed from the database in O(1) time
+[SPANS]
+[]
+[IMAGES]
+[]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 9/21 ---
+{
+  "page": 9,
+  "rect": [
+    0.0,
+    0.0,
+    612.0,
+    792.0
+  ],
+  "rotation": 0
+}
+[TEXT]
+6.006 Final          Name                                                   9
+
+
+Problem 6.  [14 points] Limited Connections
+
+For any weighted graph G = (V, E, w) and integer k, deﬁne Gk to be the graph that results from
+removing every edge in G having weight k or larger.
+
+Given a connected undirected weighted graph G = (V, E, w), where every edge has a unique
+integer weight, describe an O(|E| log |E|)-time algorithm to determine the largest value of k such
+that Gk is not connected.
+[SPANS]
+[]
+[IMAGES]
+[]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 10/21 ---
+{
+  "page": 10,
+  "rect": [
+    0.0,
+    0.0,
+    612.0,
+    792.0
+  ],
+  "rotation": 0
+}
+[TEXT]
+10     6.006 Final          Name
+
+
+Problem 7.  [14 points] On the Street
+
+Friends Dal and Sean want to take a car trip across the country from Yew Nork to Fan Sancrisco
+by driving between cities during the day, and staying at a hotel in some city each night. There are
+n cities across the country. For each city ci, Dal and Sean have compiled:
+
+  • the positive integer expense h(ci) of staying at a hotel in city ci for one night; and
+  • a list Li of the at most 10 other cities they could drive to in a single day starting from city ci,
+     along with the positive integer expense g(ci, cj ) required to drive directly from ci to cj for
+     each cj ∈ Li.
+
+Describe an O(nd)-time algorithm to determine whether it is possible for Dal and Sean to drive
+from Yew Nork to Fan Sancrisco in at most d days, spending at most b on expenses along the way.
+[SPANS]
+[]
+[IMAGES]
+[]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 11/21 ---
+{
+  "page": 11,
+  "rect": [
+    0.0,
+    0.0,
+    612.0,
+    792.0
+  ],
+  "rotation": 0
+}
+[TEXT]
+6.006 Final          Name                                                  11
+
+
+Problem 8.  [18 points] RGB Graph
+
+Let G = (V, E, w) be a weighted directed graph. Let c : V →{r, g, b} be an assignment of each
+vertex v to a color c(v), representing red, green, or blue respectively. For x ∈{r, g, b},
+
+  •  let Vx be the set of vertices with color x, i.e., Vx = {v ∈ V  | c(v) = x}; and
+  •  let Ex be the set of edges outgoing from vertices in Vx, i.e., Ex = {(u, v) ∈ E | u ∈ Vx}.
+
+Suppose graph G and coloring c have the following properties:
+
+  1. Every edge in E either connects two vertices of the same color,
+     goes from a red vertex to a green vertex, or goes from a green vertex to a blue vertex.
+
+  2. |Vr| = |Er| = O(|V |), and edges in Er have identical positive integer weight wr.
+  3. |Vg| = |Eg| = O(|V |0.99), and edges in Eg have nonnegative integer weights.
+  4. |Vb| = |Eb| = O(p|V |), and edges in Eb can have positive or negative integer weights.
+
+Given G, c, a red vertex s ∈ Vr, and a blue vertex t ∈ Vb, describe an O(|V |)-time algorithm to
+compute δ(s, t), the minimum weight of any path from s to t.
+[SPANS]
+[]
+[IMAGES]
+[]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 12/21 ---
+{
+  "page": 12,
+  "rect": [
+    0.0,
+    0.0,
+    612.0,
+    792.0
+  ],
+  "rotation": 0
+}
+[TEXT]
+12     6.006 Final          Name
+
+
+Problem 9.  [16 points] Separated Subsets
+
+For any set S of integers and for any positive integers m and k, an (m, k)-separated subset of S
+is any subset S0 ⊆ S such that S0 sums to m and every pair of distinct integers a, b ∈ S0 satisﬁes
+|a − b| ≥ k. Given positive integers m and k, and a set S containing n distinct positive integers,
+describe an O(n2m)-time algorithm to count the number of (m, k)-separated subsets of S.
+
+(When solving this problem, you may assume that a single machine word is large enough to hold
+any integer computed during your algorithm.)
+[SPANS]
+[]
+[IMAGES]
+[]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 13/21 ---
+{
+  "page": 13,
+  "rect": [
+    0.0,
+    0.0,
+    612.0,
+    792.0
+  ],
+  "rotation": 0
+}
+[TEXT]
+6.006 Final          Name                                                  13
+
+
+Problem 10.  [18 points] A Feast for Crowns
+
+Ted Snark is arranging a feast for the Queen of Southeros and her guests, and has been tasked with
+seating them along one side of a long banquet table.
+
+  • Ted has a list of the 2n guests, where each guest i has a known distinct positive integer fi
+     denoting the guest’s favor with the Queen.
+
+  • Ted must seat the guests respectfully: the Queen must be seated in the center with n guests
+    on either side so that guests’ favor monotonically decreases away from the Queen, i.e., any
+     guest seated between a guest i and the Queen must have favor larger than fi.
+
+  • Additionally, every guest hates every other guest: for every two guests i, j, Ted knows the
+      positive integer mutual hatred d(i, j) = d(j, i) between them.
+
+Given Ted’s guest information, describe an O(n3)-time algorithm to determine a respectful seating
+order that minimizes the sum of mutual hatred between pairs of guests seated next to each other.
+Signiﬁcant partial credit will be awarded to correct O(n4)-time algorithms.
+[SPANS]
+[]
+[IMAGES]
+[]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 14/21 ---
+{
+  "page": 14,
+  "rect": [
+    0.0,
+    0.0,
+    612.0,
+    792.0
+  ],
+  "rotation": 0
+}
+[TEXT]
+14     6.006 Final          Name
+
+
+         SCRATCH PAPER 1. DO NOT REMOVE FROM THE EXAM.
+
+
+You can use this paper to write a longer solution if you run out of space, but be sure to write
+“Continued on S1” on the problem statement’s page.
+[SPANS]
+[]
+[IMAGES]
+[]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 15/21 ---
+{
+  "page": 15,
+  "rect": [
+    0.0,
+    0.0,
+    612.0,
+    792.0
+  ],
+  "rotation": 0
+}
+[TEXT]
+6.006 Final          Name                                                  15
+
+
+         SCRATCH PAPER 2. DO NOT REMOVE FROM THE EXAM.
+
+
+You can use this paper to write a longer solution if you run out of space, but be sure to write
+“Continued on S2” on the problem statement’s page.
+[SPANS]
+[]
+[IMAGES]
+[]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 16/21 ---
+{
+  "page": 16,
+  "rect": [
+    0.0,
+    0.0,
+    612.0,
+    792.0
+  ],
+  "rotation": 0
+}
+[TEXT]
+16     6.006 Final          Name
+
+
+         SCRATCH PAPER 3. DO NOT REMOVE FROM THE EXAM.
+
+
+You can use this paper to write a longer solution if you run out of space, but be sure to write
+“Continued on S3” on the problem statement’s page.
+[SPANS]
+[]
+[IMAGES]
+[]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 17/21 ---
+{
+  "page": 17,
+  "rect": [
+    0.0,
+    0.0,
+    612.0,
+    792.0
+  ],
+  "rotation": 0
+}
+[TEXT]
+6.006 Final          Name                                                  17
+
+
+         SCRATCH PAPER 4. DO NOT REMOVE FROM THE EXAM.
+
+
+You can use this paper to write a longer solution if you run out of space, but be sure to write
+“Continued on S4” on the problem statement’s page.
+[SPANS]
+[]
+[IMAGES]
+[]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 18/21 ---
+{
+  "page": 18,
+  "rect": [
+    0.0,
+    0.0,
+    612.0,
+    792.0
+  ],
+  "rotation": 0
+}
+[TEXT]
+18     6.006 Final          Name
+
+
+         SCRATCH PAPER 5. DO NOT REMOVE FROM THE EXAM.
+
+
+You can use this paper to write a longer solution if you run out of space, but be sure to write
+“Continued on S5” on the problem statement’s page.
+[SPANS]
+[]
+[IMAGES]
+[]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 19/21 ---
+{
+  "page": 19,
+  "rect": [
+    0.0,
+    0.0,
+    612.0,
+    792.0
+  ],
+  "rotation": 0
+}
+[TEXT]
+6.006 Final          Name                                                  19
+
+
+         SCRATCH PAPER 6. DO NOT REMOVE FROM THE EXAM.
+
+
+You can use this paper to write a longer solution if you run out of space, but be sure to write
+“Continued on S6” on the problem statement’s page.
+[SPANS]
+[]
+[IMAGES]
+[]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 20/21 ---
+{
+  "page": 20,
+  "rect": [
+    0.0,
+    0.0,
+    612.0,
+    792.0
+  ],
+  "rotation": 0
+}
+[TEXT]
+20     6.006 Final          Name
+
+
+         SCRATCH PAPER 7. DO NOT REMOVE FROM THE EXAM.
+
+
+You can use this paper to write a longer solution if you run out of space, but be sure to write
+“Continued on S7” on the problem statement’s page.
+[SPANS]
+[]
+[IMAGES]
+[]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 21/21 ---
+{
+  "page": 21,
+  "rect": [
+    0.0,
+    0.0,
+    612.0,
+    792.0
+  ],
+  "rotation": 0
+}
+[TEXT]
+MIT OpenCourseWare
+https://ocw.mit.edu
+
+6.006 Introduction to Algorithms
+Spring 2020
+
+For information about citing these materials or our Terms of Use, visit: https://ocw.mit.edu/terms
+[SPANS]
+[]
+[IMAGES]
+[]
+[LINKS]
+[
+  {
+    "from": {
+      "x0": 52.036800384521484,
+      "x1": 159.05599975585938,
+      "y0": 87.38299560546875,
+      "y1": 106.0369873046875
+    },
+    "id": "",
+    "kind": 2,
+    "uri": "https://ocw.mit.edu",
+    "xref": 180
+  },
+  {
+    "from": {
+      "x0": 426.1130065917969,
+      "x1": 567.4959716796875,
+      "y0": 162.00201416015625,
+      "y1": 180.656005859375
+    },
+    "id": "",
+    "kind": 2,
+    "uri": "https://ocw.mit.edu/terms",
+    "xref": 175
+  }
+]
+[ANNOTATIONS]
+[]

@@ -1,0 +1,862 @@
+=== PDF EXTRACTION REPORT ===
+Source: /Users/nikich/Desktop/PROMPT RESEARCH Q&A/cs61bl_su14_mt1_exam.pdf
+SHA256: 671fe5046b76a84e945509aadd6c21bc7f13675040b2a80ab6111afff816c622
+Bytes: 147455
+ExtractedAtUTC: 2026-01-02T06:53:57.157982+00:00
+PageCount: 14
+Metadata:
+{
+  "author": "",
+  "creationDate": "D:20140905123937-07'00'",
+  "creator": "TeX",
+  "encryption": null,
+  "format": "PDF 1.5",
+  "keywords": "",
+  "modDate": "D:20140905123937-07'00'",
+  "producer": "MiKTeX pdfTeX-1.40.14",
+  "subject": "",
+  "title": "",
+  "trapped": ""
+}
+TOC:
+[]
+
+
+--- PAGE 1/14 ---
+{
+  "page": 1,
+  "rect": [
+    0.0,
+    0.0,
+    612.0,
+    792.0
+  ],
+  "rotation": 0
+}
+[TEXT]
+CS61BL: Data Structures & Programming Methodology       Summer 2014
+Instructor: Edwin Liao    Midterm 1                   July 9, 2014
+
+
+ Name:
+
+
+ Student ID Number:
+
+
+
+ Section Time:
+
+
+
+ TA:
+
+
+ Course Login:
+ cs61bl-??
+
+
+ Person on Left:
+ Possibly “Aisle” or “Wall”
+
+
+ Person on Right:
+ Possibly “Aisle” or “Wall”
+
+
+   •  Fill out ALL sections on this page. (1 point)
+
+   • Do NOT turn this page until the beginning of the exam is announced.
+
+   • You should not be sitting directly next to another student.
+
+   • You may not use outside resources other than your 1 page cheat sheet.
+
+   • You have 110 minutes to complete this exam.
+
+   • Your exam should contain 6 problems over 14 pages, including the reference sheet.
+
+   • This exam comprises 15% of the points on which your ﬁnal grade will be based (45 points).
+
+   •  If you have a question, raise your hand and a staff member will come to help you.
+
+   • Make sure to check for corrections / clariﬁcations that will be periodically added to the board
+      at the front of the room.
+
+   • Best of luck. Relax – this exam is not worth having a heart failure over.
+
+
+
+CS61BL, Summer 2014, Midterm 1                                                                 1
+[SPANS]
+[]
+[IMAGES]
+[]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 2/14 ---
+{
+  "page": 2,
+  "rect": [
+    0.0,
+    0.0,
+    612.0,
+    792.0
+  ],
+  "rotation": 0
+}
+[TEXT]
+Reference Sheet: String
+
+Here are some methods and descriptions from Java’s String class API that you may ﬁnd useful.
+
+
+
+ Return type and signature                 Method description
+
+
+                                           Returns the char value at the speciﬁed
+ char charAt(int index)
+                                                 index.
+
+
+
+                                           Returns the index within this string of
+ int indexOf(String str)                the ﬁrst occurrence of the speciﬁed sub-
+                                                        string.
+
+
+                                           Returns the index within this string of
+ int indexOf(String str, int
+                                               the ﬁrst occurrence of the speciﬁed sub-
+ fromIndex)
+                                                        string, starting at the speciﬁed index.
+
+
+
+ int length()                            Returns the length of this string.
+
+
+
+                                          Replaces each substring of this string
+ String replaceAll(String regex,
+                                                    that matches the given regular expres-
+ String replacement)
+                                               sion with the given replacement.
+
+
+
+                                                     Splits this string around matches of the
+ String[] split(String regex)
+                                              given regular expression.
+
+
+
+                                           Returns a new string that is a substring
+ String subString(int beginIndex)
+                                                    of this string.
+
+
+
+ String subString(int beginIndex,    Returns a new string that is a substring
+ int endIndex)                                of this string.
+
+
+
+
+
+CS61BL, Summer 2014, Midterm 1                                                                 2
+[SPANS]
+[]
+[IMAGES]
+[]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 3/14 ---
+{
+  "page": 3,
+  "rect": [
+    0.0,
+    0.0,
+    612.0,
+    792.0
+  ],
+  "rotation": 0
+}
+[TEXT]
+1  Equality Checks (6 points)
+
+Write a probablyEquals method that takes in two objects and returns true if one or more of
+the following are true:
+
+   • The two objects are equal (.equals) to each other.
+
+   • The two objects are equal (==) to each other.
+
+   • The two objects have the same .toString() representation.
+
+   • Calling .hashCode() on both objects returns the same int.
+
+Otherwise, probablyEquals returns false. Your method should never crash given any input.
+You may assume that for any object instances x and y, x.equals(y) will return the same value
+as y.equals(x).
+
+Note: hashCode() is a method that returns an int.  All objects inherit this method from the
+Object class. For the purposes of this problem, toString() is another method that all objects
+inherit from the Object class and that returns a String representation of the object.
+
+public static boolean probablyEquals( Object obj1, Object obj2 ) {
+
+
+
+
+
+}
+
+
+
+CS61BL, Summer 2014, Midterm 1                                                                 3
+[SPANS]
+[]
+[IMAGES]
+[]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 4/14 ---
+{
+  "page": 4,
+  "rect": [
+    0.0,
+    0.0,
+    612.0,
+    792.0
+  ],
+  "rotation": 0
+}
+[TEXT]
+  2  Whose Line is it Anyway? (4 points)
+
+  Examine the following implementations of a Point class and Line class:
+
+ 1 public class Point   {
+ 2     private  int myX;
+ 3     private  int myY;
+ 4
+ 5     public Point ( int  inputX ,  int  inputY )   {
+ 6          this .myX = inputX ;
+ 7          this .myY = inputY ;
+ 8         }
+ 9
+10     public  int getX ( )   {
+11          return  this .myX;
+12         }
+13
+14     public  int getY ( )   {
+15          return  this .myY;
+16         }
+17  }
+
+
+
+
+
+ 1 public class Line  {
+ 2     private  Point myP1;
+ 3     private  Point myP2;
+ 4
+ 5     public Line ( Point p1 ,  Point p2 )   {
+ 6          this .myP1 = p1 ;
+ 7          this .myP2 = p2 ;
+ 8         }
+ 9
+10     public  String   t oS tr in g ( )   {
+11          String  toRtn =  " " ;
+12          toRtn +=  ( " ( " + myP1. getX ( ) +  " , " + myP1. getY ( ) +  " ) , " ) ;
+13          toRtn +=  ( " ( " + myP2. getX ( ) +  " , " + myP2. getY ( ) +  " ) " ) ;
+14          return toRtn ;
+15         }
+16
+17     public  static void main ( String [ ]  args )   {
+18          Point p1 = new Point (1 ,  2) ;
+19          Line myLine = new Line ( p1 , p1 ) ;
+20                    / /  Your code here
+21         System . out . p r i n t l n ( myLine ) ;
+22         }
+23  }
+
+
+
+
+
+   CS61BL, Summer 2014, Midterm 1                                                                 4
+[SPANS]
+[]
+[IMAGES]
+[]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 5/14 ---
+{
+  "page": 5,
+  "rect": [
+    0.0,
+    0.0,
+    612.0,
+    792.0
+  ],
+  "rotation": 0
+}
+[TEXT]
+(a) In the space below, draw the resulting box-and-arrow (a.k.a. box-and-pointer) diagram after
+    executing lines 18 and 19 of the Line class (up until the // Your code here line).
+
+
+
+
+
+(b) In the space below, rewrite the // Your code here with a single line of code so that the
+   program prints out:
+
+                                (1,2),(3,4)
+
+
+
+
+
+CS61BL, Summer 2014, Midterm 1                                                                 5
+[SPANS]
+[]
+[IMAGES]
+[]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 6/14 ---
+{
+  "page": 6,
+  "rect": [
+    0.0,
+    0.0,
+    612.0,
+    792.0
+  ],
+  "rotation": 0
+}
+[TEXT]
+  3  Building a Knapsack (12 points)
+
+  The following code represents a knapsack that can carry items and keep track of the total weight
+   of the items it contains:
+
+ 1 import java . u t i l . ArrayList ;
+ 2
+ 3 public class Knapsack  {
+ 4     protected ArrayList <String > itemNames ;
+ 5     private  ArrayList <Integer > itemWeights ;
+ 6     private   f i n a l  int weightCapacity ;
+ 7     private  int  totalWeight ;
+ 8
+ 9     public Knapsack ( int weightCapacity )   {
+10         itemNames = new ArrayList <String >() ;
+11         itemWeights = new ArrayList <Integer >() ;
+12          this . weightCapacity = weightCapacity ;
+13          this . totalWeight =  0;
+14         }
+15
+16     public void addItem ( String name,  int weight )   {
+17         itemNames . add (name) ;
+18         itemWeights . add (new Integer ( weight ) ) ;
+19         }
+20
+21     public void removeItem ( String name)   {
+22           int itemIndex = itemNames . indexOf (name) ;
+23         itemNames . remove ( itemIndex ) ;
+24         itemWeights . remove ( itemIndex ) ;
+25         }
+26
+27     public  int getTotalWeight ( )   {
+28          return totalWeight ;
+29         }
+30  }
+
+
+
+  Example of usage (after you implement part a):
+
+  Knapsack myKnapsack = new Knapsack(5);
+  myKnapsack.addItem("Banana", 1);
+  myKnapsack.addItem("Water Bottle", 3);
+  myKnapsack.getTotalWeight(); // should return 4
+  myKnapsack.removeItem("Banana");
+  myKnapsack.getTotalWeight(); // should return 3
+
+
+
+
+
+   CS61BL, Summer 2014, Midterm 1                                                                 6
+[SPANS]
+[]
+[IMAGES]
+[]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 7/14 ---
+{
+  "page": 7,
+  "rect": [
+    0.0,
+    0.0,
+    612.0,
+    792.0
+  ],
+  "rotation": 0
+}
+[TEXT]
+(a) Add code to the Knapsack class so that after every method call, the totalWeight instance
+    variable always equals the total weight of all of the items in the Knapsack. You may or may
+    not have to use all of the boxes below.
+
+   Code added immediately after line               :
+
+
+
+
+
+   Code added immediately after line               :
+
+
+
+
+
+   Code added immediately after line               :
+
+
+
+
+
+CS61BL, Summer 2014, Midterm 1                                                                 7
+[SPANS]
+[]
+[IMAGES]
+[]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 8/14 ---
+{
+  "page": 8,
+  "rect": [
+    0.0,
+    0.0,
+    612.0,
+    792.0
+  ],
+  "rotation": 0
+}
+[TEXT]
+(b) Add code to the Knapsack class so that Knapsacks will never:
+
+      • contain two items with the same name
+      • have a total weight greater than its weight capacity
+      • contain an item with negative weight
+      • have a negative capacity
+
+      If a user tries to modify a Knapsack to have any of the above properties, an
+   IllegalStateException (from java.lang) should be thrown with an informative error
+   message. Assume that the code from part (a) has been implemented correctly. You may or
+   may not have to use all of the boxes below.
+
+   Code added immediately after line               :
+
+
+
+
+
+   Code added immediately after line               :
+
+
+
+
+
+   Code added immediately after line               :
+
+
+
+
+
+CS61BL, Summer 2014, Midterm 1                                                                 8
+[SPANS]
+[]
+[IMAGES]
+[]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 9/14 ---
+{
+  "page": 9,
+  "rect": [
+    0.0,
+    0.0,
+    612.0,
+    792.0
+  ],
+  "rotation": 0
+}
+[TEXT]
+(c) What is another case of error checking we should add to Knapsack?
+
+
+
+
+(d)  Fill out the following template for a ValueKnapsack class that keeps track of items’ values
+    in addition to their weights. You should use inheritance effectively. Don’t worry about error-
+    checking for this part. Assume that parts (a) and (b) have been implemented correctly.
+
+   public class ValueKnapsack extends Knapsack {
+
+       private int totalValue;
+       private ArrayList<Integer> itemValues;
+
+       public ValueKnapsack(int weightCapacity) {
+
+
+
+
+
+       }
+
+       public void addItem(String name, int weight, int value) {
+
+
+
+
+
+       }
+
+       public void removeItem(String name) {
+
+
+
+
+
+       }
+
+       public int getTotalValue() {
+           return totalValue;
+       }
+   }
+
+
+
+CS61BL, Summer 2014, Midterm 1                                                                 9
+[SPANS]
+[]
+[IMAGES]
+[]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 10/14 ---
+{
+  "page": 10,
+  "rect": [
+    0.0,
+    0.0,
+    612.0,
+    792.0
+  ],
+  "rotation": 0
+}
+[TEXT]
+4  Acronym Extractor (7 points)
+
+We want to code an extractAcronym method that returns the acronym of an input String. We
+ will be using the # character in place of whitespace characters for this problem (you may assume
+ that the input will not have any whitespace characters). An acronym consists of the ﬁrst non-#
+ letter of the input String and all non-# characters that immediately follow any # character. For
+ example, extractAcronym("Not#a##Number") would return "NaN". If there are # characters
+ at the end of an input String, we ignore them.
+
+ (a) In the table below, provide test inputs for extractAcronym that cover at least 4 generalized
+     input cases (not including the provided example). Include the input String, expected output
+    String, and what your test case is testing for. Do not reuse the example. Assume that the
+     input and return value will never be null.
+
+                                    What are you testing for?
+Input String           Expected output
+
+                                         (The     example)     Tests      that
+                                   extractAcronym can handle cases"Not#a##Number"       "NaN"
+                                               with multiple consecutive # characters.
+
+
+
+
+
+ CS61BL, Summer 2014, Midterm 1                                                                10
+[SPANS]
+[]
+[IMAGES]
+[]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 11/14 ---
+{
+  "page": 11,
+  "rect": [
+    0.0,
+    0.0,
+    612.0,
+    792.0
+  ],
+  "rotation": 0
+}
+[TEXT]
+(b) Implement the extractAcronym method:
+
+
+   public static String extractAcronym( String input ) {
+
+
+
+
+
+   }
+
+
+
+
+CS61BL, Summer 2014, Midterm 1                                                                11
+[SPANS]
+[]
+[IMAGES]
+[]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 12/14 ---
+{
+  "page": 12,
+  "rect": [
+    0.0,
+    0.0,
+    612.0,
+    792.0
+  ],
+  "rotation": 0
+}
+[TEXT]
+5  Vote Iterator (10 points)
+
+Write an iterator that takes in an Integer array of vote counts and iterates over the votes. The
+input array contains the number of votes each selection received. For example, if the input array
+contained the following:
+
+
+
+
+
+then calls to next() would eventually return 1 twice (because at index 1, the input array has value
+2), 2 once, and 4 once. After that, hasNext() would return false.
+
+Provide code for the VoteIterator class below. Make sure your iterator adheres to standard
+iterator rules.
+
+
+import java.util.Iterator;
+
+
+
+
+
+public class VoteIterator implements Iterator<Integer> {
+
+
+
+
+
+    public VoteIterator(Integer[] votes) {
+
+
+
+
+
+    }
+
+
+
+
+
+CS61BL, Summer 2014, Midterm 1                                                                12
+[SPANS]
+[]
+[IMAGES]
+[
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/cs61bl_su14_mt1_exam_images/page_0012_img_001_xref_43.png",
+    "height": 91,
+    "page": 12,
+    "size_bytes": 1661,
+    "width": 318,
+    "xref": 43
+  }
+]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 13/14 ---
+{
+  "page": 13,
+  "rect": [
+    0.0,
+    0.0,
+    612.0,
+    792.0
+  ],
+  "rotation": 0
+}
+[TEXT]
+    public boolean hasNext() {
+
+
+
+
+
+    }
+
+    public Integer next() {
+
+
+
+
+
+    }
+
+    public void remove() {
+
+
+
+
+
+    }
+}
+
+
+
+
+CS61BL, Summer 2014, Midterm 1                                                                13
+[SPANS]
+[]
+[IMAGES]
+[]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 14/14 ---
+{
+  "page": 14,
+  "rect": [
+    0.0,
+    0.0,
+    612.0,
+    792.0
+  ],
+  "rotation": 0
+}
+[TEXT]
+  6  Malicious Mallory (5 points)
+
+  Eve and Mallory are lab partners in CS61BL. Unfortunately for Eve, Mallory doesn’t get along with
+   anyone. One day, when Eve isn’t looking, Mallory codes the following method and adds calls to it
+    in Eve’s code:
+
+ 1 import java . u t i l . ArrayList ;
+ 2
+ 3 public void method ( )   {
+ 4     ArrayList a = new ArrayList ( ) ;
+ 5      String msg1 = "Code not working? Try turning  your computer  o f f and on again ! " ;
+ 6      String msg2 =  " Is  your code running? Then you better go catch    i t ! " ;
+ 7      String msg3 = "You might have forgotten a semicolon somewhere . " ;
+ 8     a . add (new IllegalArgumentException (msg1) ) ;
+ 9     a . add (new ArrayIndexOutOfBoundsException (msg2) ) ;
+10     a . add (new NumberFormatException (msg3) ) ;
+11      int  index =  ( int )   ( Math . random ( ) ∗10) ;
+12           i f   ( index >= 3) return ; throw a . get ( index ) ;
+13  }
+
+   This code is meant to do nothing 70% of the time, and throw one of three random Exceptions the
+   other 30% of the time. Note: Math.random() returns a random double in the range [0,1).
+
+   (a) There is an error with this code. Explain what the error is, and whether it is a compile time
+        error, a runtime error, or a logic error.
+
+
+
+
+
+   (b) Cross out one line of code above. Rewrite this line of code below so that the code compiles,
+       runs, and does what Mallory intended.
+
+
+
+
+
+   CS61BL, Summer 2014, Midterm 1                                                                14
+[SPANS]
+[]
+[IMAGES]
+[]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]

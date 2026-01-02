@@ -1,0 +1,157 @@
+=== PDF EXTRACTION REPORT ===
+Source: /Users/nikich/Desktop/PROMPT RESEARCH Q&A/GATE 2025 Set 2 Answer Key.pdf
+SHA256: cd046a9c634aad151adff94bae3addbcb846fb8ab78710e415c684b4b8bb966a
+Bytes: 209004
+ExtractedAtUTC: 2026-01-02T06:53:49.247741+00:00
+PageCount: 2
+Metadata:
+{
+  "author": "IIT Roorkee",
+  "creationDate": "D:20250310125318+05'00'",
+  "creator": "(unspecified)",
+  "encryption": null,
+  "format": "PDF 1.4",
+  "keywords": "",
+  "modDate": "D:20250310125318+05'00'",
+  "producer": "ReportLab PDF Library - www.reportlab.com",
+  "subject": "Answer Key",
+  "title": "GATE2025 - Key",
+  "trapped": ""
+}
+TOC:
+[]
+
+
+--- PAGE 1/2 ---
+{
+  "page": 1,
+  "rect": [
+    0.0,
+    0.0,
+    595.2755737304688,
+    841.8897705078125
+  ],
+  "rotation": 0
+}
+[TEXT]
+Answer Key for Computer Science and Information Technology 2 (CS2)
+
+        Q. No.  Session  Q. Type  Section   Key/Range   Marks
+
+            1        2     MCQ     GA        C           1
+            2        2     MCQ     GA        C           1
+            3        2     MCQ     GA         A           1
+            4        2     MCQ     GA         A           1
+            5        2     MCQ     GA         B           1
+            6        2     MCQ     GA         B           2
+            7        2     MCQ     GA         B           2
+            8        2     MCQ     GA         A           2
+            9        2     MCQ     GA        D           2
+           10        2     MCQ     GA        C           2
+           11        2     MCQ      CS-2        C           1
+           12        2     MCQ      CS-2        A           1
+           13        2     MCQ      CS-2        B           1
+           14        2     MCQ      CS-2        A           1
+           15        2     MCQ      CS-2        A           1
+           16        2     MCQ      CS-2        B           1
+           17        2     MCQ      CS-2        A           1
+           18        2     MCQ      CS-2        D           1
+           19        2     MCQ      CS-2        D           1
+           20        2     MCQ      CS-2        A           1
+           21        2     MCQ      CS-2        C           1
+           22        2     MCQ      CS-2        C           1
+           23        2     MCQ      CS-2        D           1
+           24        2     MCQ      CS-2        A           1
+           25        2     MCQ      CS-2        D           1
+           26        2     MCQ      CS-2        D           1
+           27        2      MSQ      CS-2         B;C          1
+           28        2      MSQ      CS-2        D           1
+           29        2      MSQ      CS-2         B;C;D         1
+           30        2      MSQ      CS-2         B;C          1
+
+
+
+                                     Page 1 of 2
+[SPANS]
+[]
+[IMAGES]
+[
+  {
+    "bpc": 8,
+    "colorspace": 3,
+    "ext": "png",
+    "file": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE 2025 Set 2 Answer Key_images/page_0001_img_001_xref_3.png",
+    "height": 227,
+    "page": 1,
+    "size_bytes": 162874,
+    "width": 1280,
+    "xref": 3
+  }
+]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
+
+
+--- PAGE 2/2 ---
+{
+  "page": 2,
+  "rect": [
+    0.0,
+    0.0,
+    595.2755737304688,
+    841.8897705078125
+  ],
+  "rotation": 0
+}
+[TEXT]
+31        2      MSQ      CS-2         A;B;C         1
+32        2       NAT      CS-2        13 to 13        1
+33        2       NAT      CS-2        21 to 21        1
+34        2       NAT      CS-2       250 to 250       1
+35        2       NAT      CS-2         4 to 4         1
+36        2     MCQ      CS-2        A           2
+37        2     MCQ      CS-2        C           2
+38        2     MCQ      CS-2        A           2
+39        2     MCQ      CS-2        A           2
+40        2     MCQ      CS-2        C           2
+41        2     MCQ      CS-2        D           2
+42        2      MSQ      CS-2         B;C          2
+43        2      MSQ      CS-2         A;D          2
+44        2      MSQ      CS-2         A;B;C         2
+45        2      MSQ      CS-2        A           2
+46        2      MSQ      CS-2         C;D          2
+47        2      MSQ      CS-2        D           2
+48        2      MSQ      CS-2         C;D          2
+49        2      MSQ      CS-2         A;B;C         2
+50        2      MSQ      CS-2         B;C;D         2
+51        2      MSQ      CS-2         C;D          2
+52        2      MSQ      CS-2         A;C          2
+53        2      MSQ      CS-2        B           2
+54        2      MSQ      CS-2         A;C;D         2
+55        2       NAT      CS-2        4.0 to 4.0        2
+56        2       NAT      CS-2    260.20 to 261.20     2
+57        2       NAT      CS-2        33 to 33        2
+58        2       NAT      CS-2        11 to 11        2
+59        2       NAT      CS-2         6 to 6         2
+60        2       NAT      CS-2         6 to 6         2
+61        2       NAT      CS-2        3.0 to 3.0        2
+62        2       NAT      CS-2       111 to 111       2
+63        2       NAT      CS-2        46 to 46        2
+64        2       NAT      CS-2        0.5 to 0.5        2
+65        2       NAT      CS-2       0.70 to 0.80       2
+
+
+
+
+
+                          Page 2 of 2
+[SPANS]
+[]
+[IMAGES]
+[]
+[LINKS]
+[]
+[ANNOTATIONS]
+[]
