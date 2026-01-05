@@ -1,0 +1,138 @@
+{
+  "gate_merge": {
+    "merged_records": 130,
+    "output_gate_qa_merged_jsonl": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/qa_extracted/gate_qa_merged.jsonl",
+    "output_qa_records_merged_jsonl": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/qa_extracted/qa_records_merged.jsonl",
+    "replaced_source_pdfs": [
+      "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/GATE 2025 Set 1 Answer Key.pdf",
+      "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/GATE 2025 Set 2 Answer Key.pdf",
+      "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/GATE CS 2025 Set 1 Question Paper.pdf",
+      "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/GATE CS 2025 Set 2 Question Paper.pdf"
+    ]
+  },
+  "sources": [
+    {
+      "parsers": [
+        "question_blocks_v1"
+      ],
+      "records": 15,
+      "source_txt": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/CS140 Autumn 2007 Solutions.txt",
+      "verification": {
+        "leaked_markers_in_question_text": 0,
+        "missing_answer_text_but_marker_in_raw_text": 0
+      }
+    },
+    {
+      "parsers": [
+        "question_blocks_v1"
+      ],
+      "records": 30,
+      "source_txt": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/CS140 Final Win 2007.txt",
+      "verification": {
+        "leaked_markers_in_question_text": 0,
+        "missing_answer_text_but_marker_in_raw_text": 0
+      }
+    },
+    {
+      "parsers": [
+        "question_blocks_v1"
+      ],
+      "records": 18,
+      "source_txt": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/FA13 MT1 Solutions.txt",
+      "verification": {
+        "leaked_markers_in_question_text": 0,
+        "missing_answer_text_but_marker_in_raw_text": 0
+      }
+    },
+    {
+      "parsers": [
+        "question_blocks_v1"
+      ],
+      "records": 24,
+      "source_txt": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/FA13 MT2 Solutions.txt",
+      "verification": {
+        "leaked_markers_in_question_text": 0,
+        "missing_answer_text_but_marker_in_raw_text": 0
+      }
+    },
+    {
+      "parsers": [
+        "gate_answer_key_v1"
+      ],
+      "records": 65,
+      "source_txt": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE 2025 Set 1 Answer Key.txt",
+      "verification": {
+        "leaked_markers_in_question_text": 0,
+        "missing_answer_text_but_marker_in_raw_text": 0
+      }
+    },
+    {
+      "parsers": [
+        "gate_answer_key_v1"
+      ],
+      "records": 65,
+      "source_txt": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE 2025 Set 2 Answer Key.txt",
+      "verification": {
+        "leaked_markers_in_question_text": 0,
+        "missing_answer_text_but_marker_in_raw_text": 0
+      }
+    },
+    {
+      "parsers": [
+        "question_blocks_v1"
+      ],
+      "records": 65,
+      "source_txt": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 1 Question Paper.txt",
+      "verification": {
+        "leaked_markers_in_question_text": 0,
+        "missing_answer_text_but_marker_in_raw_text": 0
+      }
+    },
+    {
+      "parsers": [
+        "question_blocks_v1"
+      ],
+      "records": 65,
+      "source_txt": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/GATE CS 2025 Set 2 Question Paper.txt",
+      "verification": {
+        "leaked_markers_in_question_text": 0,
+        "missing_answer_text_but_marker_in_raw_text": 0
+      }
+    },
+    {
+      "parsers": [
+        "question_blocks_v1"
+      ],
+      "records": 20,
+      "source_txt": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/MIT6_006S20_final_exam.txt",
+      "verification": {
+        "leaked_markers_in_question_text": 0,
+        "missing_answer_text_but_marker_in_raw_text": 0
+      }
+    },
+    {
+      "parsers": [
+        "question_blocks_v1"
+      ],
+      "records": 13,
+      "source_txt": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/cs61bl_su14_mt1_exam.txt",
+      "verification": {
+        "leaked_markers_in_question_text": 0,
+        "missing_answer_text_but_marker_in_raw_text": 0
+      }
+    },
+    {
+      "parsers": [
+        "question_blocks_v1"
+      ],
+      "records": 13,
+      "source_txt": "/Users/nikich/Desktop/PROMPT RESEARCH Q&A/extracted_txt/cs61bl_su14_mt1_solutions.txt",
+      "verification": {
+        "leaked_markers_in_question_text": 0,
+        "missing_answer_text_but_marker_in_raw_text": 1
+      }
+    }
+  ],
+  "total_records": 393,
+  "total_records_merged": 263
+}
