@@ -1,0 +1,830 @@
+[
+  {
+    "id": "CS140 Autumn 2007 Solutions::1",
+    "question": "1.  [5 points]:\n\n     Consider an x86 virtual machine monitor (VMM) such as VMware that uses binary\n      translation for guest OS kernel code.  Some instructions can be translated identically, meaning the exact same instruction is executed regardless of whether the OS\n       is running on the VMM or on raw hardware. Other instructions must be translated\n      non-identically. (For example, since the VMM must intercept all hardware interrupts,\n     the lidt instruction which loads the address of interrupt descriptor table cannot be\n      translated identically.)\n\n    Which of the following instructions must be translated non-identically?\n\n     Circle all that apply. There may be more than one answer.\n\n     A. ret\n\n     B. movl  global, %eax\n\n     C. jmp *%eax\n\n     D. call printf\n\n      E. push %cs",
+    "suggested_answer": "A, C, D, and E",
+    "score": 0.9
+  },
+  {
+    "id": "CS140 Autumn 2007 Solutions::2",
+    "question": "2.  [10 points]:\n\n     Hardware MMUs translate virtual to physical page numbers in accessed memory addresses. A virtual machine monitor must add another layer of translation, mapping\n   VM \"physical\" addresses (which are now virtualized) to real machine addresses.\n\n    One common optimization is to point the hardware MMU at shadow page tables that\n      directly map virtual to machine addresses. The VMM computes shadow page tables\n     based on guest OS page tables and its own \"physical\"→machine page mappings.\n\n    The VMM can intercept updates to guest OS page tables by making them inaccessible\n      in the shadow page table. Is it ever safe not to protect guest OS page tables and just\n      to let the guest OS directly manipulate its page tables in memory?\n\n     Circle one then justify your answer:\n\n                  Yes, it can be safe    No, it is never safe",
+    "suggested_answer": "Yes, as long as none of the virtual addresses covered by the page table are currently\naccessible in the shadow page table. The guest OS might make some previously inaccessible\npage valid. Accessing the page would then cause a hidden page fault to the VMM, at which\npoint the VMM can fix up the shadow page table and transparently resume execution.",
+    "score": 1.0
+  },
+  {
+    "id": "CS140 Autumn 2007 Solutions::3",
+    "question": "3.  [6 points]:\n\n    VMware ESX saves memory by identifying multiple copies of the same physical page\n     and mapping them all copy-on-write to a single machine page. This technique saves\n    memory when, for example, two virtual machines are running the same guest operating\n     system, as the pages containing kernel code will be identical across the two VMs.\n\n     Could this technique ever save memory when a single virtual machine is running (assuming the VM is configured to see more \"physical\" memory than there is machine\n     memory)? Under what circumstances might a modern operating system have multiple\n      physical pages with the same contents?",
+    "suggested_answer": "Yes. For example, if you copy a file, both the old and new file blocks may be\nstored in the buffer cache. VMware ESX could consolidate these identical pages.",
+    "score": 1.0
+  },
+  {
+    "id": "CS140 Autumn 2007 Solutions::4",
+    "question": "4.  [6 points]:\n\n     Give an example of a kernel instruction that can run faster under VMware than on\n      real hardware. Explain why.",
+    "suggested_answer": "One example is the cli instruction, which is slow on real hardware but just\nrequires updating a flag in VMware.\n\nAnother example might be I/O to virtual rather than real hardware. An inb or outb\ninstruction that goes across an I/O bus to a real network card is very slow. But under\nVMware you are interacting with a virtual network card, and might just be talking to\nanother VM on the same physical machine which would require no real I/O. Thus the inb\nor outb gets translated to something much faster.",
+    "score": 1.0
+  },
+  {
+    "id": "CS140 Autumn 2007 Solutions::5",
+    "question": "5.  [6 points]:\n\n    The Unix setuid facility allows programs to run with greater privilege than the user\n    who invoked them. The kernel assigns each process both an effective and a real user\n     ID. Ordinarily these two user IDs are the same. However, when a process executes a\n      setuid binary, it takes on the effective user ID of the binary file's owner, while retaining\n     the real user ID of the invoking user.\n\n     Most access control checks performed by the kernel use only the effective user ID.\n     However, process A can kill process B  if A's effective user ID matches B's real user\n     ID, even if B's effective user ID is something different. This ensures users can kill any\n      setuid programs they run.\n\n    The same logic does not apply to ptrace, the debugging system call. Explain what\n     would go wrong if A could attach to B using ptrace.",
+    "suggested_answer": "A could completely control B's memory, registers, and program counter. It could\ncause B to execute another program, thereby letting A do essentially anything it wants with\nB's effective user ID. Thus, a user could do essentially anything it wants under the effective\nuser ID of any setuid executable it can invoke.",
+    "score": 1.0
+  },
+  {
+    "id": "CS140 Autumn 2007 Solutions::6",
+    "question": "6.  [6 points]:\n\n   A Unix operating system ships configured to run this command every night:\n\n\n             find /tmp -atime +3 -exec safeunlink {} ;\n\n\n    The effect is to find every file that has not been accessed in more than three days\n     under the directory /tmp and run the safeunlink command on that file's pathname.\n     safeunlink deletes a file. Its implementation is below.\n\n    Assume path to components takes a Unix pathname separated by \"/\" characters and\n       splits it into an NULL-terminated array of strings, one for each component directory.\n\n\n      1  int\n      2  main (int argc, char **argv)\n      3  {\n      4    int i;\n      5\n      6    char **components = path_to_components (argv[1]);\n      7    if (components[0] == NULL)  /* bad path name */\n      8      exit (1);\n      9\n     10    for (i = 0; components[i+1] != NULL; i++) {\n     11      struct stat s1, s2;\n     12\n     13      /* Check the type of file components[i].  If it is anything other\n     14       * than a directory (including a symbolic link), return failure */\n     15      if (lstat (components[i], &s1) < 0 || !S_ISDIR (s1.st_mode))\n     16        exit (1);\n     17\n     18      if (chdir (components[i]) < 0)\n     19        exit (1);\n     20\n     21      /* If, after changing directory, \".\" is not the same directory\n     22       * as components[i] in the parent, then return failure */\n     23      if (stat (\".\", &s2) < 0\n     24          || s1.st_dev != s2.st_dev || s1.st_ino != s2.st_ino)\n     25        exit (1);\n     26    }\n     27\n     28    return -unlink (components[i]);\n     29  }\n\n\n    What is the purpose of lines 23-25?",
+    "suggested_answer": "To ensure no symbolic links are traversed while unlinking the file. This avoids the\nTOCTTOU bug we saw in class where an attacker deletes /etc/passwd",
+    "score": 1.0
+  },
+  {
+    "id": "CS140 Autumn 2007 Solutions::7",
+    "question": "7.  [6 points]:\n\n     Designers of Mandatory Access Control systems strive to reduce covert channels, which\n      are mechanisms that can be exploited to transfer information in violation of the system's security policy.\n\n     Imagine a system with a Bell-LaPadula-like security policy and two classifications,\n      secret (used for sensitive national security information) and public (used for publicly\n      releasable information). The policy allows users to read public files while preparing\n      secret documents, but not vice versa.\n\n     Suppose that a design limitation in the OS's file locking support creates a well-known\n     high-bandwidth covert channel. Describe a scenario in which a popular but malicious\n      software vendor can exploit this channel to steal secret data.",
+    "suggested_answer": "The attacker might release Trojan horse software that appears to do something\nuseful, but actually leaks information. For example, the software might appear to be a useful\nenhancement to the emacs text editor. However, when run by a user with a secret security\nclearance, this software will fork off a high process that sets its current-level to secret and a\nlow process that keeps its current-level at public. The high process will then communicate\nthe contents of secret files to the low process, which then in turn leaks them over the network.",
+    "score": 1.0
+  },
+  {
+    "id": "CS140 Autumn 2007 Solutions::8",
+    "question": "8.  [5 points]:\n\n    The Unix login program checks whether or not a user has entered the correct password\n      before taking on the user's ID and executing the user's shell. Explain how it can check\n     passwords this way without storing the user's actual password on the system?",
+    "suggested_answer": "It stores {salt, H(password, salt)}, where H is a function that cannot be inverted\nin a computationally efficient way.",
+    "score": 1.0
+  },
+  {
+    "id": "CS140 Autumn 2007 Solutions::9",
+    "question": "9.  [5 points]:\n\n     Suppose an attacker breaks into a Unix machine, obtains root (superuser) privileges,\n     and manages to keep them for a long period of time (e.g., many months). What might\n     the attacker do to learn users' real passwords, even if they aren't stored on the system?",
+    "suggested_answer": "Replace login with a malicious version that records the passwords users enter\nin a file where the attacker can read them.",
+    "score": 1.0
+  },
+  {
+    "id": "CS140 Autumn 2007 Solutions::10",
+    "question": "10.  [5 points]:\n\n     Explain why a reference-counting garbage collector may leak memory that a stop-andcopy garbage collector would properly collect.",
+    "suggested_answer": "A data structure may be unreachable from any registers or global pointers, yet\nhave a cycle. E.g., A has a pointer to B, B has a pointer to C, and C has a pointer to A.\nIn such a situation, A, B, and C will all have reference count of 1 and remain uncollected,\nwhile the stop-and-copy collector would not reach these objects and thus not copy them to\nthe new heap.",
+    "score": 1.0
+  },
+  {
+    "id": "CS140 Autumn 2007 Solutions::11",
+    "question": "11.  [5 points]:\n\n     Describe program behavior under which a stop-and-copy garbage collector might give\n      better performance than a reference-counting garbage collector.",
+    "suggested_answer": "A program that does not allocate or free much memory, but makes lots of copies\nof pointers will perform better under stop-and-copy. Copying a pointer under stop-and-copy\nhas the same cost as copying any other value (such as an integer), while with a referencecounting scheme one must constantly increment and decrement reference counts.",
+    "score": 1.0
+  },
+  {
+    "id": "CS140 Autumn 2007 Solutions::12",
+    "question": "12.  [10 points]:\n\n     Define the total dynamically allocated memory as the sum of sizes of all malloced\n    memory regions that have not been freed.\n\n     Suppose the page size on your machine is 4 KB. Describe a program that never exceeds\n     4,096 KB of total dynamically allocated memory, yet by calling malloc and free still\n      requires at least 5,120 KB of virtual memory to run (in addition to memory for code\n     and statically allocated data), regardless of the memory allocator in use.\n\n      Hint: Your program can depend on the value of the pointers returned by malloc to\n      act in the worst possible way regardless of the malloc implementation.",
+    "suggested_answer": "First, allocate 2,000 2 KB chunks. These will span some number of virtual\npages-at least 1,000.\n\nFor all such virtual pages, consider the first byte contained by one of the 2 KB allocated\nchunks. Free all chunks that do not contain such a first byte.\n\nSay you have n chunks that you have not freed. n ≥1,000, since at most half the chunks\ncould have been freed. Moreover, there are at least n pages of memory in use, since each\nchunk used the first allocated byte on some page.\n\nNow allocate (2,000 -n)/2 4 KB-sized chunks.",
+    "score": 1.0
+  },
+  {
+    "id": "CS140 Autumn 2007 Solutions::13",
+    "question": "13.  [5 points]:\n\n     Using Berkeley FFS, you have a file system that contains one very large (4 GB) file,\n     and a directory tree with 400,000 files of 10 KB each. You notice that you can stream\n     through the large file, reading the whole thing sequentially, in about 2 minutes. However, a program that traverses the file system and reads all the small files takes almost\n     an hour to run, even though that also involves reading about 4 GB of data. Explain\n     the difference in performance between the two workloads.",
+    "suggested_answer": "Reading each file requires a disk seek and on average half a rotation, which together\nmight take around 8 msec, while reading the large file sequentially goes at disk bandwidth\nwhich might be around 40 MB/sec.",
+    "score": 1.0
+  },
+  {
+    "id": "CS140 Autumn 2007 Solutions::14",
+    "question": "14.  [10 points]:\n\n     Suppose you modified the Berkeley fast file system (FFS) to remove all synchronous\n      or immediate writes to disk. In the modified file system, all writes to disk are delayed\n     30 seconds (or until the kernel needs to reclaim the buffer for another purpose). Thus,\n     two successive writes to the same inode, directory block, or other metadata structure\n      usually only require a single write to disk. Moreover, the kernel can order the writes\n      (or ask the disk to order them) in such a way as to get good disk arm scheduling.\n\n     Describe a way in which, after a power failure, a directory block may contain, instead\n      of directory entries, arbitrary data from a user's file. Be sure to specify the exact series\n      of system calls made before the power failure in your scenario.",
+    "suggested_answer": "unlink - delete file f\n\nmkdir - create new directory d; the kernel re-uses a block that used to belong to f to store\ndirectory data\n\ncrash - if f's inode has not been cleared yet, but d's inode has been written to disk, f and\nd will share a cross-allocated block.",
+    "score": 1.0
+  },
+  {
+    "id": "CS140 Autumn 2007 Solutions::15",
+    "question": "15.  [10 points]:\n\n     Consider the following program:\n\n\n     #define FILE \"tmp\"\n\n     int\n     main (int argc, char **argv)\n     {\n       int i, fd;\n       for (i = 0; i < 100; i++) {\n         fd = open (FILE, O_CREAT|O_WRONLY|O_TRUNC, 0666); /* create FILE */\n         close (fd);\n         unlink (FILE);                                    /* delete FILE */\n       }\n\n       return 0;\n     }\n\n\n       Is the total number of disk writes required by this program (including writes delayed\n      until after the program exits) likely to be more on XFS (the journaling file system we\n      discussed in class) or FFS with soft updates?\n\n     Circle one then justify your answer:\n\n    XFS requires more writes         soft updates requires more writes",
+    "suggested_answer": "XFS requires more writes, because each create and delete must be entered in the\nlog. Soft updates doesn't need to do any disk writes if you quickly create and delete a file.",
+    "score": 1.0
+  },
+  {
+    "id": "FA13 MT1 Solutions::1.i",
+    "question": "1. (8 points total) True/False and Why? CIRCLE YOUR ANSWER.\n          i) A user-level process cannot modify its own page table entries.\n\n      TRUE               FALSE\n         Why?",
+    "suggested_answer": "TRUE. If a user-level process was allowed to modify its own page table\n                entries, then it could access physical memory being used by other\n              processes or the OS kernel. Kernel mode is required to modify page table\n                entries.",
+    "score": 1.0
+  },
+  {
+    "id": "FA13 MT1 Solutions::1.ii",
+    "question": "1. (8 points total) True/False and Why? CIRCLE YOUR ANSWER.\n          ii) The scheduler is the part of an Operating System that determines the priority of\n          each process.\n\n      TRUE               FALSE\n         Why?",
+    "suggested_answer": "FALSE. The scheduler schedules processes based on user-specified\n                 priorities.",
+    "score": 0.7
+  },
+  {
+    "id": "FA13 MT1 Solutions::1.iii",
+    "question": "1. (8 points total) True/False and Why? CIRCLE YOUR ANSWER.\n          iii) Shortest Remaining Time First is the best preemptive scheduling algorithm\n            that can be implemented in an Operating System.\n\n      TRUE               FALSE\n         Why?",
+    "suggested_answer": "FALSE. SRTF cannot be implemented because it requires knowledge of\n               the future.",
+    "score": 0.9
+  },
+  {
+    "id": "FA13 MT1 Solutions::1.iv",
+    "question": "1. (8 points total) True/False and Why? CIRCLE YOUR ANSWER.\n        iv) The working set model is used to compute the average number of frames a job\n            will need in order to run smoothly without causing thrashing.\n\n      TRUE               FALSE\n         Why?",
+    "suggested_answer": "FALSE. The working set model is used to compute the minimum (total)\n            number of frames a job will need in order to run smoothly without causing\n               thrashing.",
+    "score": 1.0
+  },
+  {
+    "id": "FA13 MT1 Solutions::2.a.i",
+    "question": "2. (17 points total) Deadlock.\n          a. (11 points total) Recall the various deadlock detection and prevention algorithms\n          we've discussed in this course, and consider the following snapshot of a system\n           with five processes (P1, P2, P3, P4, P5) and four resources (R1, R2, R3, R4).\n          There are no current outstanding queued unsatisfied requests.\n\nCurrently Available Resources (R1 R2 R3 R4): 2 1 2 0\nProcess | Alloc (R1 R2 R3 R4) | Max (R1 R2 R3 R4) | Need (R1 R2 R3 R4)\nP1     | 0 0 1 2            | 0 0 3 2          | 0 0 2 0\nP2     | 2 0 0 0            | 2 7 5 0          | 0 7 5 0\nP3     | 0 0 3 4            | 6 6 5 6          | 6 6 2 2\nP4     | 2 3 5 4            | 4 3 5 6          | 2 0 0 2\nP5     | 0 3 3 2            | 0 6 5 2          | 0 3 2 0\n                i) (5 points) Is this system currently deadlocked, or can any process become\n              deadlocked? Why or why not? If not deadlocked, give an execution order.",
+    "suggested_answer": "Using the Banker's algorithm, the system is not deadlocked and will not\n            become deadlocked. The process finishing order is: P1, P4, P5, P2, P3.",
+    "score": 1.0
+  },
+  {
+    "id": "FA13 MT1 Solutions::2.a.ii",
+    "question": "2. (17 points total) Deadlock.\n          a. (11 points total) Recall the various deadlock detection and prevention algorithms\n          we've discussed in this course, and consider the following snapshot of a system\n           with five processes (P1, P2, P3, P4, P5) and four resources (R1, R2, R3, R4).\n          There are no current outstanding queued unsatisfied requests.\n\nCurrently Available Resources (R1 R2 R3 R4): 2 1 2 0\nProcess | Alloc (R1 R2 R3 R4) | Max (R1 R2 R3 R4) | Need (R1 R2 R3 R4)\nP1     | 0 0 1 2            | 0 0 3 2          | 0 0 2 0\nP2     | 2 0 0 0            | 2 7 5 0          | 0 7 5 0\nP3     | 0 0 3 4            | 6 6 5 6          | 6 6 2 2\nP4     | 2 3 5 4            | 4 3 5 6          | 2 0 0 2\nP5     | 0 3 3 2            | 0 6 5 2          | 0 3 2 0\n                ii) (3 points) If a request from a process P1 arrives for (0, 4, 2, 0), can the request\n             be immediately granted? Why or why not? If yes, show an execution order.",
+    "suggested_answer": "No, the request is invalid, as it would exceed\n               the maximum need that P1 specified.",
+    "score": 1.0
+  },
+  {
+    "id": "FA13 MT1 Solutions::2.a.iii",
+    "question": "2. (17 points total) Deadlock.\n          a. (11 points total) Recall the various deadlock detection and prevention algorithms\n          we've discussed in this course, and consider the following snapshot of a system\n           with five processes (P1, P2, P3, P4, P5) and four resources (R1, R2, R3, R4).\n          There are no current outstanding queued unsatisfied requests.\n\nCurrently Available Resources (R1 R2 R3 R4): 2 1 2 0\nProcess | Alloc (R1 R2 R3 R4) | Max (R1 R2 R3 R4) | Need (R1 R2 R3 R4)\nP1     | 0 0 1 2            | 0 0 3 2          | 0 0 2 0\nP2     | 2 0 0 0            | 2 7 5 0          | 0 7 5 0\nP3     | 0 0 3 4            | 6 6 5 6          | 6 6 2 2\nP4     | 2 3 5 4            | 4 3 5 6          | 2 0 0 2\nP5     | 0 3 3 2            | 0 6 5 2          | 0 3 2 0\n          iii) (3 points) If a request from a process P2 arrives for (0, 1, 2, 0), can the request\n          be immediately granted? Why or why not? If yes, show an execution order.",
+    "suggested_answer": "No, the request is valid but if granted, the\n           resulting Currently Available Resources would be (2, 0, 0, 0) and there is no\n          sequence of process executions that would allow the completion of all\n           processes. This is an UNSAFE state.",
+    "score": 1.0
+  },
+  {
+    "id": "FA13 MT1 Solutions::3.a",
+    "question": "3. (15 points total) Demand Paging\n          For each of the following page replacement policies, list the total number of page\n            faults and fill in the contents of the page frames of memory after each memory\n           reference.\n             a. (5 points) MIN page replacement policy:",
+    "suggested_answer": "Reference E D H B D E D A E B E D E B G\nPage #1 E E E E E * E E  * E  * E * E G\nPage #2  - D D D * D * A A A A D D D D\nPage #3  -   - H B B B B B B * B B B * B\nMark X X X X X X X X\nfor a fault\n\n        Number of MIN page faults? ______________7 and G can be placed anywhere",
+    "score": 0.0
+  },
+  {
+    "id": "FA13 MT1 Solutions::3.b",
+    "question": "3. (15 points total) Demand Paging\n          For each of the following page replacement policies, list the total number of page\n            faults and fill in the contents of the page frames of memory after each memory\n           reference.\n            b. (5 points) LRU page replacement policy:",
+    "suggested_answer": "Reference E D H B D E D A E B E D E B G\nPage #1 E E E B B B B A A A A D D D G\nPage #2  - D D D * D * D D B B B B * B\nPage #3  -   - H H H E E E * E * E * E E\nMark X X X X X X X X X X\nfor a fault\n\n        Number of LRU page faults? ______________9",
+    "score": 0.0
+  },
+  {
+    "id": "FA13 MT1 Solutions::3.c",
+    "question": "3. (15 points total) Demand Paging\n          For each of the following page replacement policies, list the total number of page\n            faults and fill in the contents of the page frames of memory after each memory\n           reference.\n             c. (5 points) FIFO page replacement policy:",
+    "suggested_answer": "Reference E D H B D E D A E B E D E B G\nPage #1 E E E B B B B A A A  A D D D D\nPage #2  - D D D * E E E  * B B B B * G\nPage #3  -   - H H H H D D D D E E * E\nMark X  X X X X   X X X   X X X     X\nfor a fault\n\n        Number of FIFO page faults? ______________11",
+    "score": 0.0
+  },
+  {
+    "id": "FA13 MT1 Solutions::4.a",
+    "question": "4. (23 points) Memory management:\n    a. (5 points) Consider a memory system with a cache access time of 10ns and a\n     memory access time of 110ns - assume the memory access time includes the time\n        to check the cache. If the effective access time is 10% greater than the cache\n       access time, what is the hit ratio H? (fractional answers are OK)",
+    "suggested_answer": "H = 99/100",
+    "score": 1.0
+  },
+  {
+    "id": "FA13 MT1 Solutions::4.b.i",
+    "question": "4. (23 points) Memory management:\n    b. (18 points total) Address Translation:\n          i) (5 points) Consider a machine with a physical memory of 8 GB, a page size of\n         8 KB, and a page table entry size of 4 bytes. How many levels of page tables\n         would be required to map a 46-bit virtual address space if every page table fits\n            into a single page? Be explicit in your explanation.",
+    "suggested_answer": "Since each PTE is 4 bytes and each page contains 8KB, then a one-page page\n        table would point to 2048 or 2^11 pages, addressing a total of 2^11 * 2^13 = 2^24 bytes.\n       Continuing this process:\n                    Depth             Address Space\n                    1                     2^24 bytes\n                    2                    2^35 bytes\n                    3                    2^46 bytes",
+    "score": 1.0
+  },
+  {
+    "id": "FA13 MT1 Solutions::4.b.ii",
+    "question": "4. (23 points) Memory management:\n    b. (18 points total) Address Translation:\n          ii) (4 points) List the fields of a Page Table Entry (PTE) in your scheme.",
+    "suggested_answer": "Each PTE will have a pointer to the proper page, PPN, plus several\n        bits - read, write, execute, and valid. This\n       information can all fit into 4 bytes, since if physical memory is 2^33 bytes, then 20\n        bits will be needed to point to the proper page, leaving ample space (12 bits) for\n       the information bits.\n\n          If you added incorrect fields (VPN, offset,...),",
+    "score": 0.0
+  },
+  {
+    "id": "FA13 MT1 Solutions::4.b.iii",
+    "question": "4. (23 points) Memory management:\n    b. (18 points total) Address Translation:\n          iii) (3 points) Without a cache or TLB, how many memory operations are required\n            to read or write a single 32-bit word?",
+    "suggested_answer": "Without extra hardware, performing a memory operation takes 4 actual memory\n       operations: 3 page table lookups in addition to the actual memory operation.",
+    "score": 0.0
+  },
+  {
+    "id": "FA13 MT1 Solutions::4.b.iv",
+    "question": "4. (23 points) Memory management:\n    b. (18 points total) Address Translation:\n        iv) (6 points) How much physical memory is needed for a process with three\n          pages of virtual memory (for example, one code, one data, and one stack\n          page)?",
+    "suggested_answer": "Six physical pages totaling 48KB are needed: one for the first-level page table,\n      one for one page of the second-level page table, one for one page of the third-level page table, and three for the process' three pages.\n\n      Note that the second- and third-level page tables do not need 16MB (2^11 * 8KB)\n       each, because the top-level (and second-level) page tables enable you to only\n      have the next level page table pages for those pages that are part of the process's\n        virtual address space.",
+    "score": 0.0
+  },
+  {
+    "id": "FA13 MT1 Solutions::5",
+    "question": "5. (18 points total) Scheduling.\n         Assumptions: All timeslice-based algorithms have a timeslice of one unit; The\n          currently running thread is not in the ready queue while it is running; An arriving\n          thread is run at the beginning of its arrival time, if the scheduling policy allows it.\n         Turnaround time is defined as the time a process takes to complete after it arrives.\n\n            Fill in ALL blanks in EACH table - each blank has an unambiguous answer.\n         For the missing schedulers, the possibilities are SRTF, RR, and Priority.\n           Priority is a preemptive scheduler.\n         Hint: Fill in the entry time (below) for Thread C first!\n\n              Entry Times                      Priorities\n          A       1            A       3\n           B       2              B       4\n           C       5              C       5\n          D       8            D       6",
+    "suggested_answer": "↓Current Time Currently Scheduled Process\n        Scheduler → FIFO    SRTF      Priority\n         1 A A A\n         2 A A B\n         3 A A B\n         4 B B B\n         5 B C C\n         6 B B A\n         7 C B A\n         8 D D D\n         9 D D D\n         10 D D D\nAvg Turnaround Time    3.5       3.25          3.5",
+    "score": 0.0
+  },
+  {
+    "id": "FA13 MT1 Solutions::6",
+    "question": "6. (19 points) Concurrency Control.\n   You are the organizer of a gaming exhibit at the E3 Electronic Entertainment Expo.\n   You want to allow the attendees to play your startup's new game demo. You model\n    the attendees as threads, called players, and your job is to synchronize access to a\n    single copy of the game, as follows:\n          •  When a player arrives, he or she waits in a waiting area.\n          •  Once there are 4 or more players waiting to play, you allow exactly 4 of\n            them to leave the waiting area to begin playing. These four leave the\n              waiting area and approach the game console.\n          •  When a player reaches the console, the player waits until all four players\n               are at the console, at which point all four players begin playing.\n          •  Players may finish playing at any time. However, you cannot allow any\n           new players to begin playing until all four players have left.\n          •  You do not need to let players out of the waiting area in the order in which\n              they arrived.\n          •  You cannot assume that a player will ever finish playing.\n\n     You decide to solve this synchronization problem using two custom\n       synchronization primitives, which have \"barrier-like\" semantics:\n           GameBarrier gb;\n           ConsoleBarrier cb;\n\n     Your task is to implement these synchronization primitives according to the\n       specifications listed below. Each player thread has access to the two global\n        barriers, and uses them in the following sequence:\n\n\n      void Player(ThreadID tid, GameBarrier gb, ConsoleBarrier cb) {\n            gb.waitToPlay();\n            cb.waitAtConsole();\n            play();\n            gb.donePlaying();\n      }\n\n      The GameBarrier can be in one of three states:\n          •  GAME_NOTREADY: There are fewer than 4 players waiting to play. When\n               the barrier is in this state, no player can progress beyond waitToPlay().\n          •  GAME_FILLING: There are (or were) at least 4 players waiting to play,\n            and either we are in the first turn or else all four players from the prior turn\n             have departed (via donePlaying()). When the barrier is in this state, a\n              player can progress beyond waitToPlay(), and in fact four players must\n              progress beyond this function. When exactly four players have progressed\n            beyond this function, the barrier enters the GAME_FILLED state.\n          •  GAME_FILLED: Four players have been sent to the console, and the turn is\n              not over (meaning that the departure of all four from the console via\n           donePlaying() has not yet taken place). When the barrier is in this\n                 state, no waiting player can progress beyond waitToPlay().\n\n\n      The ConsoleBarrier can be in one of two states:\n          •  CONSOLE_WAIT: Four players have not yet arrived at the console in the\n               current round. When the barrier is in this state, no player can progress\n            beyond waitAtConsole().\n          •  CONSOLE_ALLOW: Four players have arrived in the current round. When\n               the barrier is in this state, all four waiting players must progress beyond\n           waitAtConsole(), after which the state reverts to CONSOLE_WAIT.\n\n      Your barrier will require the use of condition variables. Recall that condition\n       variables provide three methods: Condition.wait(Lock mutex),\n      Condition.signal(), and Condition.broadcast().\n      Locks provide two methods: Lock.acquire() and Lock.release().\n\n      Note that part (but not all) of your work is to ensure that the barriers make the\n       correct state transitions.\n\n      Below, where indicated, fill out the variables and methods for the GameBarrier\n      and ConsoleBarrier objects.\n\n\n     public class GameBarrier {\n           private static final int GAME_NOTREADY = 0;\n           private static final int GAME_FILLING = 1;\n           private static final int GAME_FILLED = 2;\n\n           private Lock mutex;\n           private int state;\n           private Condition cv;\n\n           /* SPECIFY ANY OTHER CLASS VARIABLES */\n           private int NumWaiters;\n           private int NumPlayers;\n\n\n           public GameBarrier(Lock lock) {\n                this.mutex = lock;\n                this.state = GAME_NOTREADY;\n                this.cv = new Condition();\n\n                 /* INITIALIZE ANY OTHER CLASS VARIABLES */\n                this.NumWaiters = 0;\n                this.NumPlayers = 0;",
+    "suggested_answer": "}\n\n\n           public void waitToPlay() {\n                 /* YOU MUST FILL IN THIS FUNCTION */\n                mutex.acquire();\n                NumWaiters++\n                 if ((NumWaiters >= 4) &&\n                    (state == GAME_NOTREADY)) {\n                      state = GAME_FILLING;\n                      cv.broadcast();\n                 }\n                while (state != GAME_FILLING) {\n                      cv.wait(mutex);\n                 }\n                NumWaiters--;\n                NumPlayers++;\n                 if (NumPlayers == 4) state = GAME_FILLED;\n                mutex.release();\n\n               We applied the following grading rubric:\n                         • -3 pts for not using the mutex or using the mutex incorrectly. We\n                             deducted 1 pt if you forgot the mutex acquire OR release but not\n                                both.\n                         • -1 pt for using signal instead of broadcast. We accepted answers\n                                  that signaled at least the appropriate number of times.\n                         • -1 pt for not calling cv.wait() from within a while loop\n                         • -3 pts for using extra synchronization primitives (e.g., another\n                               condition variable or semaphores).\n                         • -1.5 pts if you had incorrect or nonexistent state transitions.\n                         • -1 or -2 pts for each additional minor or major error\n\n\n           }\n\n\n           public void donePlaying() {\n                 /* YOU MUST FILL IN THIS FUNCTION */\n                mutex.acquire();\n                NumPlayers--;\n                 if (NumPlayers = 0) {\n                      state = GAME_NOT_READY;\n                      if (NumWaiters >= 4) {\n                           state = GAME_FILLING;\n                           cv.broadcast(mutex);\n                      }\n                 }\n                mutex.release();\n\n               We applied the following grading rubric:\n                         • -3 pts for not using the mutex or using the mutex incorrectly. We\n                             deducted 1 pt if you forgot the mutex acquire OR release but not\n                                both.\n                         • -1 pt for using signal instead of broadcast. We accepted answers\n                                  that signaled at least the appropriate number of times. We\n                             deducted 2 pts if your answer had no signals or broadcast.\n                         • -2 pts for calling cv.wait() and blocking\n                      donePlaying()\n                         • -1 pt for not checking NumPlaying or NumWaiters.\n                         • -1.5 pts if you had incorrect or nonexistent state transitions.\n                         • -1 pt for each additional error\n\n\n           }\n      }\n\n     public class ConsoleBarrier {\n           private static final int CONSOLE_WAIT = 0;\n           private static final int CONSOLE_ALLOW = 1;\n\n           private Lock mutex;\n           private int state;\n           private Condition cv;\n\n           /* SPECIFY ANY OTHER CLASS VARIABLES */\n           int NumPlayers;\n\n\n           public ConsoleBarrier(Lock lock) {\n                this.mutex = lock;\n                this.state = CONSOLE_WAIT;\n                this.cv = new Condition();\n\n                 /* INITIALIZE ANY OTHER CLASS VARIABLES */\n                this.NumPlayers = 0;\n\n               We deducted 2 pts if your answer was missing NumPlayers\n\n\n           }\n\n\n           public void waitAtConsole() {\n                 /* YOU MUST FILL IN THIS FUNCTION */\n                mutex.acquire();\n                NumPlayers++\n                 if (NumPlayers == 4) {\n                      state = CONSOLE_ALLOW;\n                      cv.broadcast();\n                 }\n                while (state == CONSOLE_WAIT) {\n                      cv.wait(mutex);\n                 }\n                NumPlayers--;\n                 if (NumPlayers == 0) state = CONSOLE_WAIT;\n                mutex.release();\n\n               We applied the following grading rubric:\n                         • -3 pts for not using the mutex or using the mutex incorrectly. We\n                             deducted 1 pt if you forgot the mutex acquire OR release but not\n                                both.\n                         • -2 pts if your answer had no signals or broadcast.\n                         • -2 pts for missing cv.wait()\n                         • -1 pt for not checking NumPlaying or NumWaiters.\n                         • -1.5 pts if you had incorrect or nonexistent state transitions.\n                         • -1 or -2 pts for each additional minor/major error\n\n\n           }",
+    "score": 1.0
+  },
+  {
+    "id": "FA13 MT2 Solutions::1.i",
+    "question": "1. (8 points total) True/False and Why? CIRCLE YOUR ANSWER.\n          i) A Remote Procedure Call (RPC) can be used to call a procedure in another\n           process on the same machine.\n\n      TRUE               FALSE\n         Why?",
+    "suggested_answer": "TRUE. The client and server addresses can be the same. Location\n              transparency is a fundamental aspect of RPC. The correct answer was\n             worth 1 points and the justification was worth an additional 1 point.",
+    "score": 1.0
+  },
+  {
+    "id": "FA13 MT2 Solutions::1.ii",
+    "question": "1. (8 points total) True/False and Why? CIRCLE YOUR ANSWER.\n          ii) Doubling the block size in the UNIX 4.2 BSD file system will exactly double\n           the maximum file size.\n\n      TRUE               FALSE\n         Why?",
+    "suggested_answer": "FALSE. The maximum file size will more than double since larger\n               indirection blocks can contain more pointers to the larger blocks. The\n               correct answer was worth 1 point and the justification was worth an\n               additional 1 point.",
+    "score": 1.0
+  },
+  {
+    "id": "FA13 MT2 Solutions::1.iii",
+    "question": "1. (8 points total) True/False and Why? CIRCLE YOUR ANSWER.\n          iii) With the NFS distributed file system, it is possible for one client to write a\n          value into a file that is not seen by another client when reading that file\n          immediately afterwards.\n\n      TRUE               FALSE\n         Why?",
+    "suggested_answer": "TRUE. Since NFS only checks every 30 seconds or so, it is possible for a\n               write on one client to go unnoticed by another client for a bit. The correct\n            answer was worth 1 points and the justification was worth an additional 1\n                point.",
+    "score": 1.0
+  },
+  {
+    "id": "FA13 MT2 Solutions::1.iv",
+    "question": "1. (8 points total) True/False and Why? CIRCLE YOUR ANSWER.\n        iv) In a replicated Key-Value storage system, Iterative PUTs achieve lower\n          throughput than recursive PUTs on a loaded system.\n\n      TRUE               FALSE\n         Why?",
+    "suggested_answer": "FALSE. On a loaded system, the master is a bottleneck in a recursive\n              system.",
+    "score": 0.9
+  },
+  {
+    "id": "FA13 MT2 Solutions::2.a",
+    "question": "2. (21 points total) Security.\n    a. (5 points) Are digital signatures on digital documents more or less secure than ink\n       signatures on printed documents? Give a brief (4-5 sentence) justification for your\n       answer.",
+    "suggested_answer": "Digital signatures are more secure than ink signatures because a digital\n           signature is bound to a secure hash value computed over the document\n           contents. Any change to the document will change the hash value, and this\n          allows the receiver to determine that the signature is invalid. An attacker\n          cannot modify the signature for the new hash value unless it knows the\n           signer's public key. In contrast, a signature on a printed document contains\n         no information about the document. A printed signature looks almost the same\n         on any document, and can be copied to a document without the signer's\n          knowledge. If the document can be modified in a way that is not obvious to a\n           reader, then the reader may still consider the signature to be valid.",
+    "score": 1.0
+  },
+  {
+    "id": "FA13 MT2 Solutions::2.b.i",
+    "question": "2. (21 points total) Security.\n    b. (8 points total) X.509 Certificates.\n          i) (5 points) The recipient of an X.509 certificate can authenticate the sender of\n           the certificate without contacting a third party (e.g., a certificate authority) at\n           the time of authentication. How does this work?",
+    "suggested_answer": "The certificate is a digitally signed document from the third party endorsing\n           the bearer's public key. Any receiver can determine that the certificate is valid\n            just by examining it, assuming the receiver knows the public key of the third\n           party that issued the certificate. It does not need to contact the third party to\n           validate the certificate. If the certificate is valid, the bearer can then\n           authenticate to the receiver by proving that it holds the private key\n          corresponding to the public key endorsed in the certificate. It can prove this\n          by successfully using its private key to encrypt or decrypt content known to the\n           receiver.\n         For example, the receiver might issue a challenge with a random number\n           (nonce), and ask the bearer to encrypt the nonce and return it. The receiver\n\n\n         can then decrypt the response with the public key in the certificate: if the\n         nonce matches, then it knows that the sender is the entity named in the\n             certificate, i.e., it possesses the corresponding private key.",
+    "score": 1.0
+  },
+  {
+    "id": "FA13 MT2 Solutions::2.b.ii",
+    "question": "2. (21 points total) Security.\n    b. (8 points total) X.509 Certificates.\n          ii) (3 points) Discuss a vulnerability in the use of X.509 certificates as described",
+    "suggested_answer": "in part (i).\n       A compromise at certificate authority means that a certificate could be\n           fraudulent.",
+    "score": 0.0
+  },
+  {
+    "id": "FA13 MT2 Solutions::2.c.i",
+    "question": "2. (21 points total) Security.\n    c. (8 points) SYN Cookies.\n          i) (3 points) What type of attack do SYN cookies protect against? Be specific in",
+    "suggested_answer": "your answer.\n        SYN cookies protect against a denial of service attack on a server, where an\n           attacker attempts to exhaust the available socket memory resources by\n          sending many SYN packets with spoofed source addresses.",
+    "score": 0.95
+  },
+  {
+    "id": "FA13 MT2 Solutions::2.c.ii",
+    "question": "2. (21 points total) Security.\n    c. (8 points) SYN Cookies.\n          ii) (5 ponts) Explain how SYN cookies are used?",
+    "suggested_answer": ". Using SYN cookies, a server does not allocate any resources when it receives a\n     SYN packet. Instead it returns a SYN ACK packet containing the sequence\n      number: y = HMAC(client_IP_addr, client_port, server_key). Only when the\n        client responds with an ACK containing sequence number y+1 does the server\n       allocate any memory. The server can verify the correct ACK by recomputing the\n    HMAC function.",
+    "score": 1.0
+  },
+  {
+    "id": "FA13 MT2 Solutions::3.a.i",
+    "question": "3. (23 points total) Transactions.\n    a. (16 points) Consider the following bank transfer process for moving funds from\n       account A to account B:\n            Read balance from source account:       Read Source Account\n            Decrement source account balance\n             Write new balance of source account:      Write Source Account\n            Read balance from destination account:    Read Destination Account\n             Increment destination account balance\n             Write new balance of destination account:  Write Destination Account\n\n      Suppose John and Alice share the same accounts and they each use different\n     ATMs at the same time. John transfers $100 from Checking to Savings; while\n       Alice transfers $200 from Savings to Checking - note that one transfer goes from\n      Checking to Savings, while the other is reversed. Suppose that John and Alice's\n        transfers happen simultaneously, and there is more than $200 in the account.\n          i) List a serializable schedule for the transactions, which is not simply already a",
+    "suggested_answer": "serial schedule\n           Yes, example: T1 T2\n                           Ra, Wa\n                                        Rb, Wb\n                          Rb, Wb\n                                        Ra, Wa",
+    "score": 0.9
+  },
+  {
+    "id": "FA13 MT2 Solutions::3.a.ii",
+    "question": "3. (23 points total) Transactions.\n    a. (16 points) Consider the following bank transfer process for moving funds from\n       account A to account B:\n            Read balance from source account:       Read Source Account\n            Decrement source account balance\n             Write new balance of source account:      Write Source Account\n            Read balance from destination account:    Read Destination Account\n             Increment destination account balance\n             Write new balance of destination account:  Write Destination Account\n\n      Suppose John and Alice share the same accounts and they each use different\n     ATMs at the same time. John transfers $100 from Checking to Savings; while\n       Alice transfers $200 from Savings to Checking - note that one transfer goes from\n      Checking to Savings, while the other is reversed. Suppose that John and Alice's\n        transfers happen simultaneously, and there is more than $200 in the account.\n          ii) For each of the following three potential situations, state whether such a",
+    "suggested_answer": "situation can exists, and if it can, give an example. Otherwise, explain why it\n          cannot exist.\n\n            (1) Situation #1: A non-serializable schedule for the transactions\n               Yes, any interleaving of the read and write operations to the same\n              account.\n\n\n            (2) Situation #2: A serializable schedule using Two-Phase Locking, which is\n              not simply already a serial schedule\n             There are no conflict serializable schedules, so there is no 2PL\n               serializable schedule other than a serial schedule.\n\n\n            (3) Situation #3: A schedule where Two-Phase Locking causes deadlock\n               Yes, example: T1 T2\n                           Lock(a)\n                           Ra, Wa\n                                         Lock(b)\n                                        Rb, Wb\n                         Lock (b) [DEADLOCK]\n                          Rb, Wb\n                                         Lock(a) [DEADLOCK]\n                                        Ra, Wa",
+    "score": 1.0
+  },
+  {
+    "id": "FA13 MT2 Solutions::3.b.i",
+    "question": "3. (23 points total) Transactions.\n    b. (7 points total) Consider the following schedule of four transactions:\n      T1:            R(B)   R(A)   W(A)                     W(D)\n      T2:                              W(B)\n      T3:                                    W(A)\n      T4:    W(C)                                  W(A)\n          i) (4 points) Draw the dependency graph for this schedule.",
+    "suggested_answer": "B\n               T1 T2\n\n                  A\n          A\n\n                 A\n               T3 T4",
+    "score": 0.95
+  },
+  {
+    "id": "FA13 MT2 Solutions::3.b.ii",
+    "question": "3. (23 points total) Transactions.\n    b. (7 points total) Consider the following schedule of four transactions:\n      T1:            R(B)   R(A)   W(A)                     W(D)\n      T2:                              W(B)\n      T3:                                    W(A)\n      T4:    W(C)                                  W(A)\n          ii) (3 points) Is this schedule serializable? If so, give a possible serial schedule.\n          Otherwise, explain why not.",
+    "suggested_answer": "The schedule is serializable because the dependency graph is acyclic. Valid\n            serial schedules are: 1,2,3,4 and 1,3,4,2 and 1,3,2,4",
+    "score": 1.0
+  },
+  {
+    "id": "FA13 MT2 Solutions::4.a.i",
+    "question": "4. (32 points) Filesystems.\n    a. (8 points) Consider a file system that has 2,048 byte blocks and 32-bit disk block\n       pointers to those blocks. Each file header has 12 direct pointers, one singlyindirect pointer, one doubly-indirect pointer, and one triply-indirect pointer.\n          i) (4 points) How large of a disk can this filesystem support? You may leave your\n         answer in symbolic form.\n            232 blocks x 211 bytes/block = 243 = 8 Terabytes.",
+    "suggested_answer": "-3 missing block or disk size in calculation",
+    "score": 0.9
+  },
+  {
+    "id": "FA13 MT2 Solutions::4.a.ii",
+    "question": "4. (32 points) Filesystems.\n    a. (8 points) Consider a file system that has 2,048 byte blocks and 32-bit disk block\n       pointers to those blocks. Each file header has 12 direct pointers, one singlyindirect pointer, one doubly-indirect pointer, and one triply-indirect pointer.\n          ii) (4 points) What is the maximum file size? You may leave your answer in",
+    "suggested_answer": "symbolic form.\n         Each 2,048 byte block contains 512 4-byte pointers, so the maximum file size\n              is: blockSize x (numDirect blocks + numIndirect blocks + numDoublyindirect blocks + numTriply indirect blocks)\n       = 2,048 x (12+512+5122 +5123)=211 x(22 x 3+29 +29x2 +29x3)\n       = 213 x 3+220 +229 +238 = 24K + 513M + 256 G",
+    "score": 1.0
+  },
+  {
+    "id": "FA13 MT2 Solutions::4.b",
+    "question": "4. (32 points) Filesystems.\n    b. (6 points) Rather than writing updated files to disk immediately when they are\n       closed, many UNIX systems use a delayed write-behind policy in which dirty disk\n       blocks are flushed to disk once every 30 seconds. List two advantages and one\n       disadvantage of such a approach.",
+    "suggested_answer": "Advantage 1:\n      The disk scheduling algorithm (e.g., C-SCAN) has more dirty blocks to work with\n        at any one time and can thus do a better job of scheduling the disk arm.\n\n\n    Advantage 2:\n      Temporary files may be written and deleted before data is actually written to disk.\n\n\n     Disadvantage:\n       File data may be lost if the computer crashes before the data is written to disk.\n       -2 not listing an advantage or disadvantage -1 unclear explanation.",
+    "score": 1.0
+  },
+  {
+    "id": "FA13 MT2 Solutions::4.d",
+    "question": "4. (32 points) Filesystems.\n    d. (6 points) List the set of disk blocks that must be read into memory in order to read\n       the file /home/cs162/midterm2.txt in its entirety from a UNIX BSD 4.2\n         file system (10 direct pointers, a singly-indirect pointer, a doubly-indirect pointer,\n      and a triply-indirect pointer). Assume the file is 15,234 bytes long and that disk\n       blocks are 1024 bytes long. Assume that the directories in question all fit into a\n        single disk block each. Note that this is not always true in reality.\n            1. Read in file header for root (always at fixed spot on disk).\n            2. Read in first data block for root ( / ).\n            3. Read in file header for home.\n            4. Read in data block for home.\n            5. Read in file header for cs162\n            6. Read in data block for cs162.\n            7. Read in file header for midterm2.txt.\n            8. Read in data block for midterm2.txt.\n            9.   . - 17. Read in second through 10th data blocks for midterm2.txt.\n           18. Read in indirect block pointed to by 11th entry in miderm2.txt's  file\n             header\n           19. - 23. Read in 11th - 15th midterm2.txt's data blocks. The 15th data block\n                  is partially full.",
+    "suggested_answer": "-1 point, 5th data block of test.doc is partially full -1 point, missing an inode\n          or a data block -3 points, not listing all direct pointers, indirect pointers, and\n          data blocks for midterm2.txt.",
+    "score": 0.0
+  },
+  {
+    "id": "FA13 MT2 Solutions::4.e",
+    "question": "4. (32 points) Filesystems.\n    e. (4 points) On a single UNIX machine, if some program B reads a block of a file\n        after it has been updated by another program A, the copy of the file block B reads\n        will include A's updates. In NFS (as described in lecture) this behavior is not\n       guaranteed. Assuming that there are no failures, why doesn't NFS necessarily\n       provide such update semantics when programs A and B are run on different\n      machines? What semantics does it provide instead?",
+    "suggested_answer": "In NFS, cached data is updated only periodically. Thus, it is possible that B could\n       read old data for a while after A has finished updating it. The semantics are those\n        of \"weak coherence\".\n       -2 no mention that NFS caches data at the client -2 no mention that NFS\n       periodically updates server",
+    "score": 1.0
+  },
+  {
+    "id": "FA13 MT2 Solutions::4.f",
+    "question": "4. (32 points) Filesystems.\n     f. (4 points) The Andrew File System (AFS) solves the above problem in part (e) by\n       using state information it maintains at the server. What state is kept? How is the\n        state used to solve the problem?",
+    "suggested_answer": "An AFS server keeps track of which clients have copies of particular files. Thus,\n      when one client writes data and closes the file so that the data is flushed to the\n        server, the server contacts each of the clients that have cached copies of the file\n      and tells them to invalidate the file. -2 points for no mention client updates server\n      when file is closed",
+    "score": 1.0
+  },
+  {
+    "id": "FA13 MT2 Solutions::5.a",
+    "question": "5. (16 points) Networking.\n    a. (4 points) Consider a TCP network connection with packet size 1000 bytes, and\n       current receiver advertised window size of 100 packets, over a cross-country link\n       with one-way latency (for a 0-byte packet) of 50 milliseconds in each direction,\n      and a link bandwidth of 100 Mbit/second. You may assume that no packets are\n        lost for this particular problem, and that the times to assemble, unpack and\n       process packets at each end of the connection are negligible.\n\n     How long does it take TCP to transmit 1 million bytes across the link? That is,\n     how much time elapses from when the first byte is sent by the sender to when the\n       sender knows that the receiver has received the last byte?\n     A TCP transmission window size of 100 packets implies that the sender can send\n      100 packets before having to wait for an ACK message from the receiver that will\n       allow it to continue sending again. Then the sequence for messages sent is:\n            1.  100 packets from sender to receiver: requires 50 ms for first packet to get\n               there and another 800kb/(100 Mbpst) = 8 ms for the rest of the 100\n              packets to get there after that.\n            2.  Sender stalls waiting for ACK.\n            3. ACK msg from receiver to sender sent at t=50ms from start: requires 50\n           ms to get there, now 100ms from time first packet was sent. Note that\n              transmission does not stall for ACKs for the other packets (these should\n           come \"just in time\" if there is no loss).\n            4.  At t=100ms sender receives first ACK and sends next packet. The next 99\n          ACKs should arrive just in time and the sender should send the next 99\n              packets without stalling.\n       Sending 1M bytes will require 10 round trips of this kind, plus the time to receive\n       the acknowledgements for the last 99 packets in the last round.\n      The total time required is: 10 * (2 * 50 ms) + 99 * (1000 * 8 / 100 Mb/sec)\n      ~ 1,008 ms = 1.008 seconds",
+    "suggested_answer": "-2 points for missing the time to transmit 1000 bytes -2 points for using one-way\n       latency rather than round-trip-time (RTT) -1 for adding the window transmission\n       time every round instead of only at the end (would give answers like 1.08\n       seconds).",
+    "score": 1.0
+  },
+  {
+    "id": "FA13 MT2 Solutions::5.b",
+    "question": "5. (16 points) Networking.\n    b. (4 points) Assume that the receiver can process incoming data with zero latency,\n      what is the optimal window size that the receiver should advertise?\n      The optimal window size will keep the \"pipe\" full during the time it takes for data\n        to arrive at the receiver and the ACK to arrive back at the sender. Thus, the\n       receiver should advertise the Bandwidth Delay Product:\n       (2 x 50 milliseconds x 100 Mbit/s) = 10 Mbits or 1.25 Mbytes, or 1250 packets.",
+    "suggested_answer": "-1 point for using the one-way latency rather than RTT -2 points for no\n        justification and specifying any window larger than 1.25Mbytes",
+    "score": 0.7
+  },
+  {
+    "id": "FA13 MT2 Solutions::5.c",
+    "question": "5. (16 points) Networking.\n    c. (4 points) Polling a device for the completion of an operation is typically a bad idea\n       because, as with busy-waiting, while polling, the CPU is not doing useful work.\n      However, this is not always true. Describe a situation where polling might be a",
+    "suggested_answer": "better choice than using interrupts.\n          If a process is waiting for an operation that will occur soon, then it is not worth\n       the overhead to do the context switch involved in blocking on an interrupt. More\n       generally, when the time to wait is less than the overhead time for the context\n       switch, it is better to poll. The example given in lecture was that network device\n       drivers typically use interrupts to receive the first packet and then poll for\n       additional packets.",
+    "score": 0.95
+  },
+  {
+    "id": "FA13 MT2 Solutions::5.d",
+    "question": "5. (16 points) Networking.\n    d. (4 points) Explain the difference between an IP address and a MAC address, and\n     why we cannot use only MAC addresses or IP addresses alone.\n     A MAC address is uniquely associated with a device for the entire lifetime of the",
+    "suggested_answer": "device, while an IP address changes as the device location changes (your laptop\n      IP address at school is different from its IP address at home).\n\n       Also: MAC addresses non-hierarchical: you cant route with them and you would\n      need address tables with every host on the internet, hence you need IP addresses.\n     Why you need MAC address: before a host even has a global IP address it needs\n        to communicate with routers on its subnet to get one, and it needs a unique\n       address for local routing to work since many network devices use broadcast (e.g.\n       hubs).\n\n\n  This page intentionally left blank as scratch paper\n\n      Do not write answers on this page",
+    "score": 1.0
+  },
+  {
+    "id": "cs61bl_su14_mt1_solutions::1",
+    "question": "1  Equality Checks (6 points)\n\nWrite a probablyEquals method that takes in two objects and returns true if one or more of\nthe following are true:\n\n   • The two objects are equal (.equals) to each other.\n\n   • The two objects are equal (==) to each other.\n\n   • The two objects have the same .toString() representation.\n\n   • Calling .hashCode() on both objects returns the same int.\n\nOtherwise, probablyEquals returns false. Your method should never crash given any input.\nYou may assume that for any object instances x and y, x.equals(y) will return the same value\nas y.equals(x).\n\nNote: hashCode() is a method that returns an int.  All objects inherit this method from the\nObject class. For the purposes of this problem, toString() is another method that all objects\ninherit from the Object class and that returns a String representation of the object.",
+    "suggested_answer": "public static boolean probablyEquals( Object obj1, Object obj2 ) {\n\n    // Put this first, consider the case where both are null\n    if (obj1 == obj2) {\n        return true;\n    }\n    // Must be before method calls!\n    if (obj1 == null || obj2 == null) {\n        return false;\n    }\n    // Strings are objects, use.equals\n    if (obj1.equals(obj2)) {\n        return true;\n    }\n    if (obj1.toString().equals(obj2.toString())) {\n        return true;\n    }\n    // ints are primitive, use ==\n    if (obj1.hashCode() == obj2.hashCode()) {\n        return true;\n    }\n\n}\n\n\nComments: The most common mistake by far was forgetting to do a null check. It's important to make sure objects aren't null before calling methods on them, otherwise you get exceptions. A try/catch is also an acceptable way to catch these errors... provided you catch the right\none. You should not catch IllegalArgumentException in this problem, that is a very specific\nException and not what we're looking for. You needed to look for NullPointerException,\nor more generally Exception. There is also no reason to be throwing new exceptions, as this\ncauses the code to crash.\n\nWe were also testing you on knowing the difference between.equals and ==. For primitive\nvalues, like int, you must use ==. For Objects (like String),== only compares memory addresses\nrather than contents, so we must use.equals to compare Objects.",
+    "score": 1.0
+  },
+  {
+    "id": "cs61bl_su14_mt1_solutions::2",
+    "question": "2  Whose Line is it Anyway? (4 points)",
+    "suggested_answer": "Examine the following implementations of a Point class and Line class:\n\n 1 public class Point {\n 2 private int myX;\n 3 private int myY;\n 4\n 5 public Point ( int inputX , int inputY ) {\n 6 this.myX = inputX ;\n 7 this.myY = inputY ;\n 8 }\n 9\n10 public int getX ( ) {\n11 return this.myX;\n12 }\n13\n14 public int getY ( ) {\n15 return this.myY;\n16 }\n17 }\n\n\n 1 public class Line {\n 2 private Point myP1;\n 3 private Point myP2;\n 4\n 5 public Line ( Point p1 , Point p2 ) {\n 6 this.myP1 = p1 ;\n 7 this.myP2 = p2 ;\n 8 }\n 9\n10 public String t oS tr in g ( ) {\n11 String toRtn = \" \" ;\n12 toRtn += ( \" ( \" + myP1. getX ( ) + \" , \" + myP1. getY ( ) + \" ) , \" ) ;\n13 toRtn += ( \" ( \" + myP2. getX ( ) + \" , \" + myP2. getY ( ) + \" ) \" ) ;\n14 return toRtn ;\n15 }\n16\n17 public static void main ( String [ ] args ) {",
+    "score": 0.0
+  },
+  {
+    "id": "cs61bl_su14_mt1_solutions::18.b",
+    "question": "18          Point p1 = new Point (1 ,  2) ;\n19          Line myLine = new Line ( p1 , p1 ) ;\n20                    / /  Your code here\n21         System . out . p r i n t l n ( myLine ) ;\n22         }\n23  }\n(b) In the space below, rewrite the // Your code here with a single line of code so that the\n   program prints out:\n\n                                (1,2),(3,4)",
+    "suggested_answer": "Sol1: myLine = new Line(p1, new Point(3,4));\n   Sol2: myLine.myP2 = new Point(3,4);",
+    "score": 1.0
+  },
+  {
+    "id": "cs61bl_su14_mt1_solutions::3.a",
+    "question": "3  Building a Knapsack (12 points)\n\n  The following code represents a knapsack that can carry items and keep track of the total weight\n   of the items it contains:\n\n 1 import java . u t i l . ArrayList ;\n 2\n 3 public class Knapsack  {\n 4     protected ArrayList <String > itemNames ;\n 5     private  ArrayList <Integer > itemWeights ;\n 6     private   f i n a l  int weightCapacity ;\n 7     private  int  totalWeight ;\n 8\n 9     public Knapsack ( int weightCapacity )   {\n10         itemNames = new ArrayList <String >() ;\n11         itemWeights = new ArrayList <Integer >() ;\n12          this . weightCapacity = weightCapacity ;\n13          this . totalWeight =  0;\n14         }\n15\n16     public void addItem ( String name,  int weight )   {\n17         itemNames . add (name) ;\n18         itemWeights . add (new Integer ( weight ) ) ;\n19         }\n20\n21     public void removeItem ( String name)   {\n22           int itemIndex = itemNames . indexOf (name) ;\n23         itemNames . remove ( itemIndex ) ;\n24         itemWeights . remove ( itemIndex ) ;\n25         }\n26\n27     public  int getTotalWeight ( )   {\n28          return totalWeight ;\n29         }\n30  }\n\n\n  Example of usage (after you implement part a):\n\n  Knapsack myKnapsack = new Knapsack(5);\n  myKnapsack.addItem(\"Banana\", 1);\n  myKnapsack.addItem(\"Water Bottle\", 3);\n  myKnapsack.getTotalWeight(); // should return 4\n  myKnapsack.removeItem(\"Banana\");\n  myKnapsack.getTotalWeight(); // should return 3\n(a) Add code to the Knapsack class so that after every method call, the totalWeight instance\n    variable always equals the total weight of all of the items in the Knapsack. You may or may\n    not have to use all of the boxes below.\n\n   Code added immediately after line Solution: 16, 17, or 18 :",
+    "suggested_answer": "totalWeight += weight;\n\n\n   Code added immediately after line Solution: 22 or 23 :\n\n     Solution: totalWeight -= itemWeights.get(itemIndex);\n\n\n   Code added immediately after line :\n\n\n   Comments: Some solutions lost points for indexing into the ArrayList rather than using the\n   get method. Furthermore, in the removeItem method, the code in the second box cannot\n   be added after line 24, because we cannot get the weight of an item if we've already removed\n    that weight from itemWeights.\n\n   There were other ways to complete this problem (such as re-calculating the total weight after\n   each method call by iterating through itemWeights), but these other solutions were generally less efficient and clean than the solution above. (These alternative solutions received full\n     credit.)\n\n    Also note that it was not necessary to cast the items in the itemWeights ArrayList from\n   Integer to int due Java's auto-unboxing. Those who did cast, however, were not deducted\n    points.",
+    "score": 1.0
+  },
+  {
+    "id": "cs61bl_su14_mt1_solutions::3.b",
+    "question": "3  Building a Knapsack (12 points)\n\n  The following code represents a knapsack that can carry items and keep track of the total weight\n   of the items it contains:\n\n 1 import java . u t i l . ArrayList ;\n 2\n 3 public class Knapsack  {\n 4     protected ArrayList <String > itemNames ;\n 5     private  ArrayList <Integer > itemWeights ;\n 6     private   f i n a l  int weightCapacity ;\n 7     private  int  totalWeight ;\n 8\n 9     public Knapsack ( int weightCapacity )   {\n10         itemNames = new ArrayList <String >() ;\n11         itemWeights = new ArrayList <Integer >() ;\n12          this . weightCapacity = weightCapacity ;\n13          this . totalWeight =  0;\n14         }\n15\n16     public void addItem ( String name,  int weight )   {\n17         itemNames . add (name) ;\n18         itemWeights . add (new Integer ( weight ) ) ;\n19         }\n20\n21     public void removeItem ( String name)   {\n22           int itemIndex = itemNames . indexOf (name) ;\n23         itemNames . remove ( itemIndex ) ;\n24         itemWeights . remove ( itemIndex ) ;\n25         }\n26\n27     public  int getTotalWeight ( )   {\n28          return totalWeight ;\n29         }\n30  }\n\n\n  Example of usage (after you implement part a):\n\n  Knapsack myKnapsack = new Knapsack(5);\n  myKnapsack.addItem(\"Banana\", 1);\n  myKnapsack.addItem(\"Water Bottle\", 3);\n  myKnapsack.getTotalWeight(); // should return 4\n  myKnapsack.removeItem(\"Banana\");\n  myKnapsack.getTotalWeight(); // should return 3\n(b) Add code to the Knapsack class so that Knapsacks will never:\n\n      • contain two items with the same name\n\n      • have a total weight greater than its weight capacity\n\n      • contain an item with negative weight\n\n      • have a negative capacity\n\n      If a user tries to modify a Knapsack to have any of the above properties, an\n   IllegalStateException (from java.lang) should be thrown with an informative error\n   message. Assume that the code from part (a) has been implemented correctly. You may or\n   may not have to use all of the boxes below.\n\n   Code added immediately after line   16     :",
+    "suggested_answer": "if (itemNames.contains(name)){\n       throw new IllegalArgumentException(name + \" already exists.\");\n   }\n   if (totalWeight + weight > weightCapacity){\n       throw new IllegalArgumentException(\"Not enough capacity to carry\"\n                                           + name + \".\");\n   }\n   if (weight < 0){\n       throw new IllegalArgumentException(\"Invalid input: \" + name + \"\n                                           has negative weight\");\n   }\n\n\n   Comments: By checking items before they are added, we can make sure that (1) there are\n   no duplicate items, (2) a knapsack's total weight will never exceed its weight capacity, and\n    (3) items of negative weight will never be contained in a knapsack. It is important that these\n   checks are done immediately before the invariants for a Knapsack object are violated, so the\n    state of a knapsack will always be consistent even after an IllegalArgumentException is\n    thrown.\n\n\n   Code added immediately after line 9 :\n\n\n    Solution:\n\n   if (weightCapacity < 0)\n       throw new IllegalArgumentException(\"Error: specified negative\n           capacity for a knapsack.\");\n\n\n   Comments: The weight capacity is initialized in the constructor, so the check should be done\n   anywhere within its body.",
+    "score": 1.0
+  },
+  {
+    "id": "cs61bl_su14_mt1_solutions::3.c",
+    "question": "3  Building a Knapsack (12 points)\n\n  The following code represents a knapsack that can carry items and keep track of the total weight\n   of the items it contains:\n\n 1 import java . u t i l . ArrayList ;\n 2\n 3 public class Knapsack  {\n 4     protected ArrayList <String > itemNames ;\n 5     private  ArrayList <Integer > itemWeights ;\n 6     private   f i n a l  int weightCapacity ;\n 7     private  int  totalWeight ;\n 8\n 9     public Knapsack ( int weightCapacity )   {\n10         itemNames = new ArrayList <String >() ;\n11         itemWeights = new ArrayList <Integer >() ;\n12          this . weightCapacity = weightCapacity ;\n13          this . totalWeight =  0;\n14         }\n15\n16     public void addItem ( String name,  int weight )   {\n17         itemNames . add (name) ;\n18         itemWeights . add (new Integer ( weight ) ) ;\n19         }\n20\n21     public void removeItem ( String name)   {\n22           int itemIndex = itemNames . indexOf (name) ;\n23         itemNames . remove ( itemIndex ) ;\n24         itemWeights . remove ( itemIndex ) ;\n25         }\n26\n27     public  int getTotalWeight ( )   {\n28          return totalWeight ;\n29         }\n30  }\n\n\n  Example of usage (after you implement part a):\n\n  Knapsack myKnapsack = new Knapsack(5);\n  myKnapsack.addItem(\"Banana\", 1);\n  myKnapsack.addItem(\"Water Bottle\", 3);\n  myKnapsack.getTotalWeight(); // should return 4\n  myKnapsack.removeItem(\"Banana\");\n  myKnapsack.getTotalWeight(); // should return 3\n(c) What is another case of error checking we should add to Knapsack?",
+    "suggested_answer": "There were several accepted solutions:\n\n      • check that items exist in the Knapsack before attempting to remove them\n\n      • check that String names are not null\n\n      • check that String names are not empty (e.g. \"\")\n\n   Comments: There were several common incorrect answers:\n\n      • check that item does not have weight of 0 (items - like feathers - can have weight of 0)\n\n      • check that totalWeight is not negative (this invariant was previously checked by (b))\n\n      • check that Knapsack is not too heavy to carry (hilarious, but not correct)",
+    "score": 0.95
+  },
+  {
+    "id": "cs61bl_su14_mt1_solutions::3.d",
+    "question": "3  Building a Knapsack (12 points)\n\n  The following code represents a knapsack that can carry items and keep track of the total weight\n   of the items it contains:\n\n 1 import java . u t i l . ArrayList ;\n 2\n 3 public class Knapsack  {\n 4     protected ArrayList <String > itemNames ;\n 5     private  ArrayList <Integer > itemWeights ;\n 6     private   f i n a l  int weightCapacity ;\n 7     private  int  totalWeight ;\n 8\n 9     public Knapsack ( int weightCapacity )   {\n10         itemNames = new ArrayList <String >() ;\n11         itemWeights = new ArrayList <Integer >() ;\n12          this . weightCapacity = weightCapacity ;\n13          this . totalWeight =  0;\n14         }\n15\n16     public void addItem ( String name,  int weight )   {\n17         itemNames . add (name) ;\n18         itemWeights . add (new Integer ( weight ) ) ;\n19         }\n20\n21     public void removeItem ( String name)   {\n22           int itemIndex = itemNames . indexOf (name) ;\n23         itemNames . remove ( itemIndex ) ;\n24         itemWeights . remove ( itemIndex ) ;\n25         }\n26\n27     public  int getTotalWeight ( )   {\n28          return totalWeight ;\n29         }\n30  }\n\n\n  Example of usage (after you implement part a):\n\n  Knapsack myKnapsack = new Knapsack(5);\n  myKnapsack.addItem(\"Banana\", 1);\n  myKnapsack.addItem(\"Water Bottle\", 3);\n  myKnapsack.getTotalWeight(); // should return 4\n  myKnapsack.removeItem(\"Banana\");\n  myKnapsack.getTotalWeight(); // should return 3\n(d)  Fill out the following template for a ValueKnapsack class that keeps track of items' values\n    in addition to their weights. You should use inheritance effectively. Don't worry about errorchecking for this part. Assume that parts (a) and (b) have been implemented correctly.",
+    "suggested_answer": "public class ValueKnapsack extends Knapsack {\n\n       private int totalValue;\n       private ArrayList<Integer> itemValues;\n\n       public ValueKnapsack(int weightCapacity) {\n           super(weightCapacity);\n           totalValue = 0;\n           itemValues = new ArrayList<Integer>();\n       }\n\n       public void addItem(String name, int weight, int value) {\n           super.addItem(name, weight);\n           totalValue += value;\n           itemValues.add(value);\n       }\n\n       public void removeItem(String name) {\n           totalValue -= itemValues.remove(itemNames.indexOf(name));\n           super.removeItem(name);\n       }\n\n       public int getTotalValue() {\n           return totalValue;\n       }\n   }",
+    "score": 1.0
+  },
+  {
+    "id": "cs61bl_su14_mt1_solutions::4.a",
+    "question": "4  Acronym Extractor (7 points)\n\nWe want to code an extractAcronym method that returns the acronym of an input String. We\n will be using the # character in place of whitespace characters for this problem (you may assume\n that the input will not have any whitespace characters). An acronym consists of the first non-#\n letter of the input String and all non-# characters that immediately follow any # character. For\n example, extractAcronym(\"Not#a##Number\") would return \"NaN\". If there are # characters\n at the end of an input String, we ignore them.\n (a) In the table below, provide test inputs for extractAcronym that cover at least 4 generalized\n     input cases (not including the provided example). Include the input String, expected output\n    String, and what your test case is testing for. Do not reuse the example. Assume that the\n     input and return value will never be null.",
+    "suggested_answer": "Input String Expected output What are you testing for?\n\n                                         (The example) Tests that\n\"Not#a##Number\" \"NaN\" extractAcronym can handle cases\n                                               with multiple consecutive # characters.\n\n\"Hello#\" \"H\" Tests input with trailing # characters\n\n\n\"#Hello\" \"H\" Tests input with leading # characters\n\n\n\"###\" \"\" Tests input with only # characters\n\n\n\"Hello\" \"H\" Tests input with no # characters\n\n\n\"\" \"\" Tests empty string as input\n\n\n   Comments: Your solution should not:\n\n      • combine multiple test cases\n           (e.g. tests input with both trailing and leading # characters)\n\n      • have redundant test cases\n\n      • make specialized cases for attributes not relevant to the specs\n           (e.g. distinguish between non-# characters, repeated words, words are long, etc...)\n\n      • be too specific outside of edge cases\n           (e.g. test exactly 3 consecutive # characters between single non-# characters)\n\n    You did not receive points if you didn't provide a correct test description.",
+    "score": 1.0
+  },
+  {
+    "id": "cs61bl_su14_mt1_solutions::4.b",
+    "question": "4  Acronym Extractor (7 points)\n\nWe want to code an extractAcronym method that returns the acronym of an input String. We\n will be using the # character in place of whitespace characters for this problem (you may assume\n that the input will not have any whitespace characters). An acronym consists of the first non-#\n letter of the input String and all non-# characters that immediately follow any # character. For\n example, extractAcronym(\"Not#a##Number\") would return \"NaN\". If there are # characters\n at the end of an input String, we ignore them.\n(b) Implement the extractAcronym method:",
+    "suggested_answer": "public static String extractAcronym(String input) {\n       String result = \"\";\n       boolean looking = true;\n       for (int i = 0; i < input.length(); i++) {\n           if (looking && input.charAt(i) != '#') {\n               result += input.charAt(i);\n               looking = false;\n           }\n           if (input.charAt(i) == '#') {\n               looking = true;\n           }\n       }\n       return result;\n   }\n\n\n    Alternate solution:\n\n   public static String extractAcronym(String input) {\n       return input.replaceAll(\"((?<=[^#])[^#]*#*)|^#*\", \"\");\n   }",
+    "score": 1.0
+  },
+  {
+    "id": "cs61bl_su14_mt1_solutions::5",
+    "question": "5  Vote Iterator (10 points)\n\nWrite an iterator that takes in an Integer array of vote counts and iterates over the votes. The\ninput array contains the number of votes each selection received. For example, if the input array\ncontained the following:\n\n\nthen calls to next() would eventually return 1 twice (because at index 1, the input array has value\n2), 2 once, and 4 once. After that, hasNext() would return false.\n\nProvide code for the VoteIterator class below. Make sure your iterator adheres to standard\niterator rules.",
+    "suggested_answer": "import java.util.ArrayList;\nimport java.util.Iterator;\n\npublic class VoteIterator implements Iterator<Integer> {\n\n    private Integer[] inputVotes;\n    private ArrayList<Integer> votesArrayList;\n    private int votesIndex;\n\n    public VoteIterator(Integer[] input) {\n        votesArrayList = new ArrayList<Integer>();\n        for (int i = 0; i < input.length; i++) {\n            for (int j = 0; j < input[i]; j++) {\n                votesArrayList.add(new Integer(i));\n            }\n        }\n        votesIndex = 0;\n        inputVotes = input;\n    }\n\n    public boolean hasNext() {\n        return votesIndex < votesArrayList.size();\n    }\n\n\n    public Integer next() {\n        if (hasNext()) {\n            votesIndex++;\n            return votesArrayList.get(votesIndex - 1);\n        } else {\n            return null; // or throw some exception\n        }\n    }\n\n    public void remove() {\n        if (votesIndex > 0) {\n            inputVotes[votesArrayList.get(votesIndex - 1)]--;\n        }\n    }\n}\n\n\nComments: This solution is the simplest in terms of code. It does a lot of preprocessing in the\nconstructor by adding all of the votes to an ArrayList and then returns the votes one at a time\nwith calls to next. Note that you still have to store the original input array for remove to work\nproperly.\n\n\nAlternate solution:\n\nimport java.util.Iterator;\npublic class VoteIterator implements Iterator<Integer> {\n\n    private Integer[] votes;\n    private int voteIndex; // Which vote within same vote type\n    private int bucketIndex; // Type of vote\n\n    public VoteIterator(Integer[] input) {\n        votes = input;\n        voteIndex = 0;\n        bucketIndex = 0;\n    }\n\n    public boolean hasNext() {\n        if (voteIndex < votes[bucketIndex]) {\n            return true;\n        } else {\n            for (int i = bucketIndex + 1; i < votes.length; i++) {\n                if (votes[i] > 0) {\n                    return true;\n                }\n            }\n        }\n        return false;\n\n\n    }\n\n    public Integer next() {\n        if (voteIndex < votes[bucketIndex]) {\n            voteIndex++;\n            return bucketIndex;\n        } else {\n            for (int i = bucketIndex + 1; i < votes.length; i++) {\n                if (votes[i] > 0) {\n                    bucketIndex = i;\n                    voteIndex = 1;\n                    return bucketIndex;\n                }\n            }\n        }\n        return null; // or throw some exception\n    }\n\n    public void remove() {\n        if (voteIndex == 0) {\n            return; // or throw some exception\n        } else {\n            votes[bucketIndex]--;\n            voteIndex--;\n        }\n    }\n}\n\n\nComments: This is a more conceptually straightforward solution that iterates through the input\nvotes array. It keeps two counters: one that indexes into the input votes array and another that\nkeeps track of how many votes of the current vote type have already been returned.",
+    "score": 0.9
+  },
+  {
+    "id": "cs61bl_su14_mt1_solutions::6.a",
+    "question": "6  Malicious Mallory (5 points)\n\n  Eve and Mallory are lab partners in CS61BL. Unfortunately for Eve, Mallory doesn't get along with\n   anyone. One day, when Eve isn't looking, Mallory codes the following method and adds calls to it\n    in Eve's code:\n\n 1 import java . u t i l . ArrayList ;\n 2\n 3 public void method ( )   {\n 4     ArrayList a = new ArrayList ( ) ;\n 5      String msg1 = \"Code not working? Try turning  your computer  o f f and on again ! \" ;\n 6      String msg2 =  \" Is  your code running? Then you better go catch    i t ! \" ;\n 7      String msg3 = \"You might have forgotten a semicolon somewhere . \" ;\n 8     a . add (new IllegalArgumentException (msg1) ) ;\n 9     a . add (new ArrayIndexOutOfBoundsException (msg2) ) ;\n10     a . add (new NumberFormatException (msg3) ) ;\n11      int  index =  ( int )   ( Math . random ( ) ∗10) ;\n12           i f   ( index >= 3) return ; throw a . get ( index ) ;\n13  }\n\n\n   This code is meant to do nothing 70% of the time, and throw one of three random Exceptions the\n   other 30% of the time. Note: Math.random() returns a random double in the range [0,1).\n   (a) There is an error with this code. Explain what the error is, and whether it is a compile time\n        error, a runtime error, or a logic error.",
+    "suggested_answer": "ArrayList isn't given a generic type, so a.get(index) will give an object of\n        static type Object when throw is expecting an object of static type Throwable (or any of its\n       subclasses). This is a compile time error.",
+    "score": 1.0
+  },
+  {
+    "id": "cs61bl_su14_mt1_solutions::6.b",
+    "question": "6  Malicious Mallory (5 points)\n\n  Eve and Mallory are lab partners in CS61BL. Unfortunately for Eve, Mallory doesn't get along with\n   anyone. One day, when Eve isn't looking, Mallory codes the following method and adds calls to it\n    in Eve's code:\n\n 1 import java . u t i l . ArrayList ;\n 2\n 3 public void method ( )   {\n 4     ArrayList a = new ArrayList ( ) ;\n 5      String msg1 = \"Code not working? Try turning  your computer  o f f and on again ! \" ;\n 6      String msg2 =  \" Is  your code running? Then you better go catch    i t ! \" ;\n 7      String msg3 = \"You might have forgotten a semicolon somewhere . \" ;\n 8     a . add (new IllegalArgumentException (msg1) ) ;\n 9     a . add (new ArrayIndexOutOfBoundsException (msg2) ) ;\n10     a . add (new NumberFormatException (msg3) ) ;\n11      int  index =  ( int )   ( Math . random ( ) ∗10) ;\n12           i f   ( index >= 3) return ; throw a . get ( index ) ;\n13  }\n\n\n   This code is meant to do nothing 70% of the time, and throw one of three random Exceptions the\n   other 30% of the time. Note: Math.random() returns a random double in the range [0,1).\n   (b) Cross out one line of code above. Rewrite this line of code below so that the code compiles,\n       runs, and does what Mallory intended.",
+    "suggested_answer": "Cross out line 12:\n     if (index >= 3) return; throw (RuntimeException) a.get(index);\n\n\n        Alternatively, you could have crossed out line 4:\n     ArrayList<RuntimeException> a = new ArrayList<RuntimeException>();\n\n\n     Comments: You have to cast as a RuntimeException (unchecked exception) and not just\n      an Exception. Throwing a potentially checked exception would also require the method\n      header to say throws Exception.",
+    "score": 1.0
+  },
+  {
+    "id": "GATE CS 2025 Set 1 Question Paper::1",
+    "question": "Q.1    Ravi had ______ younger brother who taught at ______ university. He was widely\n         regarded as ______ honorable man.\n\n          Select the option with the correct sequence of articles to fill in the blanks.\n\n\n (A)      a; a; an\n\n\n (B)      the; an; a\n\n\n (C)      a; an; a\n\n\n (D)     an; an; a\n\n\n                           Computer Science and Information Technology (CS1)",
+    "suggested_answer": "A",
+    "score": 1.0
+  },
+  {
+    "id": "GATE CS 2025 Set 1 Question Paper::2",
+    "question": "Q.2    The CEO's decision to downsize the workforce was considered myopic because it\n          sacrificed long-term stability to accommodate short-term gains.\n\n          Select the most appropriate option that can replace the word \"myopic\" without\n         changing the meaning of the sentence.\n\n\n (A)     visionary\n\n\n (B)     shortsighted\n\n\n (C)     progressive\n\n\n (D)     innovative\n\n\n                           Computer Science and Information Technology (CS1)",
+    "suggested_answer": "B",
+    "score": 1.0
+  },
+  {
+    "id": "GATE CS 2025 Set 1 Question Paper::3",
+    "question": "Q.3    The average marks obtained by a class in an examination were calculated as 30.8.\n        However, while checking the marks entered, the teacher found that the marks of one\n          student were entered incorrectly as 24 instead of 42. After correcting the marks, the\n         average becomes 31.4. How many students does the class have?\n\n\n (A)    25\n\n\n (B)    28\n\n\n (C)    30\n\n\n (D)    32\n\n\n                           Computer Science and Information Technology (CS1)",
+    "suggested_answer": "C",
+    "score": 1.0
+  },
+  {
+    "id": "GATE CS 2025 Set 1 Question Paper::4",
+    "question": "Q.4     Consider the relationships among P, Q, R, S, and T:\n\n               • P is the brother of Q.\n               • S is the daughter of Q.\n               • T is the sister of S.\n               • R is the mother of Q.\n\n        The following statements are made based on the relationships given above.\n\n                  (1) R is the grandmother of S.\n\n                  (2) P is the uncle of S and T.\n\n                  (3) R has only one son.\n\n                  (4) Q has only one daughter.\n\n        Which one of the following options is correct?\n\n\n (A)    Both (1) and (2) are true.\n\n\n (B)     Both (1) and (3) are true.\n\n\n (C)    Only (3) is true.\n\n\n (D)    Only (4) is true.\n\n\n                           Computer Science and Information Technology (CS1)",
+    "suggested_answer": "A",
+    "score": 0.9
+  },
+  {
+    "id": "GATE CS 2025 Set 1 Question Paper::5",
+    "question": "Q.5    According to the map shown in the figure, which one of the following statements is\n          correct?\n\n         Note: The figure shown is representative.\n\n\n                          Library              Canteen                                                              Road\n                                                              Main                       Physics Lab             Hospital\n                                              1st\n\n                       5th Cross Road\n\n                                           Chemistry                          Hostels\n                                         Lab\n                                     N\n                      Classrooms\n                          W       E\n\n                                                S\n\n\n (A)    The library is located to the northwest of the canteen.\n\n\n (B)    The hospital is located to the east of the chemistry lab.\n\n\n (C)    The chemistry lab is to the southeast of physics lab.\n\n\n (D)    The classrooms and canteen are next to each other.\n\n\n                           Computer Science and Information Technology (CS1)\n\n\nQ.6 - Q.10 Carry TWO marks Each",
+    "suggested_answer": "C",
+    "score": 0.0
+  },
+  {
+    "id": "GATE CS 2025 Set 1 Question Paper::6",
+    "question": "Q.6     \"I put the brown paper in my pocket along with the chalks, and possibly other things.\n            I suppose every one must have reflected how primeval and how poetical are the\n          things that one carries in one's pocket: the pocket-knife, for instance the type of all\n       human tools, the infant of the sword. Once I planned to write a book of poems\n           entirely about the things in my pocket. But I found it would be too long: and the age\n          of the great epics is past.\"\n\n                                      (From G.K. Chesterton's \"A Piece of Chalk\")\n\n        Based only on the information provided in the above passage, which one of the\n         following statements is true?\n\n\n (A)    The author of the passage carries a mirror in his pocket to reflect upon things.\n\n\n (B)    The author of the passage had decided to write a poem on epics.\n\n\n (C)    The pocket-knife is described as the infant of the sword.\n\n\n (D)     Epics are described as too inconvenient to write.\n\n\n                           Computer Science and Information Technology (CS1)",
+    "suggested_answer": "C",
+    "score": 1.0
+  },
+  {
+    "id": "GATE CS 2025 Set 1 Question Paper::7",
+    "question": "Q.7     In the diagram, the lines QR and ST are parallel to each other. The shortest distance\n        between these two lines is half the shortest distance between the point P and line\n       QR. What is the ratio of the area of the triangle PST to the area of the trapezium\n       SQRT?\n\n         Note: The figure shown is representative.\n\n                                   P\n\n\n                           S         T\n\n\n                 Q              R\n\n\n (A)    1\n       3\n\n\n (B)    1\n       4\n\n\n (C)    2\n       5\n\n\n (D)    1\n       2\n\n\n                           Computer Science and Information Technology (CS1)",
+    "suggested_answer": "A",
+    "score": 0.0
+  },
+  {
+    "id": "GATE CS 2025 Set 1 Question Paper::8",
+    "question": "Q.8   A fair six-faced dice, with the faces labelled '1', '2', '3', '4', '5', and '6', is rolled\n           thrice. What is the probability of rolling '6' exactly once?\n\n\n (A)    75\n       216\n\n\n (B)    1\n       6\n\n\n (C)    1\n       18\n\n\n (D)    25\n       216\n\n\n                           Computer Science and Information Technology (CS1)",
+    "suggested_answer": "A",
+    "score": 1.0
+  },
+  {
+    "id": "GATE CS 2025 Set 1 Question Paper::9",
+    "question": "Q.9   A square paper, shown in figure (I), is folded along the dotted lines as shown in the\n          figures (II) and (III). Then a few cuts are made as shown in figure (IV). Which one\n          of the following patterns will be obtained when the paper is unfolded?\n\n         Note: The figures shown are representative.\n\n\n                 (I)                (II)              (III)            (IV)\n\n\n (A)\n\n\n (B)\n\n\n (C)\n\n\n (D)\n\n\n                           Computer Science and Information Technology (CS1)",
+    "suggested_answer": "A",
+    "score": 0.0
+  },
+  {
+    "id": "GATE CS 2025 Set 1 Question Paper::10",
+    "question": "Q.10  A shop has 4 distinct flavors of ice-cream. One can purchase any number of scoops\n          of any flavor. The order in which the scoops are purchased is inconsequential.\n            If one wants to purchase 3 scoops of ice-cream, in how many ways can one make\n           that purchase?\n\n\n (A)    4\n\n\n (B)    20\n\n\n (C)    24\n\n\n (D)    48\n\n\nQ.11 - Q.35 Carry ONE mark Each",
+    "suggested_answer": "B",
+    "score": 1.0
+  },
+  {
+    "id": "GATE CS 2025 Set 1 Question Paper::11",
+    "question": "Q.11   Suppose a program is running on a non-pipelined single processor computer system.\n        The computer is connected to an external device that can interrupt the processor\n         asynchronously. The processor needs to execute the interrupt service routine (ISR)\n          to serve this interrupt. The following steps (not necessarily in order) are taken by\n          the processor when the interrupt arrives:\n\n                   (i)   The processor saves the content of the program counter.\n                   (ii)   The program counter is loaded with the start address of the ISR.\n                    (iii)  The processor finishes the present instruction.\n\n        Which ONE of the following is the CORRECT sequence of steps?\n\n\n (A)       (iii),  (i),  (ii)\n\n\n (B)       (i),  (iii), (ii)\n\n\n                           Computer Science and Information Technology (CS1)\n\n\n (C)       (i),  (ii),  (iii)\n\n\n (D)       (iii), (ii),  (i)\n\n\n                           Computer Science and Information Technology (CS1)",
+    "suggested_answer": "A",
+    "score": 1.0
+  },
+  {
+    "id": "GATE CS 2025 Set 1 Question Paper::12",
+    "question": "Q.12   Which ONE of the following statements is FALSE regarding the symbol table?\n\n\n (A)    Symbol table is responsible for keeping track of the scope of variables.\n\n\n (B)    Symbol table can be implemented using a binary search tree.\n\n\n (C)    Symbol table is not required after the parsing phase.\n\n\n (D)    Symbol table is created during the lexical analysis phase.\n\n\n                           Computer Science and Information Technology (CS1)",
+    "suggested_answer": "C",
+    "score": 1.0
+  },
+  {
+    "id": "GATE CS 2025 Set 1 Question Paper::13",
+    "question": "Q.13   Which ONE of the following techniques used in compiler code optimization uses\n           live variable analysis?\n\n\n (A)     Run-time function call management\n\n\n (B)     Register assignment to variables\n\n\n (C)     Strength reduction\n\n\n (D)     Constant folding\n\n\n                           Computer Science and Information Technology (CS1)",
+    "suggested_answer": "B",
+    "score": 1.0
+  },
+  {
+    "id": "GATE CS 2025 Set 1 Question Paper::14",
+    "question": "Q.14    Consider a demand paging memory management system with 32-bit logical\n          address, 20-bit physical address, and page size of 2048 bytes. Assuming that the\n        memory is byte addressable, what is the maximum number of entries in the page\n           table?\n\n\n (A)      221\n\n\n (B)      220\n\n\n (C)      222\n\n\n (D)      224\n\n\n                           Computer Science and Information Technology (CS1)",
+    "suggested_answer": "A",
+    "score": 1.0
+  },
+  {
+    "id": "GATE CS 2025 Set 1 Question Paper::15",
+    "question": "Q.15  A schedule of three database transactions T1, T2, and T3  is shown. Ri(A) and\n        Wi(A) denote read and write of data item A by transaction  Ti, i= 1,2,3. The\n          transaction T1 aborts at the end. Which other transaction(s) will be required to be\n          rolled back?\n\n\n                     R1(X) W1(Y) R2(X) R2(Y) R3(Y) ABORT(T1)\n\n\n (A)    Only T2\n\n\n (B)    Only T3\n\n\n (C)     Both T2 and T3\n\n\n (D)     Neither T2 nor T3\n\n\n                           Computer Science and Information Technology (CS1)",
+    "suggested_answer": "C",
+    "score": 1.0
+  },
+  {
+    "id": "GATE CS 2025 Set 1 Question Paper::16",
+    "question": "Q.16    Identify  the ONE CORRECT matching between  the OSI  layers and  their\n          corresponding functionalities as shown.\n\n\n             OSI Layers                Functionalities\n\n                 (a) Network layer                 (I)  Packet routing\n\n                (b) Transport layer                (II) Framing and error handling\n\n                 (c) Datalink layer                (III) Host to host communication\n\n\n (A)       (a)-(I), (b)-(II), (c)-(III)\n\n\n (B)       (a)-(I), (b)-(III), (c)-(II)\n\n\n (C)       (a)-(II), (b)-(I), (c)-(III)\n\n\n (D)       (a)-(III), (b)-(II), (c)-(I)\n\n\n                           Computer Science and Information Technology (CS1)",
+    "suggested_answer": "B",
+    "score": 1.0
+  },
+  {
+    "id": "GATE CS 2025 Set 1 Question Paper::17",
+    "question": "Q.17    g(. ) is a function from A to B, f(. ) is a function from B to C, and their\n         composition defined as f(g(. )) is a mapping from A to C.\n\n            If f(. ) and f(g(. )) are onto (surjective) functions, which ONE of the following\n            is TRUE about the function g(. )?\n\n\n (A)     g(. ) must be an onto (surjective) function.\n\n\n (B)     g(. ) must be a one-to-one (injective) function.\n\n\n (C)     g(. ) must be a bijective function, that is, both one-to-one and onto.\n\n\n (D)     g(. ) is not required to be a one-to-one or onto function.\n\n\n                           Computer Science and Information Technology (CS1)",
+    "suggested_answer": "D",
+    "score": 1.0
+  },
+  {
+    "id": "GATE CS 2025 Set 1 Question Paper::18",
+    "question": "Q.18    Let G be any undirected graph with positive edge weights, and T be a minimum\n         spanning tree of G. For any two vertices, u and v, let d1(u, v) and d2(u, v) be the\n          shortest distances between u and v in G and T, respectively. Which ONE of the\n         options is CORRECT for all possible G, T, u and v?\n\n\n (A)     d1(u, v) = d2(u, v)\n\n\n (B)     d1(u, v) ≤d2(u, v)\n\n\n (C)     d1(u, v) ≥d2(u, v)\n\n\n (D)     d1(u, v) ≠d2(u, v)\n\n\n                           Computer Science and Information Technology (CS1)",
+    "suggested_answer": "B",
+    "score": 1.0
+  },
+  {
+    "id": "GATE CS 2025 Set 1 Question Paper::19",
+    "question": "Q.19   Consider the following context-free grammar G, where S, A, and B are the variables\n          (non-terminals), a and b are the terminal symbols, S is the start variable, and the\n          rules of G are described as:\n\n                       S→aaB | Abb\n\n                    A→a | aA\n\n                    B→b | bB\n\n        Which ONE of the languages L(G) is accepted by G?\n\n\n (A)    L(G) = {a2bn | n≥1} ∪{anb2 | n≥1}\n\n\n (B)    L(G) = {anb2n | n≥1} ∪{a2nbn | n≥1}\n\n\n (C)    L(G) = {anbn | n≥1}\n\n\n (D)    L(G) = {a2nb2n | n≥1}\n\n\n                           Computer Science and Information Technology (CS1)\n\n\n         Consider the following recurrence relation:",
+    "suggested_answer": "A",
+    "score": 1.0
+  },
+  {
+    "id": "GATE CS 2025 Set 1 Question Paper::20",
+    "question": "Q.20\n        T(n) = 2T(n-1) + n2n for n > 0,  T(0) = 1.\n\n        Which ONE of the following options is CORRECT?\n\n\n (A)    T(n) = Θ(n22n)\n\n\n (B)    T(n) = Θ(n2n)\n\n\n (C)    T(n) = Θ((log n)2 2n)\n\n\n (D)    T(n) = Θ(4n)\n\n\n                           Computer Science and Information Technology (CS1)",
+    "suggested_answer": "A",
+    "score": 1.0
+  },
+  {
+    "id": "GATE CS 2025 Set 1 Question Paper::21",
+    "question": "Q.21  Consider the following B+ tree with 5 nodes, in which a node can store at most 3 key values.\n      The value 23 is now inserted in the B+ tree. Which of the following options(s) is/are\n     CORRECT?\n\n\n (A)   None of the nodes will split.\n\n\n (B)   At least one node will split and redistribute.\n\n\n (C)   The total number of nodes will remain same.\n\n\n (D)   The height of the tree will increase.\n\n\n                           Computer Science and Information Technology (CS1)",
+    "suggested_answer": "B;D",
+    "score": 0.0
+  },
+  {
+    "id": "GATE CS 2025 Set 1 Question Paper::22",
+    "question": "Q.22    Consider the 3-way handshaking protocol for TCP connection establishment. Let\n          the three packets exchanged during the connection establishment be denoted as P1,\n          P2, and P3, in order. Which of the following option(s) is/are TRUE with respect to\n       TCP header flags that are set in the packets?\n\n\n (A)     P3: SYN = 1, ACK = 1\n\n\n (B)     P2: SYN = 1, ACK = 1\n\n\n (C)     P2: SYN = 0, ACK = 1\n\n\n (D)     P1: SYN = 1\n\n\n                           Computer Science and Information Technology (CS1)\n\n\n         Consider the given system of linear equations for variables x and y, where k is a",
+    "suggested_answer": "B;D",
+    "score": 1.0
+  },
+  {
+    "id": "GATE CS 2025 Set 1 Question Paper::23",
+    "question": "Q.23    real-valued constant. Which of the following option(s) is/are CORRECT?\n\n\n                       x+ ky=  1\n                          kx+ y= -1\n\n\n (A)     There is exactly one value of k for which the above system of equations has no\n          solution.\n\n\n (B)     There exist an infinite number of values of k for which the system of equations has\n        no solution.\n\n\n (C)     There exists exactly one value of k for which the system of equations has exactly\n        one solution.\n\n\n (D)     There exists exactly one value of k for which the system of equations has an infinite\n        number of solutions.\n\n\n                           Computer Science and Information Technology (CS1)",
+    "suggested_answer": "A;D",
+    "score": 1.0
+  },
+  {
+    "id": "GATE CS 2025 Set 1 Question Paper::24",
+    "question": "Q.24    Let X be a 3-variable Boolean function that produces output as '1' when at least\n        two of the input variables are '1'. Which of the following statement(s) is/are\n       CORRECT, where a, b, c, d, e are Boolean variables?\n\n\n (A)     X(a, b, X(c, d, e)) = X(X(a, b, c), d, e)\n\n\n (B)     X(a, b, X(a, b, c)) = X(a, b, c)\n\n\n (C)     X(a, b, X(a, c, d)) = (X(a, b, a) AND X(c, d, c))\n\n\n (D)     X(a, b, c) = X(a, X(a, b, c), X(a, c, c))\n\n\n                           Computer Science and Information Technology (CS1)",
+    "suggested_answer": "B;D",
+    "score": 1.0
+  },
+  {
+    "id": "GATE CS 2025 Set 1 Question Paper::25",
+    "question": "Q.25   The number -6 can be represented as 1010 in 4-bit 2's complement representation.\n        Which of the following is/are CORRECT 2's complement representation(s) of -6?\n\n\n (A)    1000 1010 in 8-bits\n\n\n (B)    1111 1010 in 8-bits\n\n\n (C)    1000 0000 0000 1010 in 16-bits\n\n\n (D)    1111 1111 1111 1010 in 16-bits\n\n\n                           Computer Science and Information Technology (CS1)",
+    "suggested_answer": "B;D",
+    "score": 1.0
+  },
+  {
+    "id": "GATE CS 2025 Set 1 Question Paper::26",
+    "question": "Q.26   Which of the following statement(s) is/are TRUE for any binary search tree (BST)\n         having n distinct integers?\n\n\n (A)    The maximum length of a path from the root node to any other node is (n-1).\n\n\n (B)    An inorder traversal will always produce a sorted sequence of elements.\n\n\n (C)     Finding an element takes O(log2 n) time in the worst case.\n\n\n (D)     Every BST is also a Min-Heap.\n\n\n                           Computer Science and Information Technology (CS1)",
+    "suggested_answer": "A;B",
+    "score": 0.6
+  },
+  {
+    "id": "GATE CS 2025 Set 1 Question Paper::27",
+    "question": "Q.27 A partial data path of a processor is given in the figure, where RA, RB, and RZ are\n        32-bit registers. Which option(s) is/are CORRECT related to arithmetic operations\n        using the data path as shown?\n\n\n (A)   The data path can implement arithmetic operations involving two registers.\n\n\n (B)   The data path can implement arithmetic operations involving one register and one\n       immediate value.\n\n\n (C)   The data path can implement arithmetic operations involving two immediate values.\n\n\n (D)   The data path can only implement arithmetic operations involving one register and\n       one immediate value.\n\n\n                           Computer Science and Information Technology (CS1)",
+    "suggested_answer": "A;B;C",
+    "score": 0.0
+  },
+  {
+    "id": "GATE CS 2025 Set 1 Question Paper::28",
+    "question": "Q.28  A regular language L is accepted by a non-deterministic finite automaton (NFA)\n         with n states. Which of the following statement(s) is/are FALSE?\n\n\n (A)    L may have an accepting NFA with < n states.\n\n\n (B)    L may have an accepting DFA with < n states.\n\n\n (C)     There exists a DFA with ≤2n states that accepts L.\n\n\n (D)     Every DFA that accepts L has > 2n states.\n\n\n                           Computer Science and Information Technology (CS1)",
+    "suggested_answer": "D",
+    "score": 0.0
+  },
+  {
+    "id": "GATE CS 2025 Set 1 Question Paper::29",
+    "question": "Q.29   Suppose in a multiprogramming environment, the following C program segment is\n          executed. A process goes into I/O queue whenever an I/O related operation is\n         performed. Assume that there will always be a context switch whenever a process\n          requests for an I/O, and also whenever the process returns from an I/O. The number\n          of times the process will enter the ready queue during its lifetime (not counting the\n         time the process enters the ready queue when it is run initially) is _______. (Answer\n           in integer)\n\n\n            int main()\n            {\n                int x=0,i=0;\n                scanf(\"%d\",&x);\n                for(i=0; i<20; i++)\n                {\n                    x = x+20;\n                    printf(\"%d\\n\",x);\n                }\n                return 0;\n            }\n\n\n                           Computer Science and Information Technology (CS1)",
+    "suggested_answer": "21 to 21",
+    "score": 1.0
+  },
+  {
+    "id": "GATE CS 2025 Set 1 Question Paper::30",
+    "question": "Q.30    Let S be the set of all ternary strings defined over the alphabet {a, b, c}. Consider\n            all strings in S that contain at least one occurrence of two consecutive symbols, that\n             is, \"aa\", \"bb\" or \"cc\". The number of such strings of length 5 that are possible is\n         _______. (Answer in integer)\n\n\n                           Computer Science and Information Technology (CS1)",
+    "suggested_answer": "195 to 195",
+    "score": 1.0
+  },
+  {
+    "id": "GATE CS 2025 Set 1 Question Paper::31",
+    "question": "Q.31   Consider the given function f(x).\n\n                         ax+ b       for x< 1\n                            f(x) = {\n                                    x3 + x2 + 1  for x≥1\n\n            If the function is differentiable everywhere, the value of b must be ________.\n         (rounded off to one decimal place)\n\n\n                           Computer Science and Information Technology (CS1)",
+    "suggested_answer": "-2.1 to -1.9",
+    "score": 1.0
+  },
+  {
+    "id": "GATE CS 2025 Set 1 Question Paper::32",
+    "question": "Q.32  A box contains 5 coins: 4 regular coins and 1 fake coin. When a regular coin is\n          tossed, the probability P(head) = 0.5 and for a fake coin, P(head) = 1. You pick\n         a coin at random and toss it twice, and get two heads. The probability that the coin\n        you have chosen is the fake coin is _______. (rounded off to two decimal places)\n\n\n                           Computer Science and Information Technology (CS1)",
+    "suggested_answer": "0.49 to 0.51",
+    "score": 1.0
+  },
+  {
+    "id": "GATE CS 2025 Set 1 Question Paper::33",
+    "question": "Q.33        The pseudocode of a function fun() is given below:\n\n            fun(int A[0,...,n-1]){\n                for i=0 to n-2\n                    for j=0 to n-i-2\n                        if (A[j]>A[j+1])\n                            then swap A[j] and A[j+1]\n\n                  }\n\n         Let A[0, ... ,29] be an array storing 30 distinct integers in descending order. The\n        number of swap operations that will be performed, if the function fun() is called\n         with A[0, ... ,29] as argument, is __________. (Answer in integer)\n\n\n                           Computer Science and Information Technology (CS1)",
+    "suggested_answer": "435 to 435",
+    "score": 1.0
+  },
+  {
+    "id": "GATE CS 2025 Set 1 Question Paper::34",
+    "question": "Q.34   #include <stdio.h>\n       void foo(int *p, int x){\n           *p=x;\n       }\n       int main(){\n           int *z;\n           int a = 20, b = 25;\n           z = &a;\n           foo(z,b);\n           printf(\"%d\",a);\n           return 0;\n       }\n\n        The output of the given C program is __________. (Answer in integer)\n\n\n                           Computer Science and Information Technology (CS1)",
+    "suggested_answer": "25 to 25",
+    "score": 1.0
+  },
+  {
+    "id": "GATE CS 2025 Set 1 Question Paper::35",
+    "question": "Q.35   The height of any rooted tree is defined as the maximum number of edges in the\n         path from the root node to any leaf node.\n\n        Suppose a Min-Heap T stores 32 keys. The height of T is _____________.\n        (Answer in integer)\n\n\n                           Computer Science and Information Technology (CS1)\n\n\nQ.36 - Q.65 Carry TWO marks Each",
+    "suggested_answer": "5 to 5",
+    "score": 1.0
+  },
+  {
+    "id": "GATE CS 2025 Set 1 Question Paper::36",
+    "question": "Q.36   Consider a memory system with 1M bytes of main memory and 16K bytes of cache\n        memory. Assume that the processor generates 20-bit memory address, and the cache\n         block size is 16 bytes. If the cache uses direct mapping, how many bits will be\n          required to store all the tag values? [Assume memory is byte addressable, 1K=210,\n        1M=220 .]\n\n\n (A)    6 × 210\n\n\n (B)    8 × 210\n\n\n (C)     212\n\n\n (D)     214\n\n\n                           Computer Science and Information Technology (CS1)",
+    "suggested_answer": "A",
+    "score": 1.0
+  },
+  {
+    "id": "GATE CS 2025 Set 1 Question Paper::37",
+    "question": "Q.37  A processor has 64 general-purpose registers and 50 distinct instruction types. An\n          instruction is encoded in 32-bits. What is the maximum number of bits that can be\n         used to store the immediate operand for the given instruction?\n\n           ADD R1, #25     // R1 = R1 + 25\n\n\n (A)    16\n\n\n (B)    20\n\n\n (C)    22\n\n\n (D)    24\n\n\n                           Computer Science and Information Technology (CS1)",
+    "suggested_answer": "B",
+    "score": 1.0
+  },
+  {
+    "id": "GATE CS 2025 Set 1 Question Paper::38",
+    "question": "Q.38  A computer has two processors, M1 and M2. Four processes P1, P2, P3, P4 with CPU\n          bursts of 20, 16, 25, and 10 milliseconds, respectively, arrive at the same time and\n          these are the only processes in the system. The scheduler uses non-preemptive\n           priority scheduling, with priorities decided as follows:\n\n            •  M1 uses priority of execution for the processes as, P1 > P3 > P2 > P4, i.e.,\n                P1 and P4 have highest and lowest priorities, respectively.\n            •  M2 uses priority of execution for the processes as, P2 > P3 > P4 > P1, i.e.,\n                P2 and P1 have highest and lowest priorities, respectively.\n\n      A process Pi is scheduled to a processor Mk, if the processor is free and no other\n          process Pj is waiting with higher priority. At any given point of time, a process can\n         be allocated to any one of the free processors without violating the execution\n           priority rules. Ignore the context switch time. What will be the average waiting time\n          of the processes in milliseconds?\n\n\n (A)     9.00\n\n\n (B)     8.75\n\n\n (C)     6.50\n\n\n (D)     7.50\n\n\n                           Computer Science and Information Technology (CS1)",
+    "suggested_answer": "A",
+    "score": 1.0
+  },
+  {
+    "id": "GATE CS 2025 Set 1 Question Paper::39",
+    "question": "Q.39  Consider two relations describing teams and players in a sports league:\n\n           •  teams(tid, tname): tid, tname are team-id and team-name, respectively\n           •  players(pid, pname, tid): pid, pname, and tid denote player-id, playername and the team-id of the player, respectively\n\n       Which ONE of the following tuple relational calculus queries returns the name of the\n         players who play for the team having tname as ′MI′?\n\n\n (A)    { p. pname | p∈players∧∃t (t∈teams∧p. tid= t. tid∧t. tname= ′MI′)}\n\n\n (B)    { p. pname | p∈teams∧∃t (t∈players∧p. tid= t. tid∧t. tname= ′MI′)}\n\n\n (C)    { p. pname | p∈players∧∃t (t∈teams∧t. tname= ′MI′)}\n\n\n (D)    { p. pname | p∈teams∧∃t (t∈players∧t. tname= ′MI′)}\n\n\n                           Computer Science and Information Technology (CS1)",
+    "suggested_answer": "A",
+    "score": 1.0
+  },
+  {
+    "id": "GATE CS 2025 Set 1 Question Paper::40",
+    "question": "Q.40  A packet with the destination IP address 145.36.109.70 arrives at a router whose\n          routing table is shown. Which interface will the packet be forwarded to?\n\n\n (A)    E3\n\n\n (B)    E1\n\n\n (C)    E2\n\n\n (D)    E5\n\n\n                           Computer Science and Information Technology (CS1)\n\n\n         Let A be a 2 × 2 matrix as given.",
+    "suggested_answer": "A",
+    "score": 0.0
+  },
+  {
+    "id": "GATE CS 2025 Set 1 Question Paper::41",
+    "question": "Q.41                                1   1\n                     A= [         ]\n                                    1  -1\n\n        What are the eigenvalues of the matrix A13 ?\n\n (A)      1, -1\n\n\n (B)     2√2, -2√2\n\n\n (C)     4√2, -4√2\n\n\n (D)     64√2, -64√2\n\n\n                           Computer Science and Information Technology (CS1)",
+    "suggested_answer": "D",
+    "score": 0.9
+  },
+  {
+    "id": "GATE CS 2025 Set 1 Question Paper::42",
+    "question": "Q.42   Consider the following four variable Boolean function in sum-of-product form\n\n                           F(b3, b2, b1, b0) = ∑(0, 2, 4, 8, 10, 11, 12).\n\n        where the value of the function is computed by considering b3b2b1b0 as a 4-bit\n         binary number, where b3 denotes the most significant bit and b0 denotes the least\n          significant bit. Note that there are no don't care terms. Which ONE of the following\n         options is the CORRECT minimized Boolean expression for F?\n\n\n (A)       b̅1b̅0 + b̅2b̅0 + b1 b̅2b3\n\n (B)       b̅1 b̅0 + b̅2 b̅0\n\n (C)         b̅2b̅0 + b1b2b3\n\n (D)        b̅0b̅2 + b̅3\n\n\n                           Computer Science and Information Technology (CS1)",
+    "suggested_answer": "A",
+    "score": 1.0
+  },
+  {
+    "id": "GATE CS 2025 Set 1 Question Paper::43",
+    "question": "Q.43    Let G(V, E) be an undirected and unweighted graph with 100 vertices. Let d(u, v)\n         denote the number of edges in a shortest path between vertices u and v in V. Let the\n       maximum value of d(u, v), u, v∈V such that u≠v, be 30. Let T be any breadthfirst-search tree of G. Which ONE of the given options is CORRECT for every such\n         graph G?\n\n\n (A)    The height of T is exactly 15.\n\n\n (B)    The height of T is exactly 30.\n\n\n (C)    The height of T is at least 15.\n\n\n (D)    The height of T is at least 30.\n\n\n                           Computer Science and Information Technology (CS1)",
+    "suggested_answer": "C",
+    "score": 1.0
+  },
+  {
+    "id": "GATE CS 2025 Set 1 Question Paper::44",
+    "question": "Q.44   Consider the following two languages over the alphabet {a, b}:\n\n                         L1 = { αβα | α∈{a, b}+ AND β∈{a, b}+ }\n\n                        L2 = { αβα | α∈{a}+ AND β∈{a, b}+ }\n\n        Which ONE of the following statements is CORRECT?\n\n\n (A)    Both L1 and L2 are regular languages.\n\n\n (B)     L1 is a regular language but L2 is not a regular language.\n\n\n (C)     L1 is not a regular language but L2 is a regular language.\n\n\n (D)     Neither L1 nor L2 is a regular language.\n\n\n                           Computer Science and Information Technology (CS1)",
+    "suggested_answer": "C",
+    "score": 1.0
+  },
+  {
+    "id": "GATE CS 2025 Set 1 Question Paper::45",
+    "question": "Q.45   Consider the following two languages over the alphabet {a, b, c}, where m and n\n          are natural numbers.\n\n                               L1 = {ambmcm+n | m, n≥1}\n\n                               L2 = {ambncm+n | m, n≥1}\n\n        Which ONE of the following statements is CORRECT?\n\n\n (A)    Both L1 and L2 are context-free languages.\n\n\n (B)     L1 is a context-free language but L2 is not a context-free language.\n\n\n (C)     L1 is not a context-free language but L2 is a context-free language.\n\n\n (D)     Neither L1 nor L2 are context-free languages.\n\n\n                           Computer Science and Information Technology (CS1)",
+    "suggested_answer": "C",
+    "score": 1.0
+  },
+  {
+    "id": "GATE CS 2025 Set 1 Question Paper::46",
+    "question": "Q.46   Which of the following statement(s) is/are TRUE while computing First and Follow\n         during top down parsing by a compiler?\n\n\n (A)     For a production A→ε, ε will be added to First(A).\n\n\n (B)       If there is any input right end marker, it will be added to First(S), where S is the\n            start symbol.\n\n\n (C)     For a production A→ε, ε will be added to Follow(A).\n\n\n (D)      If there is any input right end marker, it will be added to Follow(S), where S is\n          the start symbol.\n\n\n                           Computer Science and Information Technology (CS1)",
+    "suggested_answer": "A;D",
+    "score": 1.0
+  },
+  {
+    "id": "GATE CS 2025 Set 1 Question Paper::47",
+    "question": "Q.47    Consider  a   relational  schema  team(name, city, owner),  with  functional\n         dependencies {name→city, name→owner}.\n\n        The  relation team  is decomposed  into two  relations, t1(name, city) and\n        t2(name, owner). Which of the following statement(s) is/are TRUE?\n\n\n (A)    The relation team is NOT in BCNF.\n\n\n (B)    The relations t1 and t2 are in BCNF.\n\n\n (C)    The decomposition constitutes a lossless join.\n\n\n (D)    The relation team is NOT in 3NF.\n\n\n                           Computer Science and Information Technology (CS1)",
+    "suggested_answer": "B;C",
+    "score": 1.0
+  },
+  {
+    "id": "GATE CS 2025 Set 1 Question Paper::48",
+    "question": "Q.48   Which  of  the following  predicate  logic formulae/formula  is/are CORRECT\n          representation(s) of the statement: \"Everyone has exactly one mother\"?\n\n        The meanings of the predicates used are:\n\n                  •  mother(y, x): y is the mother of x\n                  •   noteq(x, y): x and y are not equal\n\n\n (A)    ∀x∃y∃z(mother(y, x) ∧¬mother(z, x))\n\n\n (B)    ∀x∃y[mother(y, x) ∧∀z(noteq(z, y) →¬mother(z, x))]\n\n\n (C)    ∀x∀y[mother(y, x) →∃z(mother(z, x) ∧¬noteq(z, y))]\n\n\n (D)    ∀x∃y[mother(y, x) ∧¬∃z(noteq(z, y) ∧mother(z, x))]\n\n\n                           Computer Science and Information Technology (CS1)",
+    "suggested_answer": "B;D",
+    "score": 1.0
+  },
+  {
+    "id": "GATE CS 2025 Set 1 Question Paper::49",
+    "question": "Q.49  A= {0, 1, 2, 3, ... } is the set of non-negative integers. Let Ϝ be the set of functions\n        from A to itself. For any two functions, f1, f2 ∈Ϝ, we define\n\n                               (f1⨀f2)(n) = f1(n) + f2(n)\n\n          for every number n in A. Which of the following is/are CORRECT about the\n         mathematical structure (Ϝ, ⨀)?\n\n\n (A)      (Ϝ, ⨀) is an Abelian group.\n\n\n (B)      (Ϝ, ⨀) is an Abelian monoid.\n\n\n (C)      (Ϝ, ⨀) is a non-Abelian group.\n\n\n (D)      (Ϝ, ⨀) is a non-Abelian monoid.\n\n\n                           Computer Science and Information Technology (CS1)",
+    "suggested_answer": "B",
+    "score": 1.0
+  },
+  {
+    "id": "GATE CS 2025 Set 1 Question Paper::50",
+    "question": "Q.50   Consider the following deterministic finite automaton (DFA) defined over the\n          alphabet, Σ = {a, b}. Identify which of the following language(s) is/are accepted by\n          the given DFA.\n\n\n (A)    The set of all strings containing an even number of b's.\n\n\n (B)    The set of all strings containing the pattern bab.\n\n\n (C)    The set of all strings ending with the pattern bab.\n\n\n (D)    The set of all strings not containing the pattern aba.\n\n\n                           Computer Science and Information Technology (CS1)",
+    "suggested_answer": "C",
+    "score": 0.0
+  },
+  {
+    "id": "GATE CS 2025 Set 1 Question Paper::51",
+    "question": "Q.51  A disk of size 512M bytes is divided into blocks of 64K bytes. A file is stored in\n          the disk using linked allocation. In linked allocation, each data block reserves 4\n         bytes to store the pointer to the next data block. The link part of the last data block\n          contains a NULL pointer (also of 4 bytes). Suppose a file of 1M bytes needs to be\n          stored in the disk. Assume, 1K = 210 and 1M = 220. The amount of space in bytes\n           that will be wasted due to internal fragmentation is ______. (Answer in integer)\n\n\n                           Computer Science and Information Technology (CS1)",
+    "suggested_answer": "65468 to 65468",
+    "score": 1.0
+  },
+  {
+    "id": "GATE CS 2025 Set 1 Question Paper::52",
+    "question": "Q.52    Refer to the given 3-address code sequence. This code sequence is split into basic\n          blocks. The number of basic blocks is ________. (Answer in integer)\n\n\n            1001: i = 1\n            1002: j = 1\n            1003: t1 = 10*i\n            1004: t2 = t1+j\n            1005: t3 = 8*t2\n            1006: t4 = t3-88\n            1007: a[t4] = 0.0\n            1008: j = j+1\n            1009: if j <= 10 goto 1003\n            1010: i = i+1\n            1011: if i <= 10 goto 1002\n            1012: i = 1\n            1013: t5 = i-1\n            1014: t6 = 88*t5\n            1015: a[t6] = 1.0\n            1016: i = i+1\n            1017: if i <= 10 goto 1013\n\n\n                           Computer Science and Information Technology (CS1)",
+    "suggested_answer": "6 to 6",
+    "score": 1.0
+  },
+  {
+    "id": "GATE CS 2025 Set 1 Question Paper::53",
+    "question": "Q.53  A computer has a memory hierarchy consisting of two-level cache (L1 and L2) and\n         a main memory. If the processor needs to access data from memory, it first looks\n          into L1 cache. If the data is not found in L1 cache, it goes to L2 cache. If it fails to\n          get the data from L2 cache, it goes to main memory, where the data is definitely\n          available. Hit rates and access times of various memory units are shown in the\n           figure. The average memory access time in nanoseconds (ns) is ________. (rounded\n          off to two decimal places)\n\n\n                           Computer Science and Information Technology (CS1)",
+    "suggested_answer": "11.83 to 11.87",
+    "score": 0.0
+  },
+  {
+    "id": "GATE CS 2025 Set 1 Question Paper::54",
+    "question": "Q.54    In optimal page replacement algorithm, information about all future page references\n            is available to the operating system (OS). A modification of the optimal page\n         replacement algorithm is as follows:\n\n        The OS correctly predicts only up to next 4 page references (including the current\n         page) at the time of allocating a frame to a page.\n\n      A process accesses the pages in the following order of page numbers:\n\n                                        1, 3, 2, 4, 2, 3, 1, 2, 4, 3, 1, 4.\n\n            If the system has three memory frames that are initially empty, the number of page\n           faults that will occur during execution of the process is ________ . (Answer in\n          integer)\n\n\n                           Computer Science and Information Technology (CS1)",
+    "suggested_answer": "6 to 6",
+    "score": 0.9
+  },
+  {
+    "id": "GATE CS 2025 Set 1 Question Paper::55",
+    "question": "Q.55   Consider the following database tables of a sports league.\n\n       player(pid,pname,age)        team(tid,tname,city,cid)\n       coach(cid,cname)             members(pid,tid)\n\n      An instance of the table and an SQL query are given.\n\n               player              coach               team             members\n\n\n      SELECT MIN(P.age)\n      FROM player P\n      WHERE P.pid IN (\n          SELECT M.pid\n          FROM team T, coach C, members M\n          WHERE C.cname = 'Mark'\n                AND T.cid = C.cid\n                AND M.tid = T.tid\n          )\n\n       The value returned by the given SQL query is ______ . (Answer in integer)\n\n\n                           Computer Science and Information Technology (CS1)",
+    "suggested_answer": "26 to 26",
+    "score": 0.0
+  },
+  {
+    "id": "GATE CS 2025 Set 1 Question Paper::56",
+    "question": "Q.56    Suppose a 5-bit message is transmitted from a source to a destination through a\n          noisy channel. The probability that a bit of the message gets flipped during\n          transmission is 0.01. Flipping of each bit is independent of one another. The\n          probability that the message is delivered error-free to the destination is ______ .\n         (rounded off to three decimal places)\n\n\n                           Computer Science and Information Technology (CS1)",
+    "suggested_answer": "0.949 to 0.952",
+    "score": 1.0
+  },
+  {
+    "id": "GATE CS 2025 Set 1 Question Paper::57",
+    "question": "Q.57    Suppose a message of size 15000 bytes is transmitted from a source to a destination\n          using IPv4 protocol via two routers as shown in the figure. Each router has a defined\n       maximum transmission unit (MTU) as shown in the figure, including IP header.\n        The number of fragments that will be delivered to the destination is ________ .\n         (Answer in integer)\n\n\n                           Computer Science and Information Technology (CS1)",
+    "suggested_answer": "7 to 7",
+    "score": 0.0
+  },
+  {
+    "id": "GATE CS 2025 Set 1 Question Paper::58",
+    "question": "Q.58    Consider a probability distribution given by the density function P(x).\n\n                                                  for 1 ≤x≤4                          P(x) = {Cx2,\n                                               0,     for x< 1 or x> 4\n\n        The probability that x lies between 2 and 3, i.e., P(2 ≤x≤3) is __________.\n         (rounded off to three decimal places)\n\n\n                           Computer Science and Information Technology (CS1)",
+    "suggested_answer": "0.300 to 0.302",
+    "score": 1.0
+  },
+  {
+    "id": "GATE CS 2025 Set 1 Question Paper::59",
+    "question": "Q.59     Consider a finite state machine (FSM) with one input X and one output f,\n           represented by the given state transition table. The minimum number of states\n           required to realize this FSM is ________. (Answer in integer)\n\n\n                           Present state    Next state       Output f\n                     X= 0 X= 1 X= 0 X= 1\n                   A        F    B      0      0\n                    B      D    C      0      0\n                    C        F     E      0      0\n                   D      G    A      1      0\n                      E      D    C      0      0\n                        F        F    B      1      1\n                   G      G    H      0      1\n                   H      G    A      1      0\n\n\n                           Computer Science and Information Technology (CS1)",
+    "suggested_answer": "5 to 5",
+    "score": 1.0
+  },
+  {
+    "id": "GATE CS 2025 Set 1 Question Paper::60",
+    "question": "Q.60    Consider the given sequential circuit designed using D-Flip-flops. The circuit is\n            initialized with some value (initial state). The number of distinct states the circuit\n           will go through before returning back to the initial state is _________ . (Answer\n           in integer)\n\n\n                           Computer Science and Information Technology (CS1)",
+    "suggested_answer": "7 to 8",
+    "score": 0.0
+  },
+  {
+    "id": "GATE CS 2025 Set 1 Question Paper::61",
+    "question": "Q.61   #include <stdio.h>\n       int foo(int S[],int size){\n           if(size == 0) return 0;\n           if(size == 1) return 1;\n           if(S[0] != S[1]) return 1+foo(S+1,size-1);\n           return foo(S+1,size-1);\n       }\n       int main(){\n           int A[]={0,1,2,2,2,0,0,1,1};\n           printf(\"%d\",foo(A,9));\n           return 0;\n       }\n\n        The value printed by the given C program is _______ . (Answer in integer)\n\n\n                           Computer Science and Information Technology (CS1)",
+    "suggested_answer": "5 to 5",
+    "score": 1.0
+  },
+  {
+    "id": "GATE CS 2025 Set 1 Question Paper::62",
+    "question": "Q.62  Let LIST be a datatype for an implementation of linked list defined as follows:\n\n      typedef struct list {\n          int data;\n          struct list *next;\n      } LIST;\n\n       Suppose a program has created two linked lists, L1 and L2, whose contents are given\n         in the figure below (code for creating L1 and L2 is not provided here). L1 contains 9\n        nodes, and L2 contains 7 nodes.\n\n       Consider the following C program segment that modifies the list L1. The number of\n       nodes that will be there in L1 after the execution of the code segment is ________ .\n       (Answer in integer)\n\n\n      int find (int query, LIST *list) {\n          while (list != NULL){\n              if(list->data == query) return 1;\n              list = list->next;\n          }\n          return 0;\n      }\n      int main () {\n           ... ... ...\n          ptr1=L1; ptr2=L2;\n          while (ptr1->next != NULL){\n              query = ptr1->next->data;\n              if (find (query, L2))\n                  ptr1->next = ptr1->next->next;\n              else ptr1 = ptr1->next;\n          }\n           ... ... ...\n          return 0;\n      }\n\n\n                           Computer Science and Information Technology (CS1)",
+    "suggested_answer": "5 to 5",
+    "score": 0.0
+  },
+  {
+    "id": "GATE CS 2025 Set 1 Question Paper::63",
+    "question": "Q.63         Consider the following C program:\n\n       #include <stdio.h>\n       int gate (int n) {\n           int d, t, newnum, turn;\n           newnum = turn = 0; t=1;\n           while (n>=t) t *= 10;\n           t /=10;\n           while (t>0) {\n               d = n/t;\n               n = n%t;\n               t /= 10;\n               if (turn) newnum = 10*newnum + d;\n               turn = (turn + 1) % 2;\n           }\n           return newnum;\n       }\n       int main () {\n           printf (\"%d\", gate(14362));\n           return 0;\n\n       }\n\n        The value printed by the given C program is _______ . (Answer in integer)\n\n\n                           Computer Science and Information Technology (CS1)",
+    "suggested_answer": "46 to 46",
+    "score": 1.0
+  },
+  {
+    "id": "GATE CS 2025 Set 1 Question Paper::64",
+    "question": "Q.64   The maximum value of x such that the edge between the nodes B and C is included\n          in every minimum spanning tree of the given graph is _________  . (answer in\n          integer)",
+    "suggested_answer": "5 to 5",
+    "score": 0.0
+  },
+  {
+    "id": "GATE CS 2025 Set 1 Question Paper::65",
+    "question": "Q.65    In a double hashing scheme, h1(k) = k mod 11 and h2(k) = 1 + (k mod 7) are\n          the auxiliary hash functions. The size m of the hash table is 11. The hash function\n           for the i-th probe in the open address table is [h1(k) + i h2(k)] mod m. The\n          following keys are inserted in the given order: 63, 50, 25, 79, 67, 24.\n\n        The slot at which key 24 gets stored is ___________. (Answer in integer)",
+    "suggested_answer": "10 to 11",
+    "score": 1.0
+  },
+  {
+    "id": "GATE CS 2025 Set 2 Question Paper::1",
+    "question": "Q.1     Despite his initial hesitation, Rehman's _________ to contribute to the success of\n          the project never wavered.\n\n          Select the most appropriate option to complete the above sentence.\n\n\n (A)     ambivalence\n\n\n (B)      satisfaction\n\n\n (C)     resolve\n\n\n (D)     revolve\n\n\n                           Computer Science and Information Technology (CS2)",
+    "suggested_answer": "C",
+    "score": 1.0
+  },
+  {
+    "id": "GATE CS 2025 Set 2 Question Paper::2",
+    "question": "Q.2     Bird : Nest :: Bee : _______\n\n          Select the correct option to complete the analogy.\n\n\n (A)    Kennel\n\n\n (B)    Hammock\n\n\n (C)     Hive\n\n\n (D)     Lair\n\n\n                           Computer Science and Information Technology (CS2)",
+    "suggested_answer": "C",
+    "score": 1.0
+  },
+  {
+    "id": "GATE CS 2025 Set 2 Question Paper::3",
+    "question": "Q.3      If Pex= Qe-x for all real values of x, which one of the following statements is\n          true?\n\n\n (A)   P= Q= 0\n\n\n (B)   P= Q= 1\n\n\n (C)   P= 1; Q= -1\n\n\n (D)    P\n     Q= 0\n\n\n                           Computer Science and Information Technology (CS2)",
+    "suggested_answer": "A",
+    "score": 0.95
+  },
+  {
+    "id": "GATE CS 2025 Set 2 Question Paper::4",
+    "question": "Q.4    The paper as shown in the figure is folded to make a cube where each square\n         corresponds to a particular face of the cube. Which one of the following options\n          correctly represents the cube?\n\n         Note: The figures shown are representative.\n\n\n (A)\n\n\n (B)\n\n\n (C)\n\n\n (D)\n\n\n                           Computer Science and Information Technology (CS2)",
+    "suggested_answer": "A",
+    "score": 0.0
+  },
+  {
+    "id": "GATE CS 2025 Set 2 Question Paper::5",
+    "question": "Q.5     Let p1 and p2 denote two arbitrary prime numbers. Which one of the following\n         statements is correct for all values of p1 and p2?\n\n\n (A)     p1 + p2 is not a prime number.\n\n\n (B)     p1p2 is not a prime number.\n\n\n (C)     p1 + p2 + 1 is a prime number.\n\n\n (D)     p1p2 + 1 is a prime number.\n\n\n                           Computer Science and Information Technology (CS2)\n\n\nQ.6 - Q.10 Carry TWO marks Each",
+    "suggested_answer": "B",
+    "score": 1.0
+  },
+  {
+    "id": "GATE CS 2025 Set 2 Question Paper::6",
+    "question": "Q.6    Based only on the conversation below, identify the logically correct inference:\n\n        \"Even if I had known that you were in the hospital, I would not have gone there to\n         see you\", Ramya told Josephine.\n\n\n (A)    Ramya knew that Josephine was in the hospital.\n\n\n (B)    Ramya did not know that Josephine was in the hospital.\n\n\n (C)    Ramya and Josephine were once close friends; but now, they are not.\n\n\n (D)     Josephine was in the hospital due to an injury to her leg.\n\n\n                           Computer Science and Information Technology (CS2)",
+    "suggested_answer": "B",
+    "score": 1.0
+  }
+]
