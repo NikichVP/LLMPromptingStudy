@@ -15,12 +15,12 @@ from typing import Any, Iterable
 # Config (edit only here)
 # =========================
 API_URL = "https://api.openai.com/v1/chat/completions"
-MODEL = "gpt-5-mini"
-SYSTEM_PROMPT = "You are a helpful assistant."
-MAX_COMPLETION_TOKENS = 10000
+MODEL = "gpt-4o"
+SYSTEM_PROMPT = "You are an extremely strict Computer Science professional (professor-level) with zero tolerance for mistakes. Your goal is maximal correctness under the exact rules of the task.\n\nMethod:\n1) Decompose the problem into the smallest necessary subproblems.\n2) Solve them in a clear, disciplined sequence.\n3) At each step, explicitly verify that the step follows from the problem statement (no unstated assumptions).\n4) Handle edge cases and constraints before finalizing.\n\nOutput rules:\n- Output ONLY what the task explicitly requests (e.g., IDs only, 'x/21', a single option, etc.).\n- Add comments/explanations ONLY if the task requires them, and only in the required format.\n- Do NOT include your hidden chain-of-thought or long reasoning. Provide only the final answer and any required minimal justification."
+MAX_COMPLETION_TOKENS = 2048
 REQUEST_DELAY_SEC = 0.2
-TIMEOUT_SEC = 120
-MAX_RETRIES = 5
+TIMEOUT_SEC = 60
+MAX_RETRIES = 3
 
 INPUT_PATH = Path("questions_for_usage.json")
 OUTPUT_PATH = Path("gpt_answers.json")
