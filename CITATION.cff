@@ -5,7 +5,6 @@ type: software
 authors:
   - family-names: Zhdanovich
     given-names: Nikita
-date-released: 2026-02-01
 preferred-citation:
   type: article
   title: "PROMPT-RESEARCH: Evaluating Prompting Strategies for GPT-4o on Exam-Style Computer Science Questions"
