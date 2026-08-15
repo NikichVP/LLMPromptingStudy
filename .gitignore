@@ -1,7 +1,25 @@
-*.venv
-*__pycache__/
-*.pyc
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Local environment
 .env
+.env.*
+!.env.example
+
+# OS / editor
 .DS_Store
 .vscode/
 .idea/
+
+# Generated and intermediate artifacts
+extracted_txt/
+qa_extracted/
+gpt_answers.json
+gpt_questions_checker_results.json
+
+# Third-party source PDFs; keep only the authored paper
+*.pdf
+!PROMPT_RESEARCH.pdf
