@@ -9,17 +9,23 @@ venv/
 .env.*
 !.env.example
 
-# OS / editor
+# OS / editors
 .DS_Store
 .vscode/
 .idea/
 
-# Generated and intermediate artifacts
+# Source material and local datasets
+raw/
+source_materials/
+data/
 extracted_txt/
 qa_extracted/
+
+# Local experiment outputs
+results/local/
 gpt_answers.json
 gpt_questions_checker_results.json
 
-# Third-party source PDFs; keep only the authored paper
+# Third-party PDFs; keep only the authored paper
 *.pdf
 !PROMPT_RESEARCH.pdf
