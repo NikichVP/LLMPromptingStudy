@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite the paper below."
+title: "PROMPT-RESEARCH: Evaluating Prompting Strategies for GPT-4o on Exam-Style Computer Science Questions"
+type: software
+authors:
+  - family-names: Zhdanovich
+    given-names: Nikita
+date-released: 2026-01-01
+preferred-citation:
+  type: article
+  title: "PROMPT-RESEARCH: Evaluating Prompting Strategies for GPT-4o on Exam-Style Computer Science Questions"
+  authors:
+    - family-names: Zhdanovich
+      given-names: Nikita
+  year: 2026

@@ -2,16 +2,25 @@
 
 **Evaluating Prompting Strategies for GPT-4o on Exam-Style Computer Science Questions**
 
-A controlled study of how system-prompt design changes the performance and response behavior of the same language model on a fixed set of 101 exam-style Computer Science questions.
+A controlled study of how system-prompt design changes the performance and response behavior of the same model on a fixed set of 101 exam-style Computer Science questions.
 
-## Study design
+Presented at the **Letovo School Research Conference 2026**.
 
-- **101 questions:** 49 objective-format and 52 open-ended
-- **Model held fixed:** GPT-4o
-- **Main comparison:** baseline, Reasoning chain v1, and Multiple solutions v2
-- **Additional iterations:** Reasoning chain v2 and Multiple solutions v1 are reported in the paper appendix
-- **Objective metric:** strict and lenient answer matching
-- **Open-ended metric:** unigram F1 against a reference answer, used as an approximate comparison signal rather than a complete correctness metric
+[Final paper (PDF)](./PROMPT_RESEARCH.pdf)
+
+## Experiment
+
+The study used 101 questions: 49 objective-format and 52 open-ended. GPT-4o and the user questions were held fixed while the system prompt changed.
+
+Five prompt conditions were tested across the development process:
+
+- baseline
+- reasoning chain v1
+- reasoning chain v2
+- multiple solutions v1
+- multiple solutions v2
+
+The paper treats baseline, reasoning chain v1, and multiple solutions v2 as the main comparison; the other two variants are reported as refinements.
 
 ## Results
 
@@ -23,48 +32,57 @@ A controlled study of how system-prompt design changes the performance and respo
 | Multiple solutions v1 | 30/49 (61.2%) | 0.249 | **62.9** |
 | Multiple solutions v2 | 36/49 (73.5%) | 0.245 | 135.0 |
 
-Within the three main conditions, **Reasoning chain v1** produced the best objective accuracy, while **Multiple solutions v2** produced the strongest open-ended overlap. Across all five iterative variants, the results show a trade-off between objective accuracy, open-ended overlap, verbosity, and output discipline rather than one prompt dominating every metric.
+The strongest objective result was reasoning chain v1: **77.6% vs. 69.4% for baseline (+8.2 percentage points)**. The variants also showed a trade-off between answer accuracy, open-ended overlap, verbosity, and output discipline.
 
-## Repository contents
+## Repository
 
-### Core experiment
+```text
+experiment/
+  prompts.py          exact system-prompt variants
+  run_experiment.py   experiment runner
+results/
+  baseline.json
+  reasoning_chain_v1.json
+  reasoning_chain_v2.json
+  multiple_solutions_v1.json
+  multiple_solutions_v2.json
+PROMPT_RESEARCH.pdf   final paper
+```
 
-- `prompts.py` — prompt definitions and refined variants
-- `queries_to_gpt.py` — GPT-4o experiment runner
-- `questions_for_usage.json` — curated 101-question experiment input
-- `gpt_answers_4o_without_prompt.json` — baseline outputs
-- `gpt_answers_4o_with_reasoning_chain.json` — Reasoning chain v1 outputs
-- `gpt_answers_4o_reasoning2.json` — Reasoning chain v2 outputs
-- `gpt_answers_4o_multiple_solutions.json` — Multiple solutions v1 outputs
-- `gpt_answers_4o_solutions2.json` — Multiple solutions v2 outputs
+The saved result files contain the model outputs used in the study.
 
-### Dataset preparation utilities
+Third-party exam PDFs, answer keys, extracted source text, and the question dataset itself are intentionally not redistributed in this repository. Their provenance and the dataset construction process are described in the paper.
 
-- `extractor.py` — PDF/text extraction utility
-- `qa_extractor.py` — question/answer extraction pipeline
-- `gate_qa_merge.py` — GATE question/answer merge utility
-- `export_clean_qa.py` — cleaned dataset export
-- `gpt_questions_checker.py` — question-quality screening utility
+## Reproducing a run
 
-### Paper
+The runner accepts a JSON file containing objects with `id` and `question` fields.
 
-- `PROMPT_RESEARCH.pdf` — final research paper
+```json
+[
+  {"id": 1, "question": "..."}
+]
+```
 
-## Running an experiment
-
-The runner reads `questions_for_usage.json` and uses an API key from the environment:
+Set an API key in the environment and run one condition:
 
 ```bash
 export OPENAI_API_KEY="..."
-python queries_to_gpt.py
+python experiment/run_experiment.py \
+  --condition reasoning_chain_v1 \
+  --input /path/to/questions.json \
+  --output /path/to/output.json
 ```
 
-To reproduce a particular condition, set the corresponding system prompt and output filename in `queries_to_gpt.py` before running it.
+The default model is `gpt-4o`, matching the study.
 
-## Data note
+## Limitations
 
-The original third-party exam PDFs and large intermediate extraction artifacts used during dataset construction are intentionally not kept in the current working tree. The repository keeps the experiment code, curated input, saved model outputs, and the authored paper.
+- one model family in the main experiment
+- one run per condition, so sampling variance was not estimated
+- 101 questions: useful for a focused comparison, not a universal benchmark
+- unigram F1 is an approximate signal for open-ended answers and can penalize valid paraphrases
+- objective scoring depends partly on answer extraction and formatting
 
-## Paper
+## Citation
 
-**Nikita Zhdanovich. _PROMPT-RESEARCH: Evaluating Prompting Strategies for GPT-4o on Exam-Style Computer Science Questions._ 2026.**
+Nikita Zhdanovich. *PROMPT-RESEARCH: Evaluating Prompting Strategies for GPT-4o on Exam-Style Computer Science Questions.* 2026.
